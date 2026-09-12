@@ -1,6 +1,6 @@
 # Distributed Order Processing System
 
-A production-grade, distributed order processing resume project designed for technical interviews. Demonstrates **concurrency control via Redis distributed locking**, **idempotency with SHA-256 payload hashing**, **asynchronous event-driven orchestration with Apache Kafka**, **compensation sagas for payment failures**, and an **interactive React (Vite) demo frontend**.
+A production-grade distributed order processing engine built to eliminate inventory overselling under high-concurrency burst traffic and orchestrate asynchronous order fulfillment. It implements **distributed concurrency control via Redis (Redisson)**, **idempotent transaction intake with SHA-256 payload fingerprinting**, **asynchronous event streaming with Apache Kafka**, **transactional saga compensation for payment failures**, and an **interactive system telemetry dashboard**.
 
 ---
 
@@ -49,7 +49,7 @@ A production-grade, distributed order processing resume project designed for tec
 
 ---
 
-## Architectural & Design Decision Rationale (Interview Talking Points)
+## Architectural & Design Decision Rationale
 
 ### 1. Why Redis Distributed Lock over Database Pessimistic Locking (`SELECT ... FOR UPDATE`)
 - **Connection Pool Exhaustion & Row Contention:** In high-concurrency flash sales, database pessimistic locks hold open relational database connections and transactions for the duration of stock checks, external calls, and entity writes. Under heavy traffic (e.g. 50+ concurrent buyers for 1 item), database connection pools quickly saturate, leading to thread starvation and system-wide latency degradation.
@@ -122,17 +122,23 @@ Distributed order processing/
 
 ---
 
-## Seed Data for Demonstrations
+## Baseline Product Catalog & Concurrency Test Fixtures
 
-Seeded automatically by `MongoConfig` in `order_processing_db.products`:
+The catalog is pre-seeded with items across multiple categories representing distinct concurrency and inventory profiles:
 
-| Product Name | Price | Stock | Demo Scenario |
-|---|---|---|---|
-| **Sony WH-1000XM5 Headphones** | $349.99 | **1** | **Race Condition Demo:** Low-stock item for concurrent buyer burst |
-| **Keychron K2 Mechanical Keyboard** | $89.99 | **10** | **Happy Path Demo:** Healthy inventory for standard ordering |
-| **Apple MacBook Pro M3** | $1999.99 | **5** | **Healthy Stock:** Standard multi-unit ordering |
-| **Dell UltraSharp 27 4K Monitor** | $499.99 | **0** | **Out-of-Stock Demo:** Immediate rejection validation |
-| **Simulated Payment Fail Item** (`prod-fail-payment`) | $99.99 | **5** | **Compensation Demo:** Hardcoded deterministic payment failure trigger |
+| Category | Product Name | SKU | Price | Stock | Concurrency & Pipeline Profile |
+|---|---|---|---|---|---|
+| **Phones** | **Apple iPhone 15 Pro** | `prod-iphone-15-pro` | $999.00 | **1** | Single-unit inventory (high-contention flash-sale profile) |
+| **Phones** | **Samsung Galaxy S24 Ultra** | `prod-samsung-s24` | $1299.00 | **15** | Standard multi-unit concurrent purchasing |
+| **Phones** | **Google Pixel 8 Pro** | `prod-pixel-8-pro` | $899.00 | **8** | Moderate concurrency load |
+| **Books** | **Designing Data-Intensive Applications** | `prod-book-ddia` | $44.99 | **50** | High inventory (bulk multi-unit ordering) |
+| **Books** | **System Design Interview (Vol 1 & 2)** | `prod-book-system-design` | $39.99 | **35** | High-volume purchasing |
+| **Books** | **Database Internals: A Deep Dive** | `prod-book-db-internals` | $49.99 | **20** | Standard flow |
+| **Hardware** | **Sony WH-1000XM5 Headphones** | `prod-sony-wh1000xm5` | $349.99 | **1** | Single-unit inventory race condition testing |
+| **Hardware** | **Apple MacBook Pro 14"** | `prod-macbook-pro-m3` | $1999.00 | **5** | High cart value checkout |
+| **Hardware** | **Keychron K2 Mechanical Keyboard** | `prod-keychron-k2` | $89.99 | **12** | Standard ordering |
+| **Hardware** | **Dell UltraSharp 27 4K Monitor** | `prod-dell-ultrasharp` | $549.99 | **0** | Out-of-stock guard (immediate HTTP 409 rejection) |
+| **Chaos Lab** | **Simulated Payment Fail Item** | `prod-fail-payment` | $99.99 | **10** | Deterministic payment failure trigger for saga compensation |
 
 ---
 
@@ -213,22 +219,22 @@ cd order-service
 
 ---
 
-## Frontend 3-Screen Live Demo Walkthrough
+## Frontend System Telemetry Console
 
-1. **Screen 1: Product List**
-   - Displays real-time catalog from `GET /api/products`.
-   - Color-coded stock badges (Green > 3, Amber 1–3, Red = 0).
-   - "Order / Test Race" button pre-selects product and switches to Screen 2.
-2. **Screen 2: Place Order & Concurrent Race Simulator**
-   - **Single Order:** Select product, quantity, manage Idempotency Key (UUID). Successful order placement generates Order ID and offers instant link to Screen 3.
-   - **Simulate Concurrent Buyers (Interview Demo):**
-     - Select `"Sony WH-1000XM5 Headphones"` (Stock: 1).
-     - Set buyers $N = 10$ and click **"Blast 10 Concurrent Buyers"**.
-     - Scoreboard immediately updates: **Total Fired: 10**, **Succeeded: 1 (Green)**, **Failed: 9 (Red)**.
-     - Live breakdown feed displays Buyer #1: `201 Created` vs Buyers #2–10: `409 Conflict: OUT_OF_STOCK`.
-3. **Screen 3: Order Status & Kafka Pipeline Stepper**
+1. **Screen 1: Product Inventory Telemetry**
+   - Displays real-time catalog synchronized directly from `GET /api/products`.
+   - Category filtering (`ALL`, `PHONES`, `BOOKS`, `HARDWARE`, `CHAOS LAB`) and one-click catalog restock (`POST /api/products/reset`).
+   - Color-coded stock status badges (In Stock, Low Stock, Out of Stock).
+2. **Screen 2: Direct Order Placement & High-Contention Simulator**
+   - **Single Order Placement:** Select catalog target, quantity, and specify or auto-generate UUID `Idempotency-Key`.
+   - **High-Contention Simulator:**
+     - Select a limited SKU (e.g. `Stock: 1`).
+     - Set concurrency count $N$ (clamped up to 50 for client socket safety) and trigger **"Blast N Concurrent Buyers"**.
+     - Real-time scoreboard visualizes total requests fired, allocated orders (`201 Created`), and shed contention (`409 Conflict: OUT_OF_STOCK` or `LOCK_ACQUISITION_FAILED`).
+     - Terminal execution trace stream shows sub-millisecond thread arrival, lock acquisition, and direct click-to-track order navigation.
+3. **Screen 3: Order Telemetry & Kafka Pipeline Stepper**
    - Given an Order ID, polls `GET /api/orders/{orderId}` every 1.5 seconds.
-   - Visual Stepper transitions live:
+   - Visual Stepper transitions live through async stages:
      `[ 1. PLACED ] ──> [ 2. PAYMENT_PROCESSED ] ──> [ 3. SHIPPED ]`
-   - Active stages pulse blue, completed stages turn green.
-   - Chronological audit log below the stepper displays real-time transition timestamps committed to MongoDB `statusHistory`.
+   - Active stages pulse cyan, completed stages turn emerald green.
+   - Chronological audit log below the stepper displays immutable transition timestamps committed to MongoDB `statusHistory`.

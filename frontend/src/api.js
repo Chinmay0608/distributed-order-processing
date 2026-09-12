@@ -81,7 +81,7 @@ export async function getOrderStatus(orderId) {
 
 /**
  * Fires N concurrent requests simultaneously using Promise.allSettled.
- * Demonstrates Redis distributed locking and race condition defense live.
+ * Evaluates Redis distributed locking and race condition defense under concurrent load.
  */
 export async function simulateConcurrentBuyers(productId, count = 10) {
   // Safety guardrail: clamp between 2 and 50 to prevent browser V8 OOM and OS TCP socket exhaustion

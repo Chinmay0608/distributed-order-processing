@@ -169,7 +169,7 @@ The system is split into two independent Spring Boot microservices (`order-servi
 {
   "_id": "6aa4d664c4a7835bc162201d",
   "name": "Sony WH-1000XM5 Headphones",
-  "description": "Wireless Noise Cancelling Headphones (Low Stock Demo)",
+  "description": "Wireless Noise Cancelling Headphones (Single-Unit Inventory)",
   "price": 349.99,
   "stock": 1,
   "createdAt": "2026-09-12T04:00:00.000Z",
@@ -496,7 +496,7 @@ PaymentProcessor                          Kafka                               In
 
 ### Deterministic Failure Triggers (`PaymentProcessor.java`)
 Payment capture failure is triggered deterministically if either condition matches:
-1. `event.getProductId().equals("prod-fail-payment")` (dedicated catalog compensation demo SKU).
+1. `event.getProductId().equals("prod-fail-payment")` (dedicated catalog compensation test SKU).
 2. `event.getQuantity() == 99` (global failure trigger for any product).
 
 ### Compensation Safety Invariant
@@ -561,12 +561,4 @@ At 100,000 ops/sec, acquiring a distributed lock that guards a multi-millisecond
 | **500ms Lock Wait Timeout** | Long wait (5000ms) or Instant fail (0ms) | 500ms allows 3–4 legitimate sequential database transactions to clear without thread starvation under flash sales. | Under extreme contention, late buyers fail with `LOCK_ACQUISITION_FAILED` instead of reaching the database. |
 | **Asynchronous Kafka Event Pipeline** | Synchronous REST Calls between services | Decouples checkout latency from slow third-party gateways; Kafka acts as an elastic buffer during traffic surges. | Eventual consistency: customer receives `201 Created` while payment is still in-flight. |
 | **MongoDB Document Store** | PostgreSQL Relational DB | Native atomic conditional updates (`$inc`), embedded schema-free audit logging, and built-in TTL indexes for idempotency records. | Lack of native multi-collection cross-document ACID transactions across independent entities. |
-| **Deterministic Payment Failures (`prod-fail-payment` / `qty=99`)** | Random percentage failure (`Math.random() < 0.2`) | Guarantees deterministic, reproducible test scenarios for automated CI/CD suites and live technical interview demonstrations. | Does not simulate random non-deterministic network dropouts. |
-
----
-
-## 14. 60-Second Interview Pitch
-
-> *"This project is an event-driven distributed order processing engine designed to solve two classic flash-sale problems: inventory overselling under high concurrency, and synchronous checkout latency bottlenecks.*
-> 
-> *We implemented a two-gate concurrency guard using a Redisson distributed lock with a 500ms wait timeout as our load-shedding gate, backed by an atomic MongoDB compare-and-set conditional decrement as our inventory consistency gate. This mathematically guarantees zero overselling while protecting our Tomcat thread pool against contention starvation. To keep ingestion latency under 150ms, orders are accepted immediately into a durable Kafka event pipeline, where decoupled downstream worker pools handle payment capture, carrier shipping dispatch, and automated inventory compensation sagas upon failure. The entire flow is protected by SHA-256 payload-hashed idempotency records with automated 24-hour TTL expiration."*
+| **Deterministic Payment Failures (`prod-fail-payment` / `qty=99`)** | Random percentage failure (`Math.random() < 0.2`) | Guarantees deterministic, reproducible test scenarios for automated CI/CD suites and end-to-end integration testing. | Does not simulate random non-deterministic network dropouts. |

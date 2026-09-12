@@ -92,7 +92,7 @@
       "file_type": "code",
       "norm_label": "productcontroller",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse",
@@ -105,6 +105,19 @@
       "file_type": "code",
       "norm_label": "productresponse",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
+      "source_location": "L3"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception_resourcenotfoundexception",
+      "label": "ResourceNotFoundException",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": "resourcenotfoundexception",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/exception/ResourceNotFoundException.java",
       "source_location": "L3"
     },
     {
@@ -145,45 +158,6 @@
       "norm_label": "idempotencystatus",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/IdempotencyStatus.java",
       "source_location": "L3"
-    },
-    {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_repository_orderrepository_orderrepository",
-      "label": "OrderRepository",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "orderrepository",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/repository/OrderRepository.java",
-      "source_location": "L9"
-    },
-    {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_service_inventorycompensationservice_inventorycompensationservice",
-      "label": "InventoryCompensationService",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "inventorycompensationservice",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/InventoryCompensationService.java",
-      "source_location": "L20"
-    },
-    {
-      "id": "processing_service_src_test_java_com_distributed_processingservice_compensationconsumerunittest_compensationconsumerunittest",
-      "label": "CompensationConsumerUnitTest",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "compensationconsumerunittest",
-      "source_file": "processing-service/src/test/java/com/distributed/processingservice/CompensationConsumerUnitTest.java",
-      "source_location": "L30"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_orderserviceapplication_orderserviceapplication",
@@ -296,7 +270,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "compensationconsumer",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/CompensationConsumer.java",
@@ -309,11 +283,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "paymentconsumer",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/PaymentConsumer.java",
       "source_location": "L10"
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_service_inventorycompensationservice_inventorycompensationservice",
+      "label": "InventoryCompensationService",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InventoryCompensationService",
+      "file_type": "code",
+      "norm_label": "inventorycompensationservice",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/InventoryCompensationService.java",
+      "source_location": "L20"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_service_paymentprocessor_paymentprocessor",
@@ -322,7 +309,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "paymentprocessor",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/PaymentProcessor.java",
@@ -374,24 +361,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": "shippingconsumer",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/ShippingConsumer.java",
       "source_location": "L10"
     },
     {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher_processingeventpublisher",
-      "label": "ProcessingEventPublisher",
+      "id": "processing_service_src_main_java_com_distributed_processingservice_repository_orderrepository_orderrepository",
+      "label": "OrderRepository",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
-      "norm_label": "processingeventpublisher",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
-      "source_location": "L11"
+      "norm_label": "orderrepository",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/repository/OrderRepository.java",
+      "source_location": "L9"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_service_shippingprocessor_shippingprocessor",
@@ -400,7 +387,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": "shippingprocessor",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/ShippingProcessor.java",
@@ -413,7 +400,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": "shippingprocessorunittest",
       "source_file": "processing-service/src/test/java/com/distributed/processingservice/ShippingProcessorUnitTest.java",
@@ -433,17 +420,17 @@
       "source_location": "L26"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception_resourcenotfoundexception",
-      "label": "ResourceNotFoundException",
+      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher_processingeventpublisher",
+      "label": "ProcessingEventPublisher",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "ResourceNotFoundException",
+      "community_name": "org.slf4j.Logger",
       "file_type": "code",
-      "norm_label": "resourcenotfoundexception",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/exception/ResourceNotFoundException.java",
-      "source_location": "L3"
+      "norm_label": "processingeventpublisher",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
+      "source_location": "L11"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_controller_ordercontroller_ordercontroller",
@@ -628,6 +615,19 @@
       "source_location": "L38"
     },
     {
+      "id": "processing_service_src_test_java_com_distributed_processingservice_compensationconsumerunittest_compensationconsumerunittest",
+      "label": "CompensationConsumerUnitTest",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "OrderServiceUnitTest.java",
+      "file_type": "code",
+      "norm_label": "compensationconsumerunittest",
+      "source_file": "processing-service/src/test/java/com/distributed/processingservice/CompensationConsumerUnitTest.java",
+      "source_location": "L30"
+    },
+    {
       "id": "order_service_src_main_java_com_distributed_orderservice_config_kafkaproducerconfig_kafkaproducerconfig",
       "label": "KafkaProducerConfig",
       "_callable": true,
@@ -651,7 +651,7 @@
       "file_type": "code",
       "norm_label": "mongoconfig",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L11"
+      "source_location": "L9"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_config_redissonconfig_redissonconfig",
@@ -690,7 +690,7 @@
       "file_type": "code",
       "norm_label": "kafkaconfig",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_config_redissonconfig_redissonconfig",
@@ -1000,34 +1000,6 @@
       "norm_label": ".settotalamount()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/event/OrderPaymentProcessedEvent.java",
       "source_location": "L71"
-    },
-    {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher_processingeventpublisher_publishpaymentprocessed",
-      "label": ".publishPaymentProcessed()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "OrderPaymentProcessedEvent",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "info",
-            "receiver_type": "Logger",
-            "lang": "java",
-            "line": "L23"
-          },
-          {
-            "callee": "send",
-            "receiver_type": "KafkaTemplate",
-            "lang": "java",
-            "line": "L24"
-          }
-        ]
-      },
-      "norm_label": ".publishpaymentprocessed()",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
-      "source_location": "L22"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_service_shippingprocessor_shippingprocessor_processshipping",
@@ -1809,13 +1781,13 @@
             "callee": "ok",
             "receiver_type": "ResponseEntity",
             "lang": "java",
-            "line": "L24"
+            "line": "L25"
           }
         ]
       },
       "norm_label": ".getproducts()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_productcontroller",
@@ -1827,7 +1799,41 @@
       "file_type": "code",
       "norm_label": ".productcontroller()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L18"
+      "source_location": "L19"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_resetproducts",
+      "label": ".resetProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "ok",
+            "receiver_type": "ResponseEntity",
+            "lang": "java",
+            "line": "L30"
+          }
+        ]
+      },
+      "norm_label": ".resetproducts()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L28"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getcategory",
+      "label": ".getCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": ".getcategory()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
+      "source_location": "L51"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getdescription",
@@ -1839,7 +1845,7 @@
       "file_type": "code",
       "norm_label": ".getdescription()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L37"
+      "source_location": "L43"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getid",
@@ -1851,7 +1857,7 @@
       "file_type": "code",
       "norm_label": ".getid()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L21"
+      "source_location": "L27"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getname",
@@ -1863,7 +1869,7 @@
       "file_type": "code",
       "norm_label": ".getname()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L29"
+      "source_location": "L35"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getprice",
@@ -1875,7 +1881,7 @@
       "file_type": "code",
       "norm_label": ".getprice()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L45"
+      "source_location": "L59"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getstock",
@@ -1887,7 +1893,7 @@
       "file_type": "code",
       "norm_label": ".getstock()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L53"
+      "source_location": "L67"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_productresponse",
@@ -1899,7 +1905,19 @@
       "file_type": "code",
       "norm_label": ".productresponse()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L10"
+      "source_location": "L11"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setcategory",
+      "label": ".setCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": ".setcategory()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
+      "source_location": "L55"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setdescription",
@@ -1911,7 +1929,7 @@
       "file_type": "code",
       "norm_label": ".setdescription()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L41"
+      "source_location": "L47"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setid",
@@ -1923,7 +1941,7 @@
       "file_type": "code",
       "norm_label": ".setid()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L25"
+      "source_location": "L31"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setname",
@@ -1935,7 +1953,7 @@
       "file_type": "code",
       "norm_label": ".setname()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L33"
+      "source_location": "L39"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setprice",
@@ -1947,7 +1965,7 @@
       "file_type": "code",
       "norm_label": ".setprice()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L49"
+      "source_location": "L63"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setstock",
@@ -1959,7 +1977,19 @@
       "file_type": "code",
       "norm_label": ".setstock()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L57"
+      "source_location": "L71"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception_resourcenotfoundexception_resourcenotfoundexception",
+      "label": ".ResourceNotFoundException()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": ".resourcenotfoundexception()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/exception/ResourceNotFoundException.java",
+      "source_location": "L4"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getallproducts",
@@ -1975,13 +2005,47 @@
             "callee": "toList",
             "receiver_type": "Collectors",
             "lang": "java",
-            "line": "L24"
+            "line": "L31"
           }
         ]
       },
       "norm_label": ".getallproducts()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
       "source_location": "L21"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getdefaultcatalog",
+      "label": ".getDefaultCatalog()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "of",
+            "receiver_type": "List",
+            "lang": "java",
+            "line": "L46"
+          }
+        ]
+      },
+      "norm_label": ".getdefaultcatalog()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L45"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getproduct",
+      "label": ".getProduct()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": ".getproduct()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L34"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_productservice",
@@ -1994,6 +2058,18 @@
       "norm_label": ".productservice()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
       "source_location": "L17"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_resetcatalog",
+      "label": ".resetCatalog()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": ".resetcatalog()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L39"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_idempotencyrecord_idempotencyrecord_getcreatedat",
@@ -2186,110 +2262,6 @@
       "source_location": "L50"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_inventorylockservice_inventorylockservice_inventorylockservice",
-      "label": ".InventoryLockService()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": ".inventorylockservice()",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/InventoryLockService.java",
-      "source_location": "L22"
-    },
-    {
-      "id": "order_service_src_test_java_com_distributed_orderservice_idempotencyserviceunittest_idempotencyserviceunittest_setup",
-      "label": ".setUp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": ".setup()",
-      "source_file": "order-service/src/test/java/com/distributed/orderservice/IdempotencyServiceUnitTest.java",
-      "source_location": "L29"
-    },
-    {
-      "id": "order_service_src_test_java_com_distributed_orderservice_orderprocessingendtoendintegrationtest_orderprocessingendtoendintegrationtest_setup",
-      "label": ".setup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": ".setup()",
-      "source_file": "order-service/src/test/java/com/distributed/orderservice/OrderProcessingEndToEndIntegrationTest.java",
-      "source_location": "L85"
-    },
-    {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_service_inventorycompensationservice_inventorycompensationservice_inventorycompensationservice",
-      "label": ".InventoryCompensationService()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": ".inventorycompensationservice()",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/InventoryCompensationService.java",
-      "source_location": "L30"
-    },
-    {
-      "id": "processing_service_src_test_java_com_distributed_processingservice_compensationconsumerunittest_compensationconsumerunittest_setup",
-      "label": ".setUp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "getLock",
-            "receiver_type": "RedissonClient",
-            "lang": "java",
-            "line": "L50"
-          },
-          {
-            "callee": "tryLock",
-            "receiver_type": "RLock",
-            "lang": "java",
-            "line": "L51"
-          },
-          {
-            "callee": "isHeldByCurrentThread",
-            "receiver_type": "RLock",
-            "lang": "java",
-            "line": "L52"
-          }
-        ]
-      },
-      "norm_label": ".setup()",
-      "source_file": "processing-service/src/test/java/com/distributed/processingservice/CompensationConsumerUnitTest.java",
-      "source_location": "L47"
-    },
-    {
-      "id": "processing_service_src_test_java_com_distributed_processingservice_paymentprocessorunittest_paymentprocessorunittest_setup",
-      "label": ".setUp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "setField",
-            "receiver_type": "ReflectionTestUtils",
-            "lang": "java",
-            "line": "L41"
-          }
-        ]
-      },
-      "norm_label": ".setup()",
-      "source_file": "processing-service/src/test/java/com/distributed/processingservice/PaymentProcessorUnitTest.java",
-      "source_location": "L37"
-    },
-    {
       "id": "order_service_src_main_java_com_distributed_orderservice_orderserviceapplication_orderserviceapplication_main",
       "label": ".main()",
       "_callable": true,
@@ -2334,6 +2306,18 @@
       "source_location": "L9"
     },
     {
+      "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getcategory",
+      "label": ".getCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Product",
+      "file_type": "code",
+      "norm_label": ".getcategory()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
+      "source_location": "L63"
+    },
+    {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getcreatedat",
       "label": ".getCreatedAt()",
       "_callable": true,
@@ -2343,7 +2327,7 @@
       "file_type": "code",
       "norm_label": ".getcreatedat()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L73"
+      "source_location": "L87"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getdescription",
@@ -2355,7 +2339,7 @@
       "file_type": "code",
       "norm_label": ".getdescription()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L49"
+      "source_location": "L55"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getid",
@@ -2367,7 +2351,7 @@
       "file_type": "code",
       "norm_label": ".getid()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L33"
+      "source_location": "L39"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getname",
@@ -2379,7 +2363,7 @@
       "file_type": "code",
       "norm_label": ".getname()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L41"
+      "source_location": "L47"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getprice",
@@ -2391,7 +2375,7 @@
       "file_type": "code",
       "norm_label": ".getprice()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L57"
+      "source_location": "L71"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getstock",
@@ -2403,7 +2387,7 @@
       "file_type": "code",
       "norm_label": ".getstock()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L65"
+      "source_location": "L79"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getupdatedat",
@@ -2415,7 +2399,7 @@
       "file_type": "code",
       "norm_label": ".getupdatedat()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L81"
+      "source_location": "L95"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_product",
@@ -2431,13 +2415,25 @@
             "callee": "now",
             "receiver_type": "Instant",
             "lang": "java",
-            "line": "L29"
+            "line": "L35"
           }
         ]
       },
       "norm_label": ".product()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L20"
+      "source_location": "L21"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setcategory",
+      "label": ".setCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Product",
+      "file_type": "code",
+      "norm_label": ".setcategory()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
+      "source_location": "L67"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setcreatedat",
@@ -2449,7 +2445,7 @@
       "file_type": "code",
       "norm_label": ".setcreatedat()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L77"
+      "source_location": "L91"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setdescription",
@@ -2461,7 +2457,7 @@
       "file_type": "code",
       "norm_label": ".setdescription()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L53"
+      "source_location": "L59"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setid",
@@ -2473,7 +2469,7 @@
       "file_type": "code",
       "norm_label": ".setid()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L37"
+      "source_location": "L43"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setname",
@@ -2485,7 +2481,7 @@
       "file_type": "code",
       "norm_label": ".setname()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L45"
+      "source_location": "L51"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setprice",
@@ -2497,7 +2493,7 @@
       "file_type": "code",
       "norm_label": ".setprice()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L61"
+      "source_location": "L75"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setstock",
@@ -2509,7 +2505,7 @@
       "file_type": "code",
       "norm_label": ".setstock()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L69"
+      "source_location": "L83"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setupdatedat",
@@ -2521,7 +2517,7 @@
       "file_type": "code",
       "norm_label": ".setupdatedat()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L85"
+      "source_location": "L99"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_event_orderplacedevent_orderplacedevent_geteventid",
@@ -2735,7 +2731,7 @@
       "file_type": "code",
       "norm_label": "getorderstatus()",
       "source_file": "frontend/src/api.js",
-      "source_location": "L54"
+      "source_location": "L69"
     },
     {
       "id": "frontend_src_api_getproducts",
@@ -2759,6 +2755,18 @@
       "file_type": "code",
       "norm_label": "placeorder()",
       "source_file": "frontend/src/api.js",
+      "source_location": "L44"
+    },
+    {
+      "id": "frontend_src_api_resetproducts",
+      "label": "resetProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "resetproducts()",
+      "source_file": "frontend/src/api.js",
       "source_location": "L29"
     },
     {
@@ -2771,7 +2779,7 @@
       "file_type": "code",
       "norm_label": "simulateconcurrentbuyers()",
       "source_file": "frontend/src/api.js",
-      "source_location": "L71"
+      "source_location": "L86"
     },
     {
       "id": "frontend_src_app_app",
@@ -2822,6 +2830,18 @@
       "source_location": "L4"
     },
     {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getcategory",
+      "label": ".getCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "Product",
+      "file_type": "code",
+      "norm_label": ".getcategory()",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
+      "source_location": "L63"
+    },
+    {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getcreatedat",
       "label": ".getCreatedAt()",
       "_callable": true,
@@ -2831,7 +2851,7 @@
       "file_type": "code",
       "norm_label": ".getcreatedat()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L73"
+      "source_location": "L87"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getdescription",
@@ -2843,7 +2863,7 @@
       "file_type": "code",
       "norm_label": ".getdescription()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L49"
+      "source_location": "L55"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getid",
@@ -2855,7 +2875,7 @@
       "file_type": "code",
       "norm_label": ".getid()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L33"
+      "source_location": "L39"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getname",
@@ -2867,7 +2887,7 @@
       "file_type": "code",
       "norm_label": ".getname()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L41"
+      "source_location": "L47"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getprice",
@@ -2879,7 +2899,7 @@
       "file_type": "code",
       "norm_label": ".getprice()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L57"
+      "source_location": "L71"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getstock",
@@ -2891,7 +2911,7 @@
       "file_type": "code",
       "norm_label": ".getstock()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L65"
+      "source_location": "L79"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getupdatedat",
@@ -2903,7 +2923,7 @@
       "file_type": "code",
       "norm_label": ".getupdatedat()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L81"
+      "source_location": "L95"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_product",
@@ -2919,13 +2939,25 @@
             "callee": "now",
             "receiver_type": "Instant",
             "lang": "java",
-            "line": "L29"
+            "line": "L35"
           }
         ]
       },
       "norm_label": ".product()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L20"
+      "source_location": "L21"
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setcategory",
+      "label": ".setCategory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "Product",
+      "file_type": "code",
+      "norm_label": ".setcategory()",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
+      "source_location": "L67"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setcreatedat",
@@ -2937,7 +2969,7 @@
       "file_type": "code",
       "norm_label": ".setcreatedat()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L77"
+      "source_location": "L91"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setdescription",
@@ -2949,7 +2981,7 @@
       "file_type": "code",
       "norm_label": ".setdescription()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L53"
+      "source_location": "L59"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setid",
@@ -2961,7 +2993,7 @@
       "file_type": "code",
       "norm_label": ".setid()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L37"
+      "source_location": "L43"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setname",
@@ -2973,7 +3005,7 @@
       "file_type": "code",
       "norm_label": ".setname()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L45"
+      "source_location": "L51"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setprice",
@@ -2985,7 +3017,7 @@
       "file_type": "code",
       "norm_label": ".setprice()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L61"
+      "source_location": "L75"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setstock",
@@ -2997,7 +3029,7 @@
       "file_type": "code",
       "norm_label": ".setstock()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L69"
+      "source_location": "L83"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setupdatedat",
@@ -3009,7 +3041,7 @@
       "file_type": "code",
       "norm_label": ".setupdatedat()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L85"
+      "source_location": "L99"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_event_ordershippedevent_ordershippedevent_geteventid",
@@ -3199,7 +3231,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": ".compensationconsumer()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/CompensationConsumer.java",
@@ -3211,7 +3243,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -3239,7 +3271,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": ".paymentconsumer()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/PaymentConsumer.java",
@@ -3679,7 +3711,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": ".shippingconsumer()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/ShippingConsumer.java",
@@ -3691,7 +3723,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": ".paymentprocessor()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/PaymentProcessor.java",
@@ -3703,7 +3735,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": ".shippingprocessor()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/ShippingProcessor.java",
@@ -3715,7 +3747,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -3737,7 +3769,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -3770,6 +3802,34 @@
       "norm_label": ".testshippingprocessing_success()",
       "source_file": "processing-service/src/test/java/com/distributed/processingservice/ShippingProcessorUnitTest.java",
       "source_location": "L41"
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher_processingeventpublisher_publishpaymentprocessed",
+      "label": ".publishPaymentProcessed()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "PaymentProcessorUnitTest",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "info",
+            "receiver_type": "Logger",
+            "lang": "java",
+            "line": "L23"
+          },
+          {
+            "callee": "send",
+            "receiver_type": "KafkaTemplate",
+            "lang": "java",
+            "line": "L24"
+          }
+        ]
+      },
+      "norm_label": ".publishpaymentprocessed()",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
+      "source_location": "L22"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_service_paymentprocessor_paymentprocessor_processpayment",
@@ -3816,6 +3876,28 @@
       "norm_label": ".processpayment()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/PaymentProcessor.java",
       "source_location": "L33"
+    },
+    {
+      "id": "processing_service_src_test_java_com_distributed_processingservice_paymentprocessorunittest_paymentprocessorunittest_setup",
+      "label": ".setUp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "PaymentProcessorUnitTest",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "setField",
+            "receiver_type": "ReflectionTestUtils",
+            "lang": "java",
+            "line": "L41"
+          }
+        ]
+      },
+      "norm_label": ".setup()",
+      "source_file": "processing-service/src/test/java/com/distributed/processingservice/PaymentProcessorUnitTest.java",
+      "source_location": "L37"
     },
     {
       "id": "processing_service_src_test_java_com_distributed_processingservice_paymentprocessorunittest_paymentprocessorunittest_testpaymentprocessing_deterministicfailuretrigger_byproductid",
@@ -3920,28 +4002,28 @@
       "source_location": "L44"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception_resourcenotfoundexception_resourcenotfoundexception",
-      "label": ".ResourceNotFoundException()",
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_kafkaeventpublisher_kafkaeventpublisher_kafkaeventpublisher",
+      "label": ".KafkaEventPublisher()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "ResourceNotFoundException",
+      "community_name": "org.slf4j.Logger",
       "file_type": "code",
-      "norm_label": ".resourcenotfoundexception()",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/exception/ResourceNotFoundException.java",
-      "source_location": "L4"
+      "norm_label": ".kafkaeventpublisher()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/KafkaEventPublisher.java",
+      "source_location": "L17"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getproduct",
-      "label": ".getProduct()",
+      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher_processingeventpublisher_processingeventpublisher",
+      "label": ".ProcessingEventPublisher()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "ResourceNotFoundException",
+      "community_name": "org.slf4j.Logger",
       "file_type": "code",
-      "norm_label": ".getproduct()",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
-      "source_location": "L27"
+      "norm_label": ".processingeventpublisher()",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
+      "source_location": "L18"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_controller_ordercontroller_ordercontroller_ordercontroller",
@@ -4456,18 +4538,6 @@
       "source_location": "L50"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_kafkaeventpublisher_kafkaeventpublisher_kafkaeventpublisher",
-      "label": ".KafkaEventPublisher()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": ".kafkaeventpublisher()",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/KafkaEventPublisher.java",
-      "source_location": "L17"
-    },
-    {
       "id": "order_service_src_main_java_com_distributed_orderservice_service_orderservice_orderservice_orderservice",
       "label": ".OrderService()",
       "_callable": true,
@@ -4554,6 +4624,18 @@
       "norm_label": ".placeorder()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/service/OrderService.java",
       "source_location": "L63"
+    },
+    {
+      "id": "order_service_src_test_java_com_distributed_orderservice_idempotencyserviceunittest_idempotencyserviceunittest_setup",
+      "label": ".setUp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "OrderServiceUnitTest.java",
+      "file_type": "code",
+      "norm_label": ".setup()",
+      "source_file": "order-service/src/test/java/com/distributed/orderservice/IdempotencyServiceUnitTest.java",
+      "source_location": "L29"
     },
     {
       "id": "order_service_src_test_java_com_distributed_orderservice_idempotencyserviceunittest_idempotencyserviceunittest_testidempotency_concurrentinprogressreturns409",
@@ -4868,16 +4950,38 @@
       "source_location": "L78"
     },
     {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher_processingeventpublisher_processingeventpublisher",
-      "label": ".ProcessingEventPublisher()",
+      "id": "processing_service_src_test_java_com_distributed_processingservice_compensationconsumerunittest_compensationconsumerunittest_setup",
+      "label": ".setUp()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
       "community_name": "OrderServiceUnitTest.java",
       "file_type": "code",
-      "norm_label": ".processingeventpublisher()",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
-      "source_location": "L18"
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "getLock",
+            "receiver_type": "RedissonClient",
+            "lang": "java",
+            "line": "L50"
+          },
+          {
+            "callee": "tryLock",
+            "receiver_type": "RLock",
+            "lang": "java",
+            "line": "L51"
+          },
+          {
+            "callee": "isHeldByCurrentThread",
+            "receiver_type": "RLock",
+            "lang": "java",
+            "line": "L52"
+          }
+        ]
+      },
+      "norm_label": ".setup()",
+      "source_file": "processing-service/src/test/java/com/distributed/processingservice/CompensationConsumerUnitTest.java",
+      "source_location": "L47"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_config_kafkaproducerconfig_kafkaproducerconfig_kafkatemplate",
@@ -4933,19 +5037,9 @@
       "community": 5,
       "community_name": "org.springframework.context.annotation.Bean",
       "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "of",
-            "receiver_type": "List",
-            "lang": "java",
-            "line": "L24"
-          }
-        ]
-      },
       "norm_label": ".seeddatabase()",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L14"
+      "source_location": "L12"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_config_redissonconfig_redissonconfig_redissonclient",
@@ -5004,6 +5098,18 @@
       "source_location": "L10"
     },
     {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_inventorylockservice_inventorylockservice_inventorylockservice",
+      "label": ".InventoryLockService()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "org.springframework.context.annotation.Bean",
+      "file_type": "code",
+      "norm_label": ".inventorylockservice()",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/InventoryLockService.java",
+      "source_location": "L22"
+    },
+    {
       "id": "processing_service_src_main_java_com_distributed_processingservice_config_kafkaconfig_kafkaconfig_consumerfactory",
       "label": ".consumerFactory()",
       "_callable": true,
@@ -5013,7 +5119,7 @@
       "file_type": "code",
       "norm_label": ".consumerfactory()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_config_kafkaconfig_kafkaconfig_kafkalistenercontainerfactory",
@@ -5029,13 +5135,19 @@
             "callee": "setConsumerFactory",
             "receiver_type": "ConcurrentKafkaListenerContainerFactory",
             "lang": "java",
+            "line": "L44"
+          },
+          {
+            "callee": "setRecordMessageConverter",
+            "receiver_type": "ConcurrentKafkaListenerContainerFactory",
+            "lang": "java",
             "line": "L45"
           }
         ]
       },
       "norm_label": ".kafkalistenercontainerfactory()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L41"
+      "source_location": "L40"
     },
     {
       "id": "processing_service_src_main_java_com_distributed_processingservice_config_kafkaconfig_kafkaconfig_kafkatemplate",
@@ -5160,6 +5272,18 @@
       "norm_label": ".redissonclient()",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/RedissonConfig.java",
       "source_location": "L19"
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_service_inventorycompensationservice_inventorycompensationservice_inventorycompensationservice",
+      "label": ".InventoryCompensationService()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "org.springframework.context.annotation.Bean",
+      "file_type": "code",
+      "norm_label": ".inventorycompensationservice()",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/InventoryCompensationService.java",
+      "source_location": "L30"
     },
     {
       "id": "order_service_src_main_java_com_distributed_orderservice_event_orderplacedevent_orderplacedevent_geteventid",
@@ -5446,6 +5570,18 @@
       "norm_label": ".createtestkafkaconsumer()",
       "source_file": "order-service/src/test/java/com/distributed/orderservice/OrderProcessingEndToEndIntegrationTest.java",
       "source_location": "L170"
+    },
+    {
+      "id": "order_service_src_test_java_com_distributed_orderservice_orderprocessingendtoendintegrationtest_orderprocessingendtoendintegrationtest_setup",
+      "label": ".setup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "OrderProcessingEndToEndIntegrationTest.java",
+      "file_type": "code",
+      "norm_label": ".setup()",
+      "source_file": "order-service/src/test/java/com/distributed/orderservice/OrderProcessingEndToEndIntegrationTest.java",
+      "source_location": "L85"
     },
     {
       "id": "order_service_src_test_java_com_distributed_orderservice_orderprocessingendtoendintegrationtest_orderprocessingendtoendintegrationtest_testendtoendorderflow",
@@ -6359,6 +6495,39 @@
       "source_location": "L1"
     },
     {
+      "id": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception",
+      "label": "ResourceNotFoundException.java",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": "resourcenotfoundexception.java",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/exception/ResourceNotFoundException.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice",
+      "label": "ProductService.java",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": "productservice.java",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice_java_product",
+      "label": "Product",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": "product",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "org_springframework_web_bind_annotation_getmapping",
       "label": "org.springframework.web.bind.annotation.GetMapping",
       "_origin": "ast",
@@ -6366,6 +6535,17 @@
       "community_name": "ProductResponse",
       "file_type": "code",
       "norm_label": "org.springframework.web.bind.annotation.getmapping",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "org_springframework_web_bind_annotation_postmapping",
+      "label": "org.springframework.web.bind.annotation.PostMapping",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "ProductResponse",
+      "file_type": "code",
+      "norm_label": "org.springframework.web.bind.annotation.postmapping",
       "source_file": "",
       "source_location": ""
     },
@@ -7012,66 +7192,11 @@
       "source_location": "L464"
     },
     {
-      "id": "order_service_src_test_java_com_distributed_orderservice_idempotencyserviceunittest",
-      "label": "IdempotencyServiceUnitTest.java",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "idempotencyserviceunittest.java",
-      "source_file": "order-service/src/test/java/com/distributed/orderservice/IdempotencyServiceUnitTest.java",
-      "source_location": "L1"
-    },
-    {
-      "id": "org_junit_jupiter_api_beforeeach",
-      "label": "org.junit.jupiter.api.BeforeEach",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "org.junit.jupiter.api.beforeeach",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "org_junit_jupiter_api_extension_extendwith",
-      "label": "org.junit.jupiter.api.extension.ExtendWith",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "org.junit.jupiter.api.extension.extendwith",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "org_mockito_junit_jupiter_mockitoextension",
-      "label": "org.mockito.junit.jupiter.MockitoExtension",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "org.mockito.junit.jupiter.mockitoextension",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "org_redisson_api_redissonclient",
-      "label": "org.redisson.api.RedissonClient",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "org.redisson.api.redissonclient",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "processing_service_src_main_java_com_distributed_processingservice_event_orderpaymentfailedevent",
       "label": "OrderPaymentFailedEvent.java",
       "_origin": "ast",
       "community": 14,
-      "community_name": "OrderRepository",
+      "community_name": "PaymentProcessorUnitTest.java",
       "file_type": "code",
       "norm_label": "orderpaymentfailedevent.java",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/event/OrderPaymentFailedEvent.java",
@@ -7082,21 +7207,10 @@
       "label": "OrderPaymentProcessedEvent.java",
       "_origin": "ast",
       "community": 14,
-      "community_name": "OrderRepository",
+      "community_name": "PaymentProcessorUnitTest.java",
       "file_type": "code",
       "norm_label": "orderpaymentprocessedevent.java",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/event/OrderPaymentProcessedEvent.java",
-      "source_location": "L1"
-    },
-    {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_service_inventorycompensationservice",
-      "label": "InventoryCompensationService.java",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "inventorycompensationservice.java",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/InventoryCompensationService.java",
       "source_location": "L1"
     },
     {
@@ -7104,21 +7218,10 @@
       "label": "PaymentProcessor.java",
       "_origin": "ast",
       "community": 14,
-      "community_name": "OrderRepository",
+      "community_name": "PaymentProcessorUnitTest.java",
       "file_type": "code",
       "norm_label": "paymentprocessor.java",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/PaymentProcessor.java",
-      "source_location": "L1"
-    },
-    {
-      "id": "processing_service_src_test_java_com_distributed_processingservice_compensationconsumerunittest",
-      "label": "CompensationConsumerUnitTest.java",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "compensationconsumerunittest.java",
-      "source_file": "processing-service/src/test/java/com/distributed/processingservice/CompensationConsumerUnitTest.java",
       "source_location": "L1"
     },
     {
@@ -7126,21 +7229,10 @@
       "label": "PaymentProcessorUnitTest.java",
       "_origin": "ast",
       "community": 14,
-      "community_name": "OrderRepository",
+      "community_name": "PaymentProcessorUnitTest.java",
       "file_type": "code",
       "norm_label": "paymentprocessorunittest.java",
       "source_file": "processing-service/src/test/java/com/distributed/processingservice/PaymentProcessorUnitTest.java",
-      "source_location": "L1"
-    },
-    {
-      "id": "processing_service_src_test_java_com_distributed_processingservice_shippingprocessorunittest",
-      "label": "ShippingProcessorUnitTest.java",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "OrderRepository",
-      "file_type": "code",
-      "norm_label": "shippingprocessorunittest.java",
-      "source_file": "processing-service/src/test/java/com/distributed/processingservice/ShippingProcessorUnitTest.java",
       "source_location": "L1"
     },
     {
@@ -8417,7 +8509,7 @@
       "label": "org.springframework.kafka.annotation.KafkaListener",
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "org.springframework.kafka.annotation.kafkalistener",
       "source_file": "",
@@ -8428,7 +8520,7 @@
       "label": "org.springframework.stereotype.Component",
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "org.springframework.stereotype.component",
       "source_file": "",
@@ -8439,7 +8531,7 @@
       "label": "CompensationConsumer.java",
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "compensationconsumer.java",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/CompensationConsumer.java",
@@ -8450,7 +8542,7 @@
       "label": "PaymentConsumer.java",
       "_origin": "ast",
       "community": 29,
-      "community_name": "PaymentProcessor",
+      "community_name": "InventoryCompensationService",
       "file_type": "code",
       "norm_label": "paymentconsumer.java",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/PaymentConsumer.java",
@@ -8545,25 +8637,25 @@
       "source_location": "L1"
     },
     {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_service_shippingprocessor",
-      "label": "ShippingProcessor.java",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "Order",
-      "file_type": "code",
-      "norm_label": "shippingprocessor.java",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/ShippingProcessor.java",
-      "source_location": "L1"
-    },
-    {
       "id": "processing_service_src_main_java_com_distributed_processingservice_consumer_shippingconsumer",
       "label": "ShippingConsumer.java",
       "_origin": "ast",
       "community": 30,
-      "community_name": "ProcessingEventPublisher",
+      "community_name": "OrderRepository",
       "file_type": "code",
       "norm_label": "shippingconsumer.java",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/consumer/ShippingConsumer.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "processing_service_src_test_java_com_distributed_processingservice_shippingprocessorunittest",
+      "label": "ShippingProcessorUnitTest.java",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "OrderRepository",
+      "file_type": "code",
+      "norm_label": "shippingprocessorunittest.java",
+      "source_file": "processing-service/src/test/java/com/distributed/processingservice/ShippingProcessorUnitTest.java",
       "source_location": "L1"
     },
     {
@@ -8933,14 +9025,102 @@
       "source_location": "L21"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception",
-      "label": "ResourceNotFoundException.java",
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_idempotencyservice",
+      "label": "IdempotencyService.java",
       "_origin": "ast",
       "community": 37,
-      "community_name": "ResourceNotFoundException",
+      "community_name": "org.slf4j.Logger",
       "file_type": "code",
-      "norm_label": "resourcenotfoundexception.java",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/exception/ResourceNotFoundException.java",
+      "norm_label": "idempotencyservice.java",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/IdempotencyService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_inventorylockservice",
+      "label": "InventoryLockService.java",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "inventorylockservice.java",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/InventoryLockService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "order_service_src_main_java_com_distributed_orderservice_service_kafkaeventpublisher",
+      "label": "KafkaEventPublisher.java",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "kafkaeventpublisher.java",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/KafkaEventPublisher.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "org_slf4j_logger",
+      "label": "org.slf4j.Logger",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "org.slf4j.logger",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "org_springframework_kafka_core_kafkatemplate",
+      "label": "org.springframework.kafka.core.KafkaTemplate",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "org.springframework.kafka.core.kafkatemplate",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "org_springframework_stereotype_service",
+      "label": "org.springframework.stereotype.Service",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "org.springframework.stereotype.service",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher",
+      "label": "ProcessingEventPublisher.java",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "processingeventpublisher.java",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_service_inventorycompensationservice",
+      "label": "InventoryCompensationService.java",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "inventorycompensationservice.java",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/InventoryCompensationService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "processing_service_src_main_java_com_distributed_processingservice_service_shippingprocessor",
+      "label": "ShippingProcessor.java",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "org.slf4j.Logger",
+      "file_type": "code",
+      "norm_label": "shippingprocessor.java",
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/service/ShippingProcessor.java",
       "source_location": "L1"
     },
     {
@@ -9033,6 +9213,17 @@
       "source_location": "L1"
     },
     {
+      "id": "order_service_src_main_java_com_distributed_orderservice_controller_ordercontroller_java_postmapping",
+      "label": "PostMapping",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "OrderServiceUnitTest.java",
+      "file_type": "code",
+      "norm_label": "postmapping",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "order_service_src_main_java_com_distributed_orderservice_controller_ordercontroller_java_requestmapping",
       "label": "RequestMapping",
       "_origin": "ast",
@@ -9110,39 +9301,6 @@
       "source_location": "L1"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_idempotencyservice",
-      "label": "IdempotencyService.java",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "idempotencyservice.java",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/IdempotencyService.java",
-      "source_location": "L1"
-    },
-    {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_inventorylockservice",
-      "label": "InventoryLockService.java",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "inventorylockservice.java",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/InventoryLockService.java",
-      "source_location": "L1"
-    },
-    {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_kafkaeventpublisher",
-      "label": "KafkaEventPublisher.java",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "kafkaeventpublisher.java",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/KafkaEventPublisher.java",
-      "source_location": "L1"
-    },
-    {
       "id": "order_service_src_main_java_com_distributed_orderservice_service_orderservice",
       "label": "OrderService.java",
       "_origin": "ast",
@@ -9154,14 +9312,14 @@
       "source_location": "L1"
     },
     {
-      "id": "order_service_src_main_java_com_distributed_orderservice_service_productservice",
-      "label": "ProductService.java",
+      "id": "order_service_src_test_java_com_distributed_orderservice_idempotencyserviceunittest",
+      "label": "IdempotencyServiceUnitTest.java",
       "_origin": "ast",
       "community": 4,
       "community_name": "OrderServiceUnitTest.java",
       "file_type": "code",
-      "norm_label": "productservice.java",
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "norm_label": "idempotencyserviceunittest.java",
+      "source_file": "order-service/src/test/java/com/distributed/orderservice/IdempotencyServiceUnitTest.java",
       "source_location": "L1"
     },
     {
@@ -9187,6 +9345,28 @@
       "source_location": "L1"
     },
     {
+      "id": "org_junit_jupiter_api_beforeeach",
+      "label": "org.junit.jupiter.api.BeforeEach",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "OrderServiceUnitTest.java",
+      "file_type": "code",
+      "norm_label": "org.junit.jupiter.api.beforeeach",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "org_junit_jupiter_api_extension_extendwith",
+      "label": "org.junit.jupiter.api.extension.ExtendWith",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "OrderServiceUnitTest.java",
+      "file_type": "code",
+      "norm_label": "org.junit.jupiter.api.extension.extendwith",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "org_junit_jupiter_api_test",
       "label": "org.junit.jupiter.api.Test",
       "_origin": "ast",
@@ -9194,6 +9374,17 @@
       "community_name": "OrderServiceUnitTest.java",
       "file_type": "code",
       "norm_label": "org.junit.jupiter.api.test",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "org_mockito_junit_jupiter_mockitoextension",
+      "label": "org.mockito.junit.jupiter.MockitoExtension",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "OrderServiceUnitTest.java",
+      "file_type": "code",
+      "norm_label": "org.mockito.junit.jupiter.mockitoextension",
       "source_file": "",
       "source_location": ""
     },
@@ -9220,17 +9411,6 @@
       "source_location": ""
     },
     {
-      "id": "org_slf4j_logger",
-      "label": "org.slf4j.Logger",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "org.slf4j.logger",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "org_springframework_data_mongodb_core_mongotemplate",
       "label": "org.springframework.data.mongodb.core.MongoTemplate",
       "_origin": "ast",
@@ -9242,47 +9422,14 @@
       "source_location": ""
     },
     {
-      "id": "org_springframework_kafka_core_kafkatemplate",
-      "label": "org.springframework.kafka.core.KafkaTemplate",
+      "id": "processing_service_src_test_java_com_distributed_processingservice_compensationconsumerunittest",
+      "label": "CompensationConsumerUnitTest.java",
       "_origin": "ast",
       "community": 4,
       "community_name": "OrderServiceUnitTest.java",
       "file_type": "code",
-      "norm_label": "org.springframework.kafka.core.kafkatemplate",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "org_springframework_stereotype_service",
-      "label": "org.springframework.stereotype.Service",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "org.springframework.stereotype.service",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "postmapping",
-      "label": "PostMapping",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "postmapping",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "processing_service_src_main_java_com_distributed_processingservice_producer_processingeventpublisher",
-      "label": "ProcessingEventPublisher.java",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "OrderServiceUnitTest.java",
-      "file_type": "code",
-      "norm_label": "processingeventpublisher.java",
-      "source_file": "processing-service/src/main/java/com/distributed/processingservice/producer/ProcessingEventPublisher.java",
+      "norm_label": "compensationconsumerunittest.java",
+      "source_file": "processing-service/src/test/java/com/distributed/processingservice/CompensationConsumerUnitTest.java",
       "source_location": "L1"
     },
     {
@@ -9426,6 +9573,17 @@
       "community_name": "org.springframework.context.annotation.Bean",
       "file_type": "code",
       "norm_label": "org.apache.kafka.clients.admin.newtopic",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "org_redisson_api_redissonclient",
+      "label": "org.redisson.api.RedissonClient",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "org.springframework.context.annotation.Bean",
+      "file_type": "code",
+      "norm_label": "org.redisson.api.redissonclient",
       "source_file": "",
       "source_location": ""
     },
@@ -10104,7 +10262,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L11",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -10116,7 +10274,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -10205,7 +10363,7 @@
     },
     {
       "source": "order_service_src_main_java_com_distributed_orderservice_controller_ordercontroller_ordercontroller_placeorder",
-      "target": "postmapping",
+      "target": "order_service_src_main_java_com_distributed_orderservice_controller_ordercontroller_java_postmapping",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10224,7 +10382,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10236,7 +10394,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10248,7 +10406,19 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L22",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_resetproducts",
+      "target": "org_springframework_web_bind_annotation_postmapping",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "attribute",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -10920,7 +11090,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10932,7 +11102,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10944,7 +11114,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -10956,7 +11126,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -11400,7 +11570,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/api.js",
-      "source_location": "L75",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -11412,7 +11582,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/api.js",
-      "source_location": "L76",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -11484,7 +11654,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/components/ProductList.jsx",
-      "source_location": "L13",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_productlist_productlist",
+      "target": "frontend_src_api_resetproducts",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/components/ProductList.jsx",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -11605,6 +11787,18 @@
       "context": "call",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/KafkaProducerConfig.java",
       "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_config_mongoconfig_mongoconfig_seeddatabase",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getdefaultcatalog",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -11860,6 +12054,18 @@
       "weight": 1.0
     },
     {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getdefaultcatalog",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_java_product",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
       "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getproduct",
       "target": "order_service_src_main_java_com_distributed_orderservice_exception_resourcenotfoundexception_resourcenotfoundexception",
       "relation": "calls",
@@ -11868,7 +12074,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
-      "source_location": "L29",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_resetcatalog",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getdefaultcatalog",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_resetcatalog",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getallproducts",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -12060,7 +12290,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L44",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -12072,7 +12302,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -12192,7 +12422,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -13104,7 +13334,19 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L22",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_resetproducts",
+      "target": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -13249,6 +13491,30 @@
       "context": "generic_arg",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/repository/ProductRepository.java",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getdefaultcatalog",
+      "target": "order_service_src_main_java_com_distributed_orderservice_model_product_product",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_resetcatalog",
+      "target": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -13504,6 +13770,18 @@
       "weight": 1.0
     },
     {
+      "source": "frontend_src_components_productlist",
+      "target": "frontend_src_api_resetproducts",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/components/ProductList.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_main",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -13578,6 +13856,18 @@
     {
       "source": "order_service_src_main_java_com_distributed_orderservice_config_mongoconfig",
       "target": "order_service_src_main_java_com_distributed_orderservice_repository_productrepository_productrepository",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_config_mongoconfig",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13805,7 +14095,7 @@
     },
     {
       "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller",
-      "target": "org_springframework_web_bind_annotation_requestmapping",
+      "target": "org_springframework_web_bind_annotation_postmapping",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13817,7 +14107,7 @@
     },
     {
       "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller",
-      "target": "org_springframework_web_bind_annotation_restcontroller",
+      "target": "org_springframework_web_bind_annotation_requestmapping",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13825,6 +14115,18 @@
       "context": "import",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller",
+      "target": "org_springframework_web_bind_annotation_restcontroller",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -16464,7 +16766,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -16512,7 +16814,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -17076,7 +17378,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -17124,7 +17426,19 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L22",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_resetproducts",
+      "target": "org_springframework_http_responseentity",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -17280,7 +17594,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
-      "source_location": "L27",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -17304,7 +17618,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -17316,7 +17630,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -18031,7 +18345,7 @@
     },
     {
       "source": "frontend_src_api",
-      "target": "frontend_src_api_placeorder",
+      "target": "frontend_src_api_resetproducts",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18042,13 +18356,13 @@
     },
     {
       "source": "frontend_src_api",
-      "target": "frontend_src_api_getorderstatus",
+      "target": "frontend_src_api_placeorder",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/api.js",
-      "source_location": "L54",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -18064,13 +18378,24 @@
     },
     {
       "source": "frontend_src_api",
+      "target": "frontend_src_api_getorderstatus",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/api.js",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api",
       "target": "frontend_src_api_simulateconcurrentbuyers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/api.js",
-      "source_location": "L71",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -18708,7 +19033,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L11",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -18752,7 +19077,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -19115,7 +19440,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -20076,17 +20401,6 @@
       "weight": 1.0
     },
     {
-      "source": "order_service_src_main_java_com_distributed_orderservice_config_mongoconfig",
-      "target": "order_service_src_main_java_com_distributed_orderservice_model_product_product",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
       "source": "order_service_src_main_java_com_distributed_orderservice_service_orderservice",
       "target": "order_service_src_main_java_com_distributed_orderservice_model_order_order",
       "relation": "imports",
@@ -20666,7 +20980,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/config/MongoConfig.java",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -20732,7 +21046,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -20743,7 +21057,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L22",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller",
+      "target": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_resetproducts",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -21282,7 +21607,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -21293,7 +21618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L21",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -21304,7 +21629,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L25",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -21315,7 +21640,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L29",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -21326,7 +21651,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -21337,7 +21662,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L37",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -21348,7 +21673,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L41",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse",
+      "target": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_getcategory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse",
+      "target": "order_service_src_main_java_com_distributed_orderservice_dto_response_productresponse_productresponse_setcategory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -21359,7 +21706,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L45",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -21370,7 +21717,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L49",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -21381,7 +21728,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L53",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -21392,7 +21739,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/dto/response/ProductResponse.java",
-      "source_location": "L57",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -22173,7 +22520,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L23",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -22184,7 +22531,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -22195,7 +22542,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L37",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -22206,7 +22553,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L41",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -22217,7 +22564,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L45",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -22228,7 +22575,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L49",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -22239,7 +22586,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L53",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_model_product_product",
+      "target": "order_service_src_main_java_com_distributed_orderservice_model_product_product_getcategory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_model_product_product",
+      "target": "order_service_src_main_java_com_distributed_orderservice_model_product_product_setcategory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -22250,7 +22619,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L57",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -22261,7 +22630,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L61",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -22272,7 +22641,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L65",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -22283,7 +22652,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L69",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -22294,7 +22663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L73",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -22305,7 +22674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L77",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -22316,7 +22685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L81",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -22327,7 +22696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/model/Product.java",
-      "source_location": "L85",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -22613,7 +22982,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
-      "source_location": "L27",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_resetcatalog",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_getdefaultcatalog",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -22811,7 +23202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -22822,7 +23213,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/config/KafkaConfig.java",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -23889,7 +24280,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L23",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -23900,7 +24291,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -23911,7 +24302,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L37",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -23922,7 +24313,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L41",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -23933,7 +24324,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L45",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -23944,7 +24335,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L49",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -23955,7 +24346,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L53",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "processing_service_src_main_java_com_distributed_processingservice_model_product_product",
+      "target": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_getcategory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "processing_service_src_main_java_com_distributed_processingservice_model_product_product",
+      "target": "processing_service_src_main_java_com_distributed_processingservice_model_product_product_setcategory",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -23966,7 +24379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L57",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -23977,7 +24390,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L61",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -23988,7 +24401,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L65",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -23999,7 +24412,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L69",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -24010,7 +24423,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L73",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -24021,7 +24434,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L77",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -24032,7 +24445,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L81",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -24043,7 +24456,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "processing-service/src/main/java/com/distributed/processingservice/model/Product.java",
-      "source_location": "L85",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -24376,7 +24789,19 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
-      "source_location": "L24",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "order_service_src_main_java_com_distributed_orderservice_controller_productcontroller_productcontroller_resetproducts",
+      "target": "order_service_src_main_java_com_distributed_orderservice_service_productservice_productservice_resetcatalog",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "context": "call",
+      "source_file": "order-service/src/main/java/com/distributed/orderservice/controller/ProductController.java",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -25137,5 +25562,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "83d3cabce1f237bba1e966db12ddbec71878a180"
+  "built_at_commit": "deaed70a07d410ac44a450b4603a08b5784904c0"
 }

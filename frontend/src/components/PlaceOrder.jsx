@@ -245,7 +245,7 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
         )}
       </div>
 
-      {/* RIGHT COLUMN: Simulate Concurrent Buyers (Race Condition Demo) */}
+      {/* RIGHT COLUMN: Simulate Concurrent Buyers (High-Contention Simulator) */}
       <div className="card">
         <div className="section-eyebrow">HIGH-CONTENTION SIMULATOR</div>
         <h2>Simulate Concurrent Buyers</h2>
@@ -255,8 +255,8 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
 
         <div className="callout-box-tech">
           <div className="callout-header">
-            <span className="callout-badge">INTERVIEW SHOWCASE</span>
-            <span>TWO-TIER DEFENSE ARCHITECTURE</span>
+            <span className="callout-badge">SYSTEM MECHANICS</span>
+            <span>TWO-TIER CONCURRENCY DEFENSE</span>
           </div>
           <div className="callout-body">
             Select a limited item (e.g. <strong>Stock: 1</strong>). When multiple buyers compete simultaneously, 

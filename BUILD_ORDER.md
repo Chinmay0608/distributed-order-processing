@@ -12,7 +12,7 @@ This schedule outlines how the Distributed Order Processing project is built acr
   03:00 - 04:30   [ Module 2: Kafka Topics, Payment Worker & Failure Triggers ]
   04:30 - 05:30   [ Module 2: Shipping Worker, Compensation Saga & Unit Tests ]
   05:30 - 07:15   [ Module 3: Minimal React Vite Frontend (~1.75 hrs) ]
-  07:15 - 08:00   [ Integration Verification, Docker Compose & Demo Run ]
+  07:15 - 08:00   [ Full-Stack Integration Verification & End-to-End Testing ]
 ```
 
 ---
@@ -67,7 +67,7 @@ This schedule outlines how the Distributed Order Processing project is built acr
 - **Tasks:**
   - Initialize Vite React project in `frontend/` with minimal styling in [`index.css`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/index.css).
   - Implement [`api.js`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/api.js): pure fetch calls to `http://localhost:8080/api` with `simulateConcurrentBuyers` runner.
-  - Implement Screen 1: [`ProductList.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/ProductList.jsx) with live stock badges and demo scenario tags.
+  - Implement Screen 1: [`ProductList.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/ProductList.jsx) with live stock badges and architectural profile tags.
   - Implement Screen 2: [`PlaceOrder.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/PlaceOrder.jsx) with order form, idempotency key manager, and **Simulate Concurrent Buyers** 10-request race condition blast button with live scoreboard.
   - Implement Screen 3: [`OrderStatus.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/OrderStatus.jsx) with 1.5s live polling, visual Kafka pipeline stepper (`PLACED` -> `PAYMENT_PROCESSED` -> `SHIPPED`), pulsing stage indicator, and chronological `statusHistory` audit log.
   - Wire state and tabs in [`App.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/App.jsx).
@@ -75,8 +75,8 @@ This schedule outlines how the Distributed Order Processing project is built acr
 
 ---
 
-### Phase 6: Full-Stack Integration & Demonstration (07:15 – 08:00)
-- **Goal:** Verify end-to-end flow across Docker containers and capture live race-condition demo.
+### Phase 6: Full-Stack Integration & System Verification (07:15 – 08:00)
+- **Goal:** Verify end-to-end flow across Docker containers and evaluate live race-condition defense under concurrent load.
 - **Tasks:**
   - Build and start full stack via `docker compose up --build`.
   - Open `http://localhost:3000` in browser.

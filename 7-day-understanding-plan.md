@@ -1,9 +1,8 @@
-# 7-Day Deep Understanding Plan — Distributed Order Processing System
+# Developer Onboarding & Verification Guide — 7-Day Hands-On Track
 
-Goal: by Day 7, you can explain, defend, and modify this project without needing
-Antigravity or me. Each day has a **concept focus**, a **reading task**, and a
-**hands-on exercise** — the exercises matter more than the reading. Budget roughly
-1-2 hours/day.
+Goal: by Day 7, you will have verified, load-tested, and extended every critical path in this
+distributed architecture. Each day has a **concept focus**, a **codebase inspection task**, and a
+**hands-on verification exercise** to build operational fluency. Budget roughly 1–2 hours/day.
 
 ---
 
@@ -88,7 +87,7 @@ not decorative.
 5. Revert your change (`git checkout -- InventoryLockService.java` or restore from
    your copy). Re-run the test. Confirm it passes again.
 
-**Write down (this is your interview answer, verbatim, from your own observation):**
+**Write down (system behavior under contention, from direct observation):**
 - What exact number of orders got created when the lock was disabled?
 - What was the final stock value — negative, zero, or something else?
 - In one sentence: why did removing ONLY the lock (keeping the Mongo atomic check)
@@ -193,30 +192,22 @@ is restored and status is `CANCELLED`.
 
 ---
 
-## Day 7 — Explain It Cold
+## Day 7 — Architectural Defense & System Review
 
-**Concept focus:** Can you talk about this system fluently, under mild pressure,
-without notes?
+**Concept focus:** Fluently synthesize system behavior, concurrency guarantees, and trade-offs.
 
-**Exercise (do all three, ideally with a friend or by recording yourself):**
-1. **60-second pitch:** Explain the whole project in under a minute, as if an
-   interviewer just asked "tell me about a project you're proud of."
-2. **Whiteboard/paper sketch:** Draw the architecture diagram from memory — Order
-   Service, Processing Service, Redis, MongoDB, Kafka, and the direction of data flow.
-3. **Rapid-fire Q&A** — answer each of these out loud, in your own words, in under 30
-   seconds each:
+**Exercise (system validation checklist):**
+1. **Architecture Walkthrough:** Sketch or describe the complete architecture from memory — Order
+   Service, Processing Service, Redis, MongoDB, Kafka, and the end-to-end data flow.
+2. **Failure Modes & Trade-offs:** Review the core edge cases:
    - Why Redis lock AND Mongo atomic check, not just one?
    - What happens if Redis goes down mid-transaction?
    - Why Kafka instead of Order Service calling Payment Service directly?
-   - What's a saga, and where does one exist in this project?
-   - What's the one thing you'd add first if this were going to production?
-     (Good answer: rate limiting — see your earlier conversation about the
-     1,000,000-buyer incident. This is a great real anecdote to have ready.)
+   - What is a compensation saga, and where does one execute in this system?
+   - Production readiness: rate limiting and backpressure controls needed for burst loads.
 
-**Final checkpoint:** if you can do all three of the above fluently, you're genuinely
-ready to put this on your resume and defend it in an interview — not because you built
-it with AI help, but because by now you've broken it, watched it fail, fixed it,
-extended it yourself, and can explain every decision in it.
+**Final checkpoint:** You now possess end-to-end command over the system's concurrency guarantees,
+failure recovery mechanisms, asynchronous event streaming pipeline, and operational trade-offs.
 
 ---
 

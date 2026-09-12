@@ -14,7 +14,7 @@ This document provides a comprehensive, file-by-file walkthrough of all code imp
 |---|---|
 | [`docker-compose.yml`](file:///d:/Projects/Distributed%20order%20processing/docker-compose.yml) | Multi-container definitions for Mongo, Redis, Zookeeper, Kafka, order-service, processing-service, frontend |
 | [`BUILD_ORDER.md`](file:///d:/Projects/Distributed%20order%20processing/BUILD_ORDER.md) | Hour-by-hour 8-hour sprint schedule highlighting the 1.75-hour frontend milestone |
-| [`README.md`](file:///d:/Projects/Distributed%20order%20processing/README.md) | System architecture diagram, interview design rationale, and setup/run instructions |
+| [`README.md`](file:///d:/Projects/Distributed%20order%20processing/README.md) | System architecture diagram, engineering design rationale, and setup/run instructions |
 | [`WALKTHROUGH.md`](file:///d:/Projects/Distributed%20order%20processing/WALKTHROUGH.md) | This document: full codebase index and explanation |
 
 ---
@@ -71,7 +71,7 @@ This document provides a comprehensive, file-by-file walkthrough of all code imp
 | [`frontend/package.json`](file:///d:/Projects/Distributed%20order%20processing/frontend/package.json) | React 18, Vite 5, minimal dependencies, zero Redux |
 | [`frontend/vite.config.js`](file:///d:/Projects/Distributed%20order%20processing/frontend/vite.config.js) | Vite dev server on port 3000 with API proxy to `http://localhost:8080` |
 | [`frontend/src/api.js`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/api.js) | Fetch client calling real backend at `http://localhost:8080/api` (Zero Mocks) |
-| [`frontend/src/components/ProductList.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/ProductList.jsx) | **Screen 1**: Product catalog, live stock badges (green, amber, red), demo scenario tags |
+| [`frontend/src/components/ProductList.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/ProductList.jsx) | **Screen 1**: Product catalog, live stock badges (green, amber, red), architectural profile tags |
 | [`frontend/src/components/PlaceOrder.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/PlaceOrder.jsx) | **Screen 2**: Single order form + **10-Buyer Concurrent Race Simulator** with live scoreboard |
 | [`frontend/src/components/OrderStatus.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/OrderStatus.jsx) | **Screen 3**: Visual Kafka pipeline stepper (`PLACED` -> `PAYMENT_PROCESSED` -> `SHIPPED`) & timeline |
 | [`frontend/src/App.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/App.jsx) | Main app coordinating tab navigation and pre-selected order states |
@@ -171,7 +171,7 @@ When targeting the low-stock item (stock=1) with 10 buyers:
 - **Total Fired:** 10
 - **Succeeded (201):** 1
 - **Failed (409):** 9
-- Proves in front of interviewers that the Redis distributed lock safely serialized access and prevented overselling!
+- Confirms that the Redis distributed lock safely serialized access and prevented overselling under concurrent load!
 
 ---
 
