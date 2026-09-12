@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "frontend/src/api.js": {
-    "mtime": 1789192241.379298,
-    "seen": 1789192531.6869333,
-    "ast_hash": "f3d51a9a2becc1137f97fdf096c1a898",
+    "mtime": 1789231704.28717,
+    "seen": 1789231874.9936824,
+    "ast_hash": "c4893ff6a3af9d934d352dea8c222fcc",
     "semantic_hash": ""
   },
   "frontend/src/components/OrderStatus.jsx": {
@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/PlaceOrder.jsx": {
-    "mtime": 1789192274.2226381,
-    "seen": 1789192531.6869404,
-    "ast_hash": "73611af2ed0a97d523e67d41ad78aa72",
+    "mtime": 1789231701.6150017,
+    "seen": 1789231874.9936883,
+    "ast_hash": "93e21dfbfb1055f77a177064ec46c010",
     "semantic_hash": ""
   },
   "frontend/src/components/ProductList.jsx": {
@@ -252,9 +252,9 @@
     "semantic_hash": "c03ca6cbaf722e5a06008dcb4e0ef1d5"
   },
   "order-service/src/main/java/com/distributed/orderservice/service/ProductService.java": {
-    "mtime": 1789192190.9920301,
-    "seen": 1789192531.6872737,
-    "ast_hash": "9a3e44b608a42e9da877b0403945cc04",
+    "mtime": 1789231712.423953,
+    "seen": 1789231874.9937572,
+    "ast_hash": "bbe31218cccd4154a32599b8aaf62de1",
     "semantic_hash": ""
   },
   "order-service/src/test/java/com/distributed/orderservice/IdempotencyServiceUnitTest.java": {
@@ -468,15 +468,15 @@
     "semantic_hash": ""
   },
   "7-day-understanding-plan.md": {
-    "mtime": 1789192068.3589756,
-    "seen": 1789192102.6388059,
-    "ast_hash": "7d8d58f5c9903701a930bf2861d24cea",
+    "mtime": 1789231790.1209953,
+    "seen": 1789231874.99382,
+    "ast_hash": "48a18390a41ccbdd99e8e7c0f0bc79a0",
     "semantic_hash": ""
   },
   "BUILD_ORDER.md": {
-    "mtime": 1789186282.3493707,
-    "seen": 1789192102.6388078,
-    "ast_hash": "68f478b150fe96151f31bc0d172f7235",
+    "mtime": 1789231671.3673532,
+    "seen": 1789231874.9938216,
+    "ast_hash": "73ba2870a34c0a706f33f1d5f0278d23",
     "semantic_hash": ""
   },
   "GEMINI.md": {
@@ -486,21 +486,21 @@
     "semantic_hash": ""
   },
   "HLD.md": {
-    "mtime": 1789190549.9058466,
-    "seen": 1789192102.6388118,
-    "ast_hash": "e40ac5b651261b1b76e6e39439a8ba32",
+    "mtime": 1789231600.29143,
+    "seen": 1789231874.9938252,
+    "ast_hash": "b397785a058f3029c17c2344b5347478",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1789186267.831984,
-    "seen": 1789192102.6388216,
-    "ast_hash": "1ebc95d0ee87b2d7984caa26ce29f92c",
+    "mtime": 1789231557.536535,
+    "seen": 1789231874.993827,
+    "ast_hash": "6f81e39c6fc3e4d38c39a964f893149d",
     "semantic_hash": ""
   },
   "WALKTHROUGH.md": {
-    "mtime": 1789186299.2196646,
-    "seen": 1789192102.638824,
-    "ast_hash": "5867bb47df7301c189dbb097f9bee945",
+    "mtime": 1789231689.6697063,
+    "seen": 1789231874.9938288,
+    "ast_hash": "a7d1719844864ba2d48b413cea4e16b5",
     "semantic_hash": ""
   },
   "docker-compose.yml": {
@@ -528,9 +528,9 @@
     "semantic_hash": ""
   },
   "understanding-the-project.md": {
-    "mtime": 1789190122.8274193,
-    "seen": 1789192102.638878,
-    "ast_hash": "c25af296ae7802c95cba7565258ee3be",
+    "mtime": 1789231759.408232,
+    "seen": 1789231874.9938378,
+    "ast_hash": "1f39277174d99b6f1e03bc8893227219",
     "semantic_hash": ""
   },
   "Distributed_Order_Processing_HLD.pdf": {

@@ -78,7 +78,6 @@ A production-grade distributed order processing engine built to eliminate invent
 Distributed order processing/
 ├── docker-compose.yml                  # MongoDB, Redis, Zookeeper, Kafka, Microservices, Frontend
 ├── BUILD_ORDER.md                      # Hour-by-hour implementation schedule
-├── WALKTHROUGH.md                      # Complete file-by-file codebase walkthrough
 ├── README.md                           # Architecture and operations guide
 │
 ├── order-service/                      # Module 1: Spring Boot REST API & Order Intake (Port 8080)

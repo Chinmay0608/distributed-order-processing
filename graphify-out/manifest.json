@@ -467,12 +467,6 @@
     "ast_hash": "a831cf3669f1e6ab85d8a80ebe655f99",
     "semantic_hash": ""
   },
-  "7-day-understanding-plan.md": {
-    "mtime": 1789231790.1209953,
-    "seen": 1789231874.99382,
-    "ast_hash": "48a18390a41ccbdd99e8e7c0f0bc79a0",
-    "semantic_hash": ""
-  },
   "BUILD_ORDER.md": {
     "mtime": 1789231671.3673532,
     "seen": 1789231874.9938216,
@@ -485,22 +479,10 @@
     "ast_hash": "19220d10f8947e9ad004ce552a4d613e",
     "semantic_hash": ""
   },
-  "HLD.md": {
-    "mtime": 1789231600.29143,
-    "seen": 1789231874.9938252,
-    "ast_hash": "b397785a058f3029c17c2344b5347478",
-    "semantic_hash": ""
-  },
   "README.md": {
-    "mtime": 1789231557.536535,
-    "seen": 1789231874.993827,
-    "ast_hash": "6f81e39c6fc3e4d38c39a964f893149d",
-    "semantic_hash": ""
-  },
-  "WALKTHROUGH.md": {
-    "mtime": 1789231689.6697063,
-    "seen": 1789231874.9938288,
-    "ast_hash": "a7d1719844864ba2d48b413cea4e16b5",
+    "mtime": 1789231958.6973357,
+    "seen": 1789231980.74802,
+    "ast_hash": "556d670ac262d2f2c29bc8b344da01ac",
     "semantic_hash": ""
   },
   "docker-compose.yml": {
@@ -525,12 +507,6 @@
     "mtime": 1789185838.30966,
     "seen": 1789192102.638835,
     "ast_hash": "24285914eec42ddd6c4771b798fb08dc",
-    "semantic_hash": ""
-  },
-  "understanding-the-project.md": {
-    "mtime": 1789231759.408232,
-    "seen": 1789231874.9938378,
-    "ast_hash": "1f39277174d99b6f1e03bc8893227219",
     "semantic_hash": ""
   },
   "Distributed_Order_Processing_HLD.pdf": {

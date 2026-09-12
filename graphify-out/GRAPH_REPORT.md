@@ -1,47 +1,41 @@
 # Graph Report - Distributed order processing  (2026-09-12)
 
 ## Corpus Check
-- 85 files · ~27,346 words
+- 81 files · ~18,818 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 741 nodes · 1332 edges · 35 communities (25 shown, 10 thin omitted)
+- 654 nodes · 1249 edges · 29 communities (21 shown, 8 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 67 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c6bd1bbf`
+- Built from commit: `ff43de4f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - OrderPaymentProcessedEvent
-- OrderPaymentFailedEvent
-- OrderResponse
-- Order
-- OrderServiceUnitTest.java
-- org.springframework.context.annotation.Bean
 - OrderPlacedEvent
+- OrderServiceUnitTest.java
+- Order
+- OrderPaymentFailedEvent
+- org.springframework.context.annotation.Bean
+- OrderProcessingEndToEndIntegrationTest.java
 - package.json
 - OrderStatusResponse
 - Order
 - ErrorResponse
-- Product
-- IdempotencyRecord
-- High-Level Design (HLD): Distributed Order Processing System
-- OrderProcessingEndToEndIntegrationTest.java
+- ProductResponse
+- OrderResponse
 - Distributed Order Processing System
 - order-service/mvnw
 - processing-service/mvnw
 - org.springframework.boot.autoconfigure.SpringBootApplication
 - com.distributed:order-service
 - com.distributed:processing-service
-- .createTestKafkaConsumer
 - App.jsx
 - Product
-- Complete Project File Index
-- Distributed Order Processing System — Architecture & Engineering Deep Dive
-- Developer Onboarding & Verification Guide — 7-Day Hands-On Track
 - 8-Hour Schedule
 - Core Design Principles
 - Project Guidelines & Integrated Skills
@@ -68,33 +62,37 @@
   order-service/src/main/java/com/distributed/orderservice/repository/IdempotencyKeyRepository.java → order-service/src/main/java/com/distributed/orderservice/model/IdempotencyRecord.java
 - `Order` --references--> `StatusHistoryEntry`  [EXTRACTED]
   order-service/src/main/java/com/distributed/orderservice/model/Order.java → order-service/src/main/java/com/distributed/orderservice/model/StatusHistoryEntry.java
+- `OrderRepository` --references--> `Order`  [EXTRACTED]
+  order-service/src/main/java/com/distributed/orderservice/repository/OrderRepository.java → order-service/src/main/java/com/distributed/orderservice/model/Order.java
 - `ProductRepository` --references--> `Product`  [EXTRACTED]
   order-service/src/main/java/com/distributed/orderservice/repository/ProductRepository.java → order-service/src/main/java/com/distributed/orderservice/model/Product.java
-- `IdempotencyService` --references--> `IdempotencyKeyRepository`  [EXTRACTED]
-  order-service/src/main/java/com/distributed/orderservice/service/IdempotencyService.java → order-service/src/main/java/com/distributed/orderservice/repository/IdempotencyKeyRepository.java
 - `IdempotencyServiceUnitTest` --references--> `IdempotencyKeyRepository`  [EXTRACTED]
   order-service/src/test/java/com/distributed/orderservice/IdempotencyServiceUnitTest.java → order-service/src/main/java/com/distributed/orderservice/repository/IdempotencyKeyRepository.java
 
 ## Import Cycles
 - None detected.
 
-## Communities (35 total, 10 thin omitted)
+## Communities (29 total, 8 thin omitted)
 
-### Community 1 - "OrderPaymentFailedEvent"
-Cohesion: 0.06
-Nodes (6): org.springframework.kafka.annotation.KafkaListener, org.springframework.stereotype.Component, CompensationConsumer, PaymentConsumer, OrderPaymentFailedEvent, OrderPlacedEvent
+### Community 2 - "OrderServiceUnitTest.java"
+Cohesion: 0.11
+Nodes (21): com.fasterxml.jackson.databind.ObjectMapper, java.util.concurrent.locks.ReentrantLock, RequestMapping, RestController, OrderController, PlaceOrderRequest, OutOfStockException, IdempotencyKeyRepository (+13 more)
 
 ### Community 3 - "Order"
 Cohesion: 0.05
 Nodes (9): StatusHistoryEntry, Order, OrderStatus, CANCELLED, FAILED, PAYMENT_PROCESSED, PLACED, SHIPPED (+1 more)
 
-### Community 4 - "OrderServiceUnitTest.java"
-Cohesion: 0.06
-Nodes (34): com.fasterxml.jackson.databind.ObjectMapper, java.util.concurrent.locks.ReentrantLock, PostMapping, RequestMapping, RestController, OrderController, PlaceOrderRequest, LockAcquisitionException (+26 more)
+### Community 4 - "OrderPaymentFailedEvent"
+Cohesion: 0.07
+Nodes (22): org.junit.jupiter.api.BeforeEach, org.junit.jupiter.api.extension.ExtendWith, org.mockito.junit.jupiter.MockitoExtension, org.redisson.api.RedissonClient, org.redisson.api.RLock, org.slf4j.Logger, org.springframework.kafka.annotation.KafkaListener, org.springframework.kafka.core.KafkaTemplate (+14 more)
 
 ### Community 5 - "org.springframework.context.annotation.Bean"
 Cohesion: 0.09
-Nodes (22): ConcurrentKafkaListenerContainerFactory, ConsumerFactory, KafkaTemplate, KafkaProducerConfig, MongoConfig, RedissonConfig, WebCorsConfig, org.apache.kafka.clients.admin.NewTopic (+14 more)
+Nodes (21): ConcurrentKafkaListenerContainerFactory, ConsumerFactory, KafkaTemplate, KafkaProducerConfig, MongoConfig, RedissonConfig, WebCorsConfig, org.apache.kafka.clients.admin.NewTopic (+13 more)
+
+### Community 6 - "OrderProcessingEndToEndIntegrationTest.java"
+Cohesion: 0.08
+Nodes (14): KafkaMessageListenerContainer, OrderPlacedEvent, OrderProcessingEndToEndIntegrationTest, org.apache.kafka.clients.consumer.ConsumerRecord, org.junit.jupiter.api.DisplayName, org.springframework.boot.test.context.SpringBootTest, org.springframework.boot.test.web.client.TestRestTemplate, org.springframework.kafka.listener.KafkaMessageListenerContainer (+6 more)
 
 ### Community 7 - "package.json"
 Cohesion: 0.11
@@ -105,28 +103,20 @@ Cohesion: 0.07
 Nodes (3): GetMapping, OrderStatusResponse, StatusHistoryEntry
 
 ### Community 9 - "Order"
-Cohesion: 0.06
-Nodes (14): StatusHistoryEntry, Order, OrderStatus, CANCELLED, FAILED, PAYMENT_PROCESSED, PLACED, SHIPPED (+6 more)
+Cohesion: 0.07
+Nodes (8): StatusHistoryEntry, Order, OrderStatus, CANCELLED, FAILED, PAYMENT_PROCESSED, PLACED, SHIPPED
 
 ### Community 10 - "ErrorResponse"
-Cohesion: 0.15
-Nodes (8): ErrorResponse, GlobalExceptionHandler, OutOfStockException, org.springframework.http.ResponseEntity, org.springframework.web.bind.annotation.ExceptionHandler, org.springframework.web.bind.annotation.RestControllerAdvice, org.springframework.web.bind.MethodArgumentNotValidException, org.springframework.web.bind.MissingRequestHeaderException
+Cohesion: 0.13
+Nodes (9): ErrorResponse, GlobalExceptionHandler, IdempotencyPayloadMismatchException, OrderAlreadyProcessingException, org.springframework.http.ResponseEntity, org.springframework.web.bind.annotation.ExceptionHandler, org.springframework.web.bind.annotation.RestControllerAdvice, org.springframework.web.bind.MethodArgumentNotValidException (+1 more)
 
-### Community 11 - "Product"
-Cohesion: 0.05
-Nodes (10): ProductController, ProductResponse, ResourceNotFoundException, Product, Product, ProductService, org.springframework.web.bind.annotation.GetMapping, org.springframework.web.bind.annotation.PostMapping (+2 more)
-
-### Community 12 - "IdempotencyRecord"
+### Community 11 - "ProductResponse"
 Cohesion: 0.08
-Nodes (7): IdempotencyPayloadMismatchException, OrderAlreadyProcessingException, IdempotencyRecord, IdempotencyStatus, COMPLETED, FAILED, IN_PROGRESS
+Nodes (9): ProductController, ProductResponse, ResourceNotFoundException, Product, ProductService, org.springframework.web.bind.annotation.GetMapping, org.springframework.web.bind.annotation.PostMapping, org.springframework.web.bind.annotation.RequestMapping (+1 more)
 
-### Community 13 - "High-Level Design (HLD): Distributed Order Processing System"
-Cohesion: 0.04
-Nodes (46): 10. Deep-Dive Flow 4: Compensation Saga, 11. Failure Mode Analysis, 12. Scaling Discussion, 13. Architectural Trade-Offs Matrix, 1. In-JVM Mock Test (`OrderServiceConcurrencyTest.java`), 1. Order Service (`com.distributed.orderservice`), 1. Problem Statement, 1. Products Collection (`products`) (+38 more)
-
-### Community 14 - "OrderProcessingEndToEndIntegrationTest.java"
-Cohesion: 0.29
-Nodes (9): OrderProcessingEndToEndIntegrationTest, org.springframework.boot.test.context.SpringBootTest, org.springframework.boot.test.web.client.TestRestTemplate, org.springframework.test.context.DynamicPropertyRegistry, org.springframework.test.context.DynamicPropertySource, org.testcontainers.containers.GenericContainer, org.testcontainers.containers.KafkaContainer, org.testcontainers.containers.MongoDBContainer (+1 more)
+### Community 12 - "OrderResponse"
+Cohesion: 0.05
+Nodes (10): PostMapping, OrderResponse, LockAcquisitionException, IdempotencyRecord, IdempotencyStatus, COMPLETED, FAILED, IN_PROGRESS (+2 more)
 
 ### Community 15 - "Distributed Order Processing System"
 Cohesion: 0.10
@@ -144,25 +134,13 @@ Nodes (8): mvnw script, clean(), die(), exec_maven(), hash_string(), set_java_ho
 Cohesion: 0.38
 Nodes (3): OrderServiceApplication, org.springframework.boot.autoconfigure.SpringBootApplication, ProcessingServiceApplication
 
-### Community 21 - ".createTestKafkaConsumer"
-Cohesion: 0.33
-Nodes (4): KafkaMessageListenerContainer, org.apache.kafka.clients.consumer.ConsumerRecord, org.junit.jupiter.api.DisplayName, org.springframework.kafka.listener.KafkaMessageListenerContainer
-
 ### Community 22 - "App.jsx"
 Cohesion: 0.32
 Nodes (11): generateUUID(), getOrderStatus(), getProducts(), placeOrder(), resetProducts(), simulateConcurrentBuyers(), App(), OrderStatus() (+3 more)
 
-### Community 24 - "Complete Project File Index"
-Cohesion: 0.12
-Nodes (15): 1. `order-service` Unit & Concurrency Tests: 10/10 Passed, 1. Testcontainers End-to-End Test: [`OrderProcessingEndToEndIntegrationTest.java`](file:///d:/Projects/Distributed%20order%20processing/order-service/src/test/java/com/distributed/orderservice/OrderProcessingEndToEndIntegrationTest.java), 2. Frontend: Concurrent Race Simulation in [`PlaceOrder.jsx`](file:///d:/Projects/Distributed%20order%20processing/frontend/src/components/PlaceOrder.jsx), 2. `processing-service` Unit Tests: 5/5 Passed, 3. Frontend Production Build: Built Cleanly, Complete Project File Index, Container Startup Code:, Detailed Code Deep Dives (+7 more)
-
-### Community 26 - "Distributed Order Processing System — Architecture & Engineering Deep Dive"
-Cohesion: 0.14
-Nodes (13): 3.1 The Race Condition (the core problem), 3.2 Idempotency (the "don't double-charge me" problem), 3.3 Kafka / Event-Driven Pipeline (the "don't make the customer wait" problem), 3.4 The Compensation Saga (the "what if it fails halfway" problem), 3.5 Why MongoDB and not just plain SQL?, Distributed Order Processing System — Architecture & Engineering Deep Dive, Part 1: What Is This Project, In Plain English?, Part 2: Real-World Distributed Systems Context (+5 more)
-
-### Community 27 - "Developer Onboarding & Verification Guide — 7-Day Hands-On Track"
-Cohesion: 0.20
-Nodes (9): A Note on Pacing, Day 1 — Trace the Request, End to End, Day 2 — The Lock, In Isolation, Day 3 — Break It On Purpose (The Most Important Day), Day 4 — Watch the Async Pipeline With Your Own Eyes, Day 5 — The Compensation Saga, Live, Day 6 — Extend It Yourself (No AI Help), Day 7 — Architectural Defense & System Review (+1 more)
+### Community 23 - "Product"
+Cohesion: 0.05
+Nodes (3): Product, org.springframework.data.mongodb.core.mapping.Document, Product
 
 ### Community 31 - "8-Hour Schedule"
 Cohesion: 0.22
@@ -181,24 +159,24 @@ Cohesion: 0.50
 Nodes (3): Core Rules, Ponytail Skill, The Ladder of Simplicity
 
 ## Knowledge Gaps
-- **123 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+118 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 390 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **61 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+56 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 324 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Order` connect `Order` to `Order`, `OrderServiceUnitTest.java`, `Product`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
+- **Why does `Order` connect `Order` to `OrderServiceUnitTest.java`, `OrderPaymentFailedEvent`, `Product`?**
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
 - **Why does `Order` connect `Order` to `OrderStatusResponse`, `OrderServiceUnitTest.java`, `OrderProcessingEndToEndIntegrationTest.java`, `Product`?**
-  _High betweenness centrality (0.068) - this node is a cross-community bridge._
-- **Why does `Product` connect `Product` to `Order`, `OrderServiceUnitTest.java`, `OrderProcessingEndToEndIntegrationTest.java`, `Product`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
+- **Why does `Product` connect `Product` to `OrderServiceUnitTest.java`, `ProductResponse`, `OrderProcessingEndToEndIntegrationTest.java`?**
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _123 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _61 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `OrderPaymentProcessedEvent` be split into smaller, more focused modules?**
-  _Cohesion score 0.07258064516129033 - nodes in this community are weakly interconnected._
-- **Should `OrderPaymentFailedEvent` be split into smaller, more focused modules?**
-  _Cohesion score 0.05507246376811594 - nodes in this community are weakly interconnected._
-- **Should `OrderResponse` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06951871657754011 - nodes in this community are weakly interconnected._
+- **Should `OrderPlacedEvent` be split into smaller, more focused modules?**
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
+- **Should `OrderServiceUnitTest.java` be split into smaller, more focused modules?**
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
