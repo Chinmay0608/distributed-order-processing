@@ -24,6 +24,21 @@ export async function getProducts() {
 }
 
 /**
+ * Reset and restock catalog back to defaults across all categories.
+ */
+export async function resetProducts() {
+  const response = await fetch(`${API_BASE}/products/reset`, {
+    method: 'POST',
+    headers: { Accept: 'application/json' }
+  });
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.message || `Failed to reset catalog (HTTP ${response.status})`);
+  }
+  return response.json();
+}
+
+/**
  * Place a single order guarded by Redis distributed lock and Idempotency key.
  */
 export async function placeOrder(productId, quantity, idempotencyKey) {

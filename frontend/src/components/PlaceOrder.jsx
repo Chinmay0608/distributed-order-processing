@@ -113,10 +113,16 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
           <div className="form-group">
             <label className="form-label-tech">SELECT CATALOG TARGET</label>
             <select className="form-control mono-select" value={productId} onChange={handleProductChange} required>
-              {products.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.name} (${p.price.toFixed(2)}) — Live Stock: {p.stock}
-                </option>
+              {Array.from(new Set(products.map((p) => p.category || 'Hardware'))).map((cat) => (
+                <optgroup key={cat} label={`── ${cat.toUpperCase()} ──`}>
+                  {products
+                    .filter((p) => (p.category || 'Hardware') === cat)
+                    .map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.name} (${p.price.toFixed(2)}) — Stock: {p.stock}
+                      </option>
+                    ))}
+                </optgroup>
               ))}
             </select>
           </div>

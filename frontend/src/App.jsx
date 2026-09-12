@@ -99,6 +99,7 @@ export default function App() {
         {activeTab === 'products' && (
           <ProductList
             onSelectProduct={handleSelectProduct}
+            onProductsUpdated={refreshProducts}
           />
         )}
 
