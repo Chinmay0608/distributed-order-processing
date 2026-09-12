@@ -6,34 +6,34 @@
     "semantic_hash": "1d02bbe4162575757c8aed781a6765d6"
   },
   "frontend/src/App.jsx": {
-    "mtime": 1789186177.5164664,
-    "seen": 1789188141.9704072,
-    "ast_hash": "2eac6f0f26c3f29d6ebf2835d77aaf65",
-    "semantic_hash": "2eac6f0f26c3f29d6ebf2835d77aaf65"
+    "mtime": 1789189088.1512685,
+    "seen": 1789192102.6385872,
+    "ast_hash": "75ebe05fafb1e554b170d4a957f8ca9c",
+    "semantic_hash": ""
   },
   "frontend/src/api.js": {
-    "mtime": 1789186145.6174297,
-    "seen": 1789188141.9704092,
-    "ast_hash": "32bece5d64789b50f18377555bbe78e9",
-    "semantic_hash": "32bece5d64789b50f18377555bbe78e9"
+    "mtime": 1789189773.5946007,
+    "seen": 1789192102.6385925,
+    "ast_hash": "dab1b55dec3994968831a962b7e71f6d",
+    "semantic_hash": ""
   },
   "frontend/src/components/OrderStatus.jsx": {
-    "mtime": 1789186171.7695603,
-    "seen": 1789188141.9704106,
-    "ast_hash": "fe5cf6ef707fec9b76e1449110c80909",
-    "semantic_hash": "fe5cf6ef707fec9b76e1449110c80909"
+    "mtime": 1789189679.6724236,
+    "seen": 1789192102.6385958,
+    "ast_hash": "04a1289e95d8ff106eebabab4b7b1cd8",
+    "semantic_hash": ""
   },
   "frontend/src/components/PlaceOrder.jsx": {
-    "mtime": 1789186163.6064663,
-    "seen": 1789188141.9704115,
-    "ast_hash": "f98cdf2647b431e5e98f58568c11e6b5",
-    "semantic_hash": "f98cdf2647b431e5e98f58568c11e6b5"
+    "mtime": 1789192032.933149,
+    "seen": 1789192102.6385984,
+    "ast_hash": "36c1ff96f500c5105843d431b3675522",
+    "semantic_hash": ""
   },
   "frontend/src/components/ProductList.jsx": {
-    "mtime": 1789186153.5992796,
-    "seen": 1789188141.9704125,
-    "ast_hash": "72ac15824d3e06f579016ef720f6d12e",
-    "semantic_hash": "72ac15824d3e06f579016ef720f6d12e"
+    "mtime": 1789189099.4532578,
+    "seen": 1789192102.6386013,
+    "ast_hash": "4cb2a1c65bf48029e2b4c81a3f529979",
+    "semantic_hash": ""
   },
   "frontend/src/main.jsx": {
     "mtime": 1789186180.6278574,
@@ -430,5 +430,107 @@
     "seen": 1789188141.9704776,
     "ast_hash": "9fff2b031b3eaa4042d49de28e51a72a",
     "semantic_hash": "9fff2b031b3eaa4042d49de28e51a72a"
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1789188123.9075,
+    "seen": 1789192102.6387916,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  ".agents/rules/ponytail.md": {
+    "mtime": 1789188195.9107342,
+    "seen": 1789192102.6387944,
+    "ast_hash": "cf4990ba53b2b4f882f548f1156a3387",
+    "semantic_hash": ""
+  },
+  ".agents/rules/ui-ux-pro-max.md": {
+    "mtime": 1789188203.4655879,
+    "seen": 1789192102.6387968,
+    "ast_hash": "62852fadd5444f14e6b2446acd356e99",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail/SKILL.md": {
+    "mtime": 1789188170.323148,
+    "seen": 1789192102.6387992,
+    "ast_hash": "ce1141b78703668876271dcda1c167a8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ui-ux-pro-max/SKILL.md": {
+    "mtime": 1789188179.4889433,
+    "seen": 1789192102.6388013,
+    "ast_hash": "087c16cb350b56f517004b40b5ebaaa5",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1789188123.9091225,
+    "seen": 1789192102.6388037,
+    "ast_hash": "a831cf3669f1e6ab85d8a80ebe655f99",
+    "semantic_hash": ""
+  },
+  "7-day-understanding-plan.md": {
+    "mtime": 1789192068.3589756,
+    "seen": 1789192102.6388059,
+    "ast_hash": "7d8d58f5c9903701a930bf2861d24cea",
+    "semantic_hash": ""
+  },
+  "BUILD_ORDER.md": {
+    "mtime": 1789186282.3493707,
+    "seen": 1789192102.6388078,
+    "ast_hash": "68f478b150fe96151f31bc0d172f7235",
+    "semantic_hash": ""
+  },
+  "GEMINI.md": {
+    "mtime": 1789188214.6808746,
+    "seen": 1789192102.63881,
+    "ast_hash": "19220d10f8947e9ad004ce552a4d613e",
+    "semantic_hash": ""
+  },
+  "HLD.md": {
+    "mtime": 1789190549.9058466,
+    "seen": 1789192102.6388118,
+    "ast_hash": "e40ac5b651261b1b76e6e39439a8ba32",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789186267.831984,
+    "seen": 1789192102.6388216,
+    "ast_hash": "1ebc95d0ee87b2d7984caa26ce29f92c",
+    "semantic_hash": ""
+  },
+  "WALKTHROUGH.md": {
+    "mtime": 1789186299.2196646,
+    "seen": 1789192102.638824,
+    "ast_hash": "5867bb47df7301c189dbb097f9bee945",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1789185252.3542018,
+    "seen": 1789192102.6388261,
+    "ast_hash": "452cf1b042ed93fe2da70955f1f73d11",
+    "semantic_hash": ""
+  },
+  "frontend/index.html": {
+    "mtime": 1789189063.3861096,
+    "seen": 1789192102.6388283,
+    "ast_hash": "e66a976612a976e92da911030f1a71f9",
+    "semantic_hash": ""
+  },
+  "order-service/src/main/resources/application.yml": {
+    "mtime": 1789185275.0487337,
+    "seen": 1789192102.6388328,
+    "ast_hash": "98b12fad7014418f9527293c24aa2805",
+    "semantic_hash": ""
+  },
+  "processing-service/src/main/resources/application.yml": {
+    "mtime": 1789185838.30966,
+    "seen": 1789192102.638835,
+    "ast_hash": "24285914eec42ddd6c4771b798fb08dc",
+    "semantic_hash": ""
+  },
+  "understanding-the-project.md": {
+    "mtime": 1789190122.8274193,
+    "seen": 1789192102.638878,
+    "ast_hash": "c25af296ae7802c95cba7565258ee3be",
+    "semantic_hash": ""
   }
 }
