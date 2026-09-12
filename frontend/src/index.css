@@ -1008,8 +1008,9 @@ code, .mono-input, .mono-num, .mono-select, .mono-log, .tabular-price, .t-actor,
 }
 
 .terminal-body {
-  max-height: 240px;
+  max-height: 260px;
   overflow-y: auto;
+  overflow-x: auto;
   padding: 0.65rem;
   display: flex;
   flex-direction: column;
@@ -1022,11 +1023,13 @@ code, .mono-input, .mono-num, .mono-select, .mono-log, .tabular-price, .t-actor,
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.35rem 0.55rem;
+  padding: 0.4rem 0.65rem;
   border-radius: var(--radius-xs);
   font-family: var(--font-mono);
   font-size: 0.76rem;
   border: 1px solid transparent;
+  min-width: max-content;
+  box-sizing: border-box;
   animation: traceRowFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: calc(var(--row-idx) * 45ms);
 }
@@ -1044,12 +1047,14 @@ code, .mono-input, .mono-num, .mono-select, .mono-log, .tabular-price, .t-actor,
 .t-time {
   color: var(--text-muted);
   font-size: 0.7rem;
+  flex-shrink: 0;
 }
 
 .t-actor {
   color: #38bdf8;
   font-weight: 700;
   width: 70px;
+  flex-shrink: 0;
 }
 
 .t-code {
@@ -1057,6 +1062,7 @@ code, .mono-input, .mono-num, .mono-select, .mono-log, .tabular-price, .t-actor,
   font-size: 0.72rem;
   padding: 0.1rem 0.35rem;
   border-radius: var(--radius-xs);
+  flex-shrink: 0;
 }
 
 .t-code-201 { background: var(--emerald-bg); color: #34d399; }
@@ -1067,9 +1073,44 @@ code, .mono-input, .mono-num, .mono-select, .mono-log, .tabular-price, .t-actor,
   color: #cbd5e1;
   font-size: 0.74rem;
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.t-order-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.45);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-fast);
+}
+
+.t-order-chip:hover {
+  background: rgba(6, 182, 212, 0.3);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+}
+
+.t-order-chip:active {
+  transform: scale(0.97);
+}
+
+.t-detail-muted {
+  color: var(--text-muted);
+  font-size: 0.72rem;
 }
 
 .t-msg code {

@@ -396,7 +396,16 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
                       <span className="t-msg">
                         {isSuccess ? (
                           <>
-                            <span className="t-check">✓</span> Lock acquired → Mongo stock decremented → Order <code>{res.orderId}</code>
+                            <span className="t-check">✓</span> Order{' '}
+                            <button
+                              type="button"
+                              className="t-order-chip"
+                              title="Click to track in Kafka Pipeline Stepper"
+                              onClick={() => onTrackOrder && onTrackOrder(res.orderId)}
+                            >
+                              {res.orderId} ↗
+                            </button>{' '}
+                            <span className="t-detail-muted">• Lock acquired & stock decremented</span>
                           </>
                         ) : (
                           <>
