@@ -552,15 +552,15 @@
     "semantic_hash": ""
   },
   "frontend/public/preview-distributed-order-processing.png": {
-    "mtime": 1789326132.3022249,
-    "seen": 1789326181.6200535,
-    "ast_hash": "66665cd88a234d6b9aeacd620299e622",
+    "mtime": 1789326326.1483393,
+    "seen": 1789326357.1773417,
+    "ast_hash": "a8c64db15f4843b69f49ea7e73e4397f",
     "semantic_hash": ""
   },
   "frontend/public/preview-distributed-order-processing.svg": {
-    "mtime": 1789326127.7673082,
-    "seen": 1789326181.6200547,
-    "ast_hash": "8fc03b99a326a3bcb4b3da18eb1abc3d",
+    "mtime": 1789326320.6053636,
+    "seen": 1789326357.1773446,
+    "ast_hash": "e5ba2c6587b30667b960d8591de090e6",
     "semantic_hash": ""
   }
 }

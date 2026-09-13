@@ -1,275 +1,197 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap');
 
       .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
       .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      
+      .card-shadow {
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.55)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+      }
+      .cta-shadow {
+        filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.35));
+      }
     </style>
 
-    <!-- Crisp background patterns -->
-    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#1e293b" fill-opacity="0.7" />
+    <!-- Subtle ambient canvas gradients -->
+    <linearGradient id="bgCanvas" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+
+    <!-- Card Background -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111a2e" />
+      <stop offset="100%" stop-color="#0b111e" />
+    </linearGradient>
+
+    <!-- Subtle Dot Grid -->
+    <pattern id="dotGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#334155" fill-opacity="0.35" />
     </pattern>
 
-    <!-- Arrow markers -->
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8" />
-    </marker>
-    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
-    </marker>
-    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f59e0b" />
-    </marker>
+    <!-- Button Gradient -->
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
   </defs>
 
-  <!-- 1. Deep Slate Canvas Background -->
-  <rect width="1200" height="630" fill="#090d16" />
+  <!-- 1. Canvas Background -->
+  <rect width="1200" height="630" fill="url(#bgCanvas)" />
   <rect width="1200" height="630" fill="url(#dotGrid)" />
 
-  <!-- Subtle Top Brand Accent Line -->
-  <rect x="0" y="0" width="1200" height="2" fill="#1e293b" />
-  <rect x="60" y="0" width="300" height="2" fill="#38bdf8" />
-  <rect x="360" y="0" width="160" height="2" fill="#10b981" />
+  <!-- Soft subtle radial light at top center -->
+  <radialGradient id="topGlow" cx="50%" cy="0%" r="50%">
+    <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.18" />
+    <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0" />
+  </radialGradient>
+  <rect width="1200" height="300" fill="url(#topGlow)" />
 
   <!-- ========================================================================= -->
-  <!-- HEADER / TITLE SECTION (Y: 34 to 125) -->
+  <!-- HERO HEADER (Centered, Spacious, Punchy) -->
   <!-- ========================================================================= -->
-  
-  <!-- Status Badge -->
-  <g transform="translate(60, 36)">
-    <rect x="0" y="0" width="245" height="24" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-    <circle cx="12" cy="12" r="4" fill="#10b981" />
-    <text x="24" y="16" fill="#94a3b8" font-size="11" font-weight="600" class="mono" letter-spacing="0.5">HIGH-CONCURRENCY PIPELINE</text>
+
+  <!-- Pill Badge -->
+  <g transform="translate(485, 52)">
+    <rect width="230" height="26" rx="13" fill="#172238" stroke="#253554" stroke-width="1" />
+    <circle cx="14" cy="13" r="3.5" fill="#10b981" />
+    <text x="26" y="17" fill="#38bdf8" font-size="11" font-weight="600" class="mono" letter-spacing="0.8">DISTRIBUTED SYSTEMS ENGINE</text>
   </g>
 
-  <!-- Title -->
-  <text x="60" y="88" fill="#f8fafc" font-size="28" font-weight="700" class="sans" letter-spacing="-0.5">
+  <!-- Main Headline -->
+  <text x="600" y="122" text-anchor="middle" fill="#f8fafc" font-size="38" font-weight="800" class="sans" letter-spacing="-0.8">
     Distributed Order Processing System
   </text>
 
   <!-- Subtitle -->
-  <text x="60" y="112" fill="#94a3b8" font-size="14" font-weight="400" class="sans">
-    Production-grade distributed architecture featuring Redis Mutex, Kafka event streams, and MongoDB sagas.
+  <text x="600" y="152" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="400" class="sans">
+    High-concurrency ordering platform with Redis distributed locking and zero-overselling guarantee.
   </text>
 
-  <!-- Top Right Metric Chips -->
-  <g transform="translate(710, 42)">
-    <!-- Metric 1 -->
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="130" height="54" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-      <text x="12" y="20" fill="#64748b" font-size="10" font-weight="600" class="mono">CONCURRENCY</text>
-      <text x="12" y="42" fill="#38bdf8" font-size="16" font-weight="700" class="mono">50 THREADS</text>
-    </g>
-    <!-- Metric 2 -->
-    <g transform="translate(145, 0)">
-      <rect x="0" y="0" width="135" height="54" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-      <text x="12" y="20" fill="#64748b" font-size="10" font-weight="600" class="mono">LOCK ACQUISITION</text>
-      <text x="12" y="42" fill="#10b981" font-size="16" font-weight="700" class="mono">1.8 ms AVG</text>
-    </g>
-    <!-- Metric 3 -->
-    <g transform="translate(295, 0)">
-      <rect x="0" y="0" width="135" height="54" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
-      <text x="12" y="20" fill="#64748b" font-size="10" font-weight="600" class="mono">OVERSELLING</text>
-      <text x="12" y="42" fill="#f8fafc" font-size="16" font-weight="700" class="mono">0 DEFECTS</text>
-    </g>
-  </g>
-
   <!-- ========================================================================= -->
-  <!-- MAIN WORKBENCH WINDOW (Y: 135 to 585) -->
+  <!-- FLOATING PREVIEW SHOWCASE CARD (High clarity, Normal UI, Zero clutter) -->
   <!-- ========================================================================= -->
-  <g transform="translate(60, 135)">
-    <!-- Window Outer Shell -->
-    <rect x="0" y="0" width="1080" height="445" rx="8" fill="#0b101b" stroke="#1e293b" stroke-width="1" />
+  <g transform="translate(175, 185)" class="card-shadow">
+    <!-- Card Frame -->
+    <rect width="850" height="280" rx="12" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1" />
 
-    <!-- Window Top Header Bar -->
-    <rect x="0" y="0" width="1080" height="36" rx="8" fill="#0e1524" />
-    <rect x="0" y="28" width="1080" height="8" fill="#0e1524" /> <!-- Sharp bottom corners for header -->
-    <line x1="0" y1="36" x2="1080" y2="36" stroke="#1e293b" stroke-width="1" />
+    <!-- Card Title Bar -->
+    <rect width="850" height="38" rx="12" fill="#0b101c" />
+    <rect y="26" width="850" height="12" fill="#0b101c" />
+    <line x1="0" y1="38" x2="850" y2="38" stroke="#1e293b" stroke-width="1" />
 
-    <!-- Traffic Lights -->
-    <circle cx="20" cy="18" r="5" fill="#ef4444" fill-opacity="0.8" />
-    <circle cx="36" cy="18" r="5" fill="#f59e0b" fill-opacity="0.8" />
-    <circle cx="52" cy="18" r="5" fill="#10b981" fill-opacity="0.8" />
+    <!-- Window Dots -->
+    <circle cx="22" cy="19" r="4.5" fill="#ef4444" fill-opacity="0.8" />
+    <circle cx="37" cy="19" r="4.5" fill="#f59e0b" fill-opacity="0.8" />
+    <circle cx="52" cy="19" r="4.5" fill="#10b981" fill-opacity="0.8" />
 
-    <!-- Console Path / Breadcrumb -->
-    <text x="75" y="22" fill="#94a3b8" font-size="12" font-weight="500" class="mono">
-      cluster-node-01 &gt; architecture &amp; transaction telemetry
+    <!-- Tab / Breadcrumb -->
+    <text x="75" y="23" fill="#94a3b8" font-size="12" font-weight="500" class="mono">
+      telemetry-console &gt; simulation-bench &gt; 50-buyer-rush
     </text>
 
-    <!-- Cluster Status Tag on Right -->
-    <rect x="910" y="8" width="155" height="20" rx="3" fill="#162238" stroke="#22324f" stroke-width="1" />
-    <circle cx="922" cy="18" r="3" fill="#10b981" />
-    <text x="932" y="22" fill="#cbd5e1" font-size="10" font-weight="600" class="mono">STATUS: OPTIMAL</text>
+    <!-- Cluster Status Tag -->
+    <rect x="715" y="9" width="115" height="20" rx="4" fill="#0f291e" stroke="#10b981" stroke-width="0.8" stroke-opacity="0.4" />
+    <circle cx="727" cy="19" r="3" fill="#10b981" />
+    <text x="736" y="23" fill="#34d399" font-size="10" font-weight="600" class="mono">LIVE CLUSTER</text>
 
-    <!-- Vertical Split Pane Divider -->
-    <line x1="620" y1="36" x2="620" y2="445" stroke="#1e293b" stroke-width="1" />
-
-    <!-- ======================================================================= -->
-    <!-- LEFT PANE: ARCHITECTURE TOPOLOGY & SAGA FLOW (X: 0 to 620) -->
-    <!-- ======================================================================= -->
-    <g transform="translate(24, 52)">
-      <!-- Pane Title -->
-      <text x="0" y="12" fill="#64748b" font-size="11" font-weight="700" class="mono" letter-spacing="0.5">
-        SYSTEM COMPONENT TOPOLOGY
+    <!-- Card Interior Content -->
+    <!-- LEFT HALF: The Concurrency Rush Scenario -->
+    <g transform="translate(32, 60)">
+      <text x="0" y="0" fill="#64748b" font-size="11" font-weight="700" class="mono" letter-spacing="0.5">
+        CONCURRENT STRESS SIMULATION
       </text>
 
-      <!-- NODE 1: Ingress / Client Simulation -->
-      <g transform="translate(0, 30)">
-        <rect x="0" y="0" width="160" height="74" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-        <text x="12" y="20" fill="#38bdf8" font-size="10" font-weight="700" class="mono">01. INGRESS</text>
-        <text x="12" y="38" fill="#f1f5f9" font-size="13" font-weight="600" class="sans">Client Traffic</text>
-        <text x="12" y="56" fill="#94a3b8" font-size="10" class="mono">POST /api/orders</text>
-        <rect x="108" y="8" width="42" height="16" rx="3" fill="#0f2942" />
-        <text x="114" y="20" fill="#38bdf8" font-size="9" font-weight="600" class="mono">BURST</text>
+      <!-- Rush Scenario Box -->
+      <g transform="translate(0, 14)">
+        <rect width="390" height="84" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
+        
+        <!-- Icon & Tag -->
+        <text x="16" y="28" fill="#f1f5f9" font-size="15" font-weight="700" class="sans">
+          ⚡ 50 Concurrent Orders
+        </text>
+        <rect x="275" y="14" width="98" height="18" rx="3" fill="#1e293b" />
+        <text x="324" y="26" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600" class="mono">BURST TRAFFIC</text>
+
+        <!-- Product Details -->
+        <text x="16" y="52" fill="#94a3b8" font-size="12" class="mono">
+          Target: iPhone 15 Pro
+        </text>
+        <text x="210" y="52" fill="#e2e8f0" font-size="12" font-weight="600" class="mono">
+          Available Stock: 10
+        </text>
+
+        <text x="16" y="70" fill="#64748b" font-size="11" class="mono">
+          Concurrency Lock: Redis Redlock (TTL: 5s)
+        </text>
       </g>
 
-      <!-- Connecting Arrow 1 -> 2 -->
-      <line x1="160" y1="67" x2="200" y2="67" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)" />
-
-      <!-- NODE 2: Order Service -->
-      <g transform="translate(205, 30)">
-        <rect x="0" y="0" width="175" height="74" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-        <text x="12" y="20" fill="#38bdf8" font-size="10" font-weight="700" class="mono">02. CORE GATEWAY</text>
-        <text x="12" y="38" fill="#f1f5f9" font-size="13" font-weight="600" class="sans">Order Service</text>
-        <text x="12" y="56" fill="#94a3b8" font-size="10" class="mono">Spring Boot 3 · 8080</text>
+      <!-- Outcome Banner -->
+      <g transform="translate(0, 110)">
+        <rect width="390" height="42" rx="6" fill="#08281e" stroke="#10b981" stroke-width="1" stroke-opacity="0.5" />
+        <circle cx="20" cy="21" r="5" fill="#10b981" />
+        <text x="34" y="25" fill="#34d399" font-size="12" font-weight="700" class="mono">
+          10 Orders Placed  ·  40 Gracefully Rejected
+        </text>
       </g>
 
-      <!-- Connecting Arrow 2 -> Redis -->
-      <path d="M 292 104 L 292 142" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow-amber)" />
+      <text x="0" y="174" fill="#64748b" font-size="11" class="mono">
+        Guaranteed: Remaining inventory = 0 (No overselling)
+      </text>
+    </g>
 
-      <!-- NODE 3: Redis Distributed Lock (Sub-system) -->
-      <g transform="translate(205, 146)">
-        <rect x="0" y="0" width="175" height="66" rx="6" fill="#141a29" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4" />
-        <text x="12" y="18" fill="#f59e0b" font-size="10" font-weight="700" class="mono">DISTRIBUTED MUTEX</text>
-        <text x="12" y="36" fill="#f1f5f9" font-size="12" font-weight="600" class="sans">Redis Redlock</text>
-        <text x="12" y="52" fill="#94a3b8" font-size="10" class="mono">SETNX lock:prod:id 5s</text>
+    <!-- VERTICAL DIVIDER -->
+    <line x1="465" y1="56" x2="465" y2="256" stroke="#1e293b" stroke-width="1" stroke-dasharray="3,3" />
+
+    <!-- RIGHT HALF: Core System Guarantees & KPIs -->
+    <g transform="translate(500, 60)">
+      <text x="0" y="0" fill="#64748b" font-size="11" font-weight="700" class="mono" letter-spacing="0.5">
+        SYSTEM GUARANTEES &amp; TELEMETRY
+      </text>
+
+      <!-- Metric 1: Zero Overselling -->
+      <g transform="translate(0, 14)">
+        <rect width="318" height="54" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
+        <text x="16" y="22" fill="#64748b" font-size="10" font-weight="600" class="mono">OVERSELLING RATE</text>
+        <text x="16" y="44" fill="#38bdf8" font-size="20" font-weight="800" class="mono">0 ITEMS</text>
+        <text x="135" y="42" fill="#94a3b8" font-size="11" class="sans">Strict single-winner lock</text>
       </g>
 
-      <!-- Connecting Arrow 2 -> Kafka -->
-      <line x1="380" y1="67" x2="415" y2="67" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)" />
-
-      <!-- NODE 4: Apache Kafka Event Stream -->
-      <g transform="translate(420, 30)">
-        <rect x="0" y="0" width="150" height="74" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-        <text x="12" y="20" fill="#38bdf8" font-size="10" font-weight="700" class="mono">03. EVENT STREAM</text>
-        <text x="12" y="38" fill="#f1f5f9" font-size="13" font-weight="600" class="sans">Apache Kafka</text>
-        <text x="12" y="56" fill="#94a3b8" font-size="10" class="mono">3 Cluster Partitions</text>
+      <!-- Metric 2: Lock Latency -->
+      <g transform="translate(0, 78)">
+        <rect width="318" height="54" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
+        <text x="16" y="22" fill="#64748b" font-size="10" font-weight="600" class="mono">AVG LOCK ACQUISITION</text>
+        <text x="16" y="44" fill="#10b981" font-size="20" font-weight="800" class="mono">1.8 ms</text>
+        <text x="135" y="42" fill="#94a3b8" font-size="11" class="sans">Sub-millisecond Redis I/O</text>
       </g>
 
-      <!-- Connecting Arrow Kafka -> Worker -->
-      <path d="M 495 104 L 495 240 L 385 240" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow-green)" />
-
-      <!-- NODE 5: Processing Worker (Downstream) -->
-      <g transform="translate(205, 222)">
-        <rect x="0" y="0" width="175" height="72" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-        <text x="12" y="18" fill="#10b981" font-size="10" font-weight="700" class="mono">04. ASYNC WORKER</text>
-        <text x="12" y="36" fill="#f1f5f9" font-size="13" font-weight="600" class="sans">Processing Service</text>
-        <text x="12" y="54" fill="#94a3b8" font-size="10" class="mono">Payment &amp; Inventory Saga</text>
-      </g>
-
-      <!-- Connecting Arrow Worker -> DB -->
-      <line x1="205" y1="258" x2="165" y2="258" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow-green)" />
-
-      <!-- NODE 6: MongoDB Persistence -->
-      <g transform="translate(0, 222)">
-        <rect x="0" y="0" width="160" height="72" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-        <text x="12" y="18" fill="#10b981" font-size="10" font-weight="700" class="mono">05. PERSISTENCE</text>
-        <text x="12" y="36" fill="#f1f5f9" font-size="13" font-weight="600" class="sans">MongoDB Store</text>
-        <text x="12" y="54" fill="#94a3b8" font-size="10" class="mono">status: CONFIRMED</text>
-      </g>
-
-      <!-- Topology Status Footer Bar -->
-      <g transform="translate(0, 322)">
-        <rect x="0" y="0" width="570" height="42" rx="5" fill="#0e1422" stroke="#192438" stroke-width="1" />
-        <text x="16" y="18" fill="#64748b" font-size="10" font-weight="600" class="mono">INTEGRITY ASSURANCE</text>
-        <text x="16" y="32" fill="#cbd5e1" font-size="11" font-weight="500" class="sans">
-          Lock TTL fail-safe + idempotent key de-duplication prevents duplicate execution.
+      <!-- Metric 3: Kafka Streaming -->
+      <g transform="translate(0, 142)">
+        <rect width="318" height="42" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
+        <text x="16" y="26" fill="#cbd5e1" font-size="11" font-weight="600" class="mono">
+          KAFKA PIPELINE: 3 PARTITIONS · 0 LAG
         </text>
       </g>
     </g>
-
-    <!-- ======================================================================= -->
-    <!-- RIGHT PANE: LIVE TELEMETRY LOG STREAM (X: 620 to 1080) -->
-    <!-- ======================================================================= -->
-    <g transform="translate(640, 52)">
-      <!-- Pane Title Bar -->
-      <text x="0" y="12" fill="#64748b" font-size="11" font-weight="700" class="mono" letter-spacing="0.5">
-        LIVE EXECUTION TELEMETRY
-      </text>
-      <text x="320" y="12" fill="#10b981" font-size="10" font-weight="600" class="mono">● STREAMING</text>
-
-      <!-- Terminal Screen Box -->
-      <g transform="translate(0, 26)">
-        <rect x="0" y="0" width="415" height="340" rx="5" fill="#080c14" stroke="#1a2333" stroke-width="1" />
-
-        <!-- Terminal Output Lines -->
-        <g transform="translate(16, 26)" font-size="11" class="mono">
-          <!-- Line 1 -->
-          <text y="0" fill="#64748b">18:11:14.201</text>
-          <text x="92" y="0" fill="#38bdf8">INGRESS</text>
-          <text x="156" y="0" fill="#cbd5e1">POST /api/orders (50 reqs)</text>
-
-          <!-- Line 2 -->
-          <text y="24" fill="#64748b">18:11:14.203</text>
-          <text x="92" y="24" fill="#f59e0b">REDIS</text>
-          <text x="156" y="24" fill="#94a3b8">LOCK lock:prod_101</text>
-          <text x="312" y="24" fill="#10b981">1.2ms</text>
-
-          <!-- Line 3 -->
-          <text y="48" fill="#64748b">18:11:14.205</text>
-          <text x="92" y="48" fill="#a78bfa">INVENTORY</text>
-          <text x="156" y="48" fill="#cbd5e1">stock: 100 -&gt; 99 OK</text>
-
-          <!-- Line 4 -->
-          <text y="72" fill="#64748b">18:11:14.207</text>
-          <text x="92" y="72" fill="#38bdf8">KAFKA</text>
-          <text x="156" y="72" fill="#cbd5e1">order-placed [p=1, off=42]</text>
-
-          <!-- Line 5 -->
-          <text y="96" fill="#64748b">18:11:14.209</text>
-          <text x="92" y="96" fill="#f59e0b">REDIS</text>
-          <text x="156" y="96" fill="#64748b">UNLOCK lock:prod_101</text>
-          <text x="312" y="96" fill="#10b981">DONE</text>
-
-          <!-- Line 6 (Lock contention handle) -->
-          <text y="120" fill="#64748b">18:11:14.210</text>
-          <text x="92" y="120" fill="#f43f5e">CONFLICT</text>
-          <text x="156" y="120" fill="#fca5a5">thread-09 queued on lock</text>
-
-          <!-- Line 7 -->
-          <text y="144" fill="#64748b">18:11:14.214</text>
-          <text x="92" y="144" fill="#10b981">WORKER</text>
-          <text x="156" y="144" fill="#cbd5e1">consume ord_9918</text>
-
-          <!-- Line 8 -->
-          <text y="168" fill="#64748b">18:11:14.225</text>
-          <text x="92" y="168" fill="#38bdf8">PAYMENT</text>
-          <text x="156" y="168" fill="#cbd5e1">gateway charge: 200 OK</text>
-
-          <!-- Line 9 -->
-          <text y="192" fill="#64748b">18:11:14.238</text>
-          <text x="92" y="192" fill="#10b981">MONGO</text>
-          <text x="156" y="192" fill="#34d399">order ord_9918 CONFIRMED</text>
-
-          <!-- Line 10 -->
-          <text y="216" fill="#64748b">18:11:14.241</text>
-          <text x="92" y="216" fill="#38bdf8">KAFKA</text>
-          <text x="156" y="216" fill="#cbd5e1">order-payment-processed</text>
-
-          <!-- Divider line in terminal -->
-          <line x1="0" y1="234" x2="380" y2="234" stroke="#1e293b" stroke-width="1" />
-
-          <!-- Summary status line -->
-          <text y="254" fill="#94a3b8">BURST SUMMARY:</text>
-          <text x="110" y="254" fill="#10b981" font-weight="700">50 / 50 HANDLED CLEANLY</text>
-          <text y="274" fill="#64748b">OVERSELLING:</text>
-          <text x="110" y="274" fill="#38bdf8" font-weight="700">0 ITEMS (ZERO DISCREPANCY)</text>
-          <text y="294" fill="#64748b">PIPELINE LAG:</text>
-          <text x="110" y="294" fill="#f8fafc" font-weight="700">0 MS (DRAINED)</text>
-        </g>
-      </g>
-    </g>
   </g>
+
+  <!-- ========================================================================= -->
+  <!-- CALL TO ACTION & STACK BADGES (Bottom Section, Invites Click) -->
+  <!-- ========================================================================= -->
+
+  <!-- Interactive CTA Button -->
+  <g transform="translate(485, 492)" class="cta-shadow">
+    <rect width="230" height="44" rx="22" fill="url(#btnGrad)" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.5" />
+    <text x="115" y="27" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" class="sans" letter-spacing="0.2">
+      Explore Live Console  →
+    </text>
+  </g>
+
+  <!-- Tech Stack Line -->
+  <text x="600" y="568" text-anchor="middle" fill="#64748b" font-size="12" font-weight="500" class="mono">
+    Spring Boot 3  ·  Redis Distributed Locking  ·  Apache Kafka  ·  MongoDB Saga  ·  React
+  </text>
 </svg>
