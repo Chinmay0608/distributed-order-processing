@@ -1,0 +1,351 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap');
+
+      .font-mono { font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }
+      .font-sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      
+      .title-glow {
+        filter: drop-shadow(0 0 25px rgba(0, 242, 254, 0.22));
+      }
+      .panel-shadow {
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 1px rgba(0, 242, 254, 0.2));
+      }
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090e1c" />
+      <stop offset="50%" stop-color="#060913" />
+      <stop offset="100%" stop-color="#030508" />
+    </linearGradient>
+
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0" />
+      <stop offset="20%" stop-color="#00f2fe" stop-opacity="0.8" />
+      <stop offset="80%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="cardGradOrder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f192e" />
+      <stop offset="100%" stop-color="#090f1d" />
+    </linearGradient>
+
+    <linearGradient id="cardGradLock" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1f36" />
+      <stop offset="100%" stop-color="#081424" />
+    </linearGradient>
+
+    <linearGradient id="cardGradMongo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2420" />
+      <stop offset="100%" stop-color="#071714" />
+    </linearGradient>
+
+    <linearGradient id="cardGradKafka" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141d33" />
+      <stop offset="100%" stop-color="#0a0f1d" />
+    </linearGradient>
+
+    <linearGradient id="cardGradWorker" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c2b" />
+      <stop offset="100%" stop-color="#09101a" />
+    </linearGradient>
+
+    <linearGradient id="busCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#18243b" stroke-width="0.8" stroke-opacity="0.4" />
+      <circle cx="0" cy="0" r="1.2" fill="#00f2fe" fill-opacity="0.25" />
+    </pattern>
+
+    <!-- Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glowSubtle" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Canvas Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+
+  <!-- Technical Coordinate Grid -->
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Ambient Volumetric Lighting -->
+  <radialGradient id="amb1" cx="22%" cy="28%" r="48%">
+    <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.09" />
+    <stop offset="60%" stop-color="#00f2fe" stop-opacity="0.02" />
+    <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+  </radialGradient>
+  <circle cx="260" cy="180" r="500" fill="url(#amb1)" />
+
+  <radialGradient id="amb2" cx="80%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.08" />
+    <stop offset="60%" stop-color="#0284c7" stop-opacity="0.02" />
+    <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+  </radialGradient>
+  <circle cx="960" cy="320" r="520" fill="url(#amb2)" />
+
+  <radialGradient id="amb3" cx="50%" cy="95%" r="40%">
+    <stop offset="0%" stop-color="#10b981" stop-opacity="0.05" />
+    <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+  </radialGradient>
+  <circle cx="600" cy="580" r="450" fill="url(#amb3)" />
+
+  <!-- TOP DECORATIVE ACCENT LINE -->
+  <line x1="100" y1="0" x2="1100" y2="0" stroke="url(#accentLine)" stroke-width="3" />
+
+  <!-- ========================================================================= -->
+  <!-- LEFT HERO SECTION (480px column) -->
+  <!-- ========================================================================= -->
+
+  <!-- Architecture Pill -->
+  <g transform="translate(70, 75)">
+    <rect width="360" height="28" rx="14" fill="#00f2fe" fill-opacity="0.08" stroke="#00f2fe" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="16" cy="14" r="4" fill="#00f2fe" filter="url(#glowSubtle)" />
+    <text x="28" y="18" class="font-mono" font-size="11" font-weight="700" fill="#00f2fe" letter-spacing="1.5">HIGH-CONCURRENCY ARCHITECTURE</text>
+  </g>
+
+  <!-- Project Main Title -->
+  <g transform="translate(70, 155)">
+    <text class="font-sans title-glow" font-size="52" font-weight="800" fill="#f8fafc" letter-spacing="-1.2">
+      Distributed Order
+    </text>
+    <text y="62" class="font-sans title-glow" font-size="52" font-weight="800" fill="#f8fafc" letter-spacing="-1.2">
+      Processing <tspan fill="url(#cyanGradient)">System</tspan>
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <g transform="translate(70, 268)">
+    <text class="font-sans" font-size="14.5" font-weight="500" fill="#cbd5e1" letter-spacing="-0.1">
+      Redis Distributed Locking <tspan fill="#00f2fe">·</tspan> Kafka Event Pipeline <tspan fill="#00f2fe">·</tspan> Zero-Overselling Guarantee
+    </text>
+  </g>
+
+  <!-- Telemetry Feature Pills -->
+  <g transform="translate(70, 310)">
+    <!-- Pill 1: Redisson Lock -->
+    <g transform="translate(0, 0)">
+      <rect width="144" height="34" rx="6" fill="#0b1322" stroke="#1e2d47" stroke-width="1" />
+      <circle cx="16" cy="17" r="3.5" fill="#38bdf8" />
+      <text x="26" y="21" class="font-mono" font-size="10.5" font-weight="700" fill="#38bdf8">REDISSON LOCK</text>
+    </g>
+    <!-- Pill 2: Fast Ingest -->
+    <g transform="translate(154, 0)">
+      <rect width="140" height="34" rx="6" fill="#0b1322" stroke="#1e2d47" stroke-width="1" />
+      <circle cx="16" cy="17" r="3.5" fill="#10b981" />
+      <text x="26" y="21" class="font-mono" font-size="10.5" font-weight="700" fill="#10b981">&lt;150ms INGEST</text>
+    </g>
+    <!-- Pill 3: Saga -->
+    <g transform="translate(304, 0)">
+      <rect width="156" height="34" rx="6" fill="#0b1322" stroke="#1e2d47" stroke-width="1" />
+      <circle cx="16" cy="17" r="3.5" fill="#f59e0b" />
+      <text x="26" y="21" class="font-mono" font-size="10.5" font-weight="700" fill="#f59e0b">SAGA COMPENSATE</text>
+    </g>
+  </g>
+
+  <!-- Concurrency Defense Card Box (Left Lower) -->
+  <g transform="translate(70, 380)">
+    <rect width="460" height="105" rx="10" fill="#070b14" stroke="#1a2742" stroke-width="1.2" />
+    <rect width="4" height="105" rx="2" fill="#00f2fe" />
+    
+    <g transform="translate(18, 22)">
+      <text class="font-mono" font-size="10" font-weight="700" fill="#00f2fe" letter-spacing="1">TWO-TIER CONCURRENCY DEFENSE</text>
+      <text y="22" class="font-mono" font-size="11.5" font-weight="500" fill="#94a3b8">
+        1. <tspan fill="#38bdf8" font-weight="700">Redis Lock:</tspan> Serializes burst access (500ms wait)
+      </text>
+      <text y="42" class="font-mono" font-size="11.5" font-weight="500" fill="#94a3b8">
+        2. <tspan fill="#10b981" font-weight="700">MongoDB CAS:</tspan> Atomic check-and-decrement filter
+      </text>
+      <text y="62" class="font-mono" font-size="10.5" font-weight="600" fill="#64748b">
+        Mathematical consistency: Total successful orders ≤ Initial stock
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Console Status Ribbon -->
+  <g transform="translate(70, 520)">
+    <rect width="460" height="42" rx="6" fill="#04060b" stroke="#162238" stroke-width="1" />
+    <circle cx="18" cy="21" r="4" fill="#10b981" />
+    <text x="32" y="25" class="font-mono" font-size="10.5" font-weight="600" fill="#64748b">
+      SYSTEM STATUS: <tspan fill="#10b981">ONLINE (HEALTHY)</tspan>  <tspan fill="#334155">|</tspan>  IDEMPOTENCY: <tspan fill="#00f2fe">SHA-256</tspan>
+    </text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- RIGHT ARCHITECTURE TOPOLOGY PANEL (600px width) -->
+  <!-- ========================================================================= -->
+
+  <g transform="translate(565, 65)" class="panel-shadow">
+    <!-- Topology Window Frame -->
+    <rect width="565" height="500" rx="14" fill="#080e1b" stroke="#1c2b4a" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <path d="M 0 14 C 0 6.27 6.27 0 14 0 L 551 0 C 558.73 0 565 6.27 565 14 L 565 38 L 0 38 Z" fill="#0b1426" />
+    <line x1="0" y1="38" x2="565" y2="38" stroke="#1c2b4a" stroke-width="1" />
+    
+    <!-- Window Controls -->
+    <circle cx="20" cy="19" r="4.5" fill="#f43f5e" opacity="0.85" />
+    <circle cx="36" cy="19" r="4.5" fill="#f59e0b" opacity="0.85" />
+    <circle cx="52" cy="19" r="4.5" fill="#10b981" opacity="0.85" />
+    <text x="74" y="23" class="font-mono" font-size="11" font-weight="600" fill="#64748b">architecture::topology_map</text>
+
+    <!-- LIVE TELEMETRY BADGE -->
+    <rect x="450" y="10" width="95" height="18" rx="9" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.35" />
+    <circle cx="462" cy="19" r="3" fill="#10b981" filter="url(#glowSubtle)" />
+    <text x="471" y="23" class="font-mono" font-size="9" font-weight="700" fill="#10b981">LIVE SYNC</text>
+
+    <!-- ===================================================================== -->
+    <!-- CONNECTING FLOW BUSES -->
+    <!-- ===================================================================== -->
+
+    <!-- Bus: Client -> Order Service -->
+    <line x1="30" y1="100" x2="70" y2="100" stroke="#33476d" stroke-width="2" stroke-dasharray="4,4" />
+    <polygon points="68,96 76,100 68,104" fill="#00f2fe" />
+    <text x="25" y="88" class="font-mono" font-size="8.5" font-weight="600" fill="#64748b">HTTP</text>
+
+    <!-- Bus: Order Service -> Redis Lock -->
+    <path d="M 310 100 L 375 100" stroke="url(#busCyan)" stroke-width="2.5" />
+    <polygon points="373,96 381,100 373,104" fill="#00f2fe" />
+    <text x="325" y="90" class="font-mono" font-size="8.5" font-weight="700" fill="#38bdf8">1. LOCK</text>
+
+    <!-- Bus: Order Service -> MongoDB -->
+    <path d="M 190 145 L 190 205" stroke="url(#busCyan)" stroke-width="2.5" />
+    <polygon points="186,203 190,211 194,203" fill="#00f2fe" />
+    <text x="198" y="180" class="font-mono" font-size="8.5" font-weight="700" fill="#10b981">2. CAS DECR</text>
+
+    <!-- Bus: Order Service -> Kafka Bus -->
+    <path d="M 190 287 L 190 350" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" />
+    <polygon points="186,348 190,356 194,348" fill="#38bdf8" />
+    <text x="198" y="322" class="font-mono" font-size="8.5" font-weight="700" fill="#38bdf8">3. EVENT</text>
+
+    <!-- Bus: Kafka Bus -> Async Workers -->
+    <path d="M 335 405 L 385 405" stroke="#10b981" stroke-width="2.5" />
+    <polygon points="383,401 391,405 383,409" fill="#10b981" />
+    <text x="340" y="396" class="font-mono" font-size="8.5" font-weight="700" fill="#10b981">CONSUME</text>
+
+    <!-- ===================================================================== -->
+    <!-- NODE 1: ORDER SERVICE -->
+    <!-- ===================================================================== -->
+    <g transform="translate(70, 62)">
+      <rect width="240" height="82" rx="10" fill="url(#cardGradOrder)" stroke="#00f2fe" stroke-width="1.75" filter="url(#glowSubtle)" />
+      <rect width="4" height="82" rx="2" fill="#00f2fe" />
+      
+      <!-- Top Row with Pill Badge separated cleanly -->
+      <text x="16" y="24" class="font-mono" font-size="10" font-weight="700" fill="#00f2fe" letter-spacing="1">ORDER SERVICE</text>
+      <rect x="155" y="12" width="70" height="18" rx="4" fill="#00f2fe" fill-opacity="0.12" stroke="#00f2fe" stroke-opacity="0.3" />
+      <text x="163" y="25" class="font-mono" font-size="9" font-weight="700" fill="#00f2fe">PORT 8080</text>
+      
+      <!-- Title & Subtitle -->
+      <text x="16" y="47" class="font-sans" font-size="15" font-weight="700" fill="#ffffff">Spring Boot API</text>
+      <text x="16" y="66" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">REST Intake + Idempotency</text>
+    </g>
+
+    <!-- ===================================================================== -->
+    <!-- NODE 2: REDIS DISTRIBUTED LOCK -->
+    <!-- ===================================================================== -->
+    <g transform="translate(385, 62)">
+      <rect width="150" height="82" rx="10" fill="url(#cardGradLock)" stroke="#38bdf8" stroke-width="1.3" />
+      <rect width="4" height="82" rx="2" fill="#38bdf8" />
+      
+      <text x="14" y="24" class="font-mono" font-size="9.5" font-weight="700" fill="#38bdf8">REDIS LOCK</text>
+      <text x="14" y="47" class="font-sans" font-size="15" font-weight="700" fill="#f1f5f9">Redisson Gate</text>
+      <text x="14" y="66" class="font-mono" font-size="9.5" font-weight="500" fill="#7dd3fc">500ms Wait / 3s TTL</text>
+
+      <!-- Padlock Vector Icon -->
+      <g transform="translate(118, 14)" fill="#00f2fe">
+        <path d="M 14 10 L 14 7 C 14 3.7 11.3 1 8 1 C 4.7 1 2 3.7 2 7 L 2 10 L 0 10 L 0 20 L 16 20 L 16 10 Z M 4 7 C 4 4.8 5.8 3 8 3 C 10.2 3 12 4.8 12 7 L 12 10 L 4 10 Z" opacity="0.9" />
+      </g>
+    </g>
+
+    <!-- ===================================================================== -->
+    <!-- NODE 3: MONGODB INVENTORY STORE -->
+    <!-- ===================================================================== -->
+    <g transform="translate(70, 210)">
+      <rect width="240" height="76" rx="10" fill="url(#cardGradMongo)" stroke="#10b981" stroke-width="1.3" />
+      <rect width="4" height="76" rx="2" fill="#10b981" />
+      
+      <text x="16" y="24" class="font-mono" font-size="10" font-weight="700" fill="#10b981" letter-spacing="1">PERSISTENCE GATE</text>
+      <text x="16" y="46" class="font-sans" font-size="15" font-weight="700" fill="#ffffff">MongoDB Cluster</text>
+      <text x="16" y="64" class="font-mono" font-size="10" font-weight="500" fill="#86efac">Atomic CAS: $inc {stock: -qty}</text>
+
+      <!-- Cylinder Database Icon -->
+      <g transform="translate(202, 22)" fill="none" stroke="#10b981" stroke-width="1.5">
+        <ellipse cx="12" cy="5" rx="11" ry="3.5" />
+        <path d="M 1 5 L 1 16 A 11 3.5 0 0 0 23 16 L 23 5" />
+        <path d="M 1 10.5 A 11 3.5 0 0 0 23 10.5" />
+      </g>
+    </g>
+
+    <!-- Contention Shed Signal Badge -->
+    <g transform="translate(385, 220)">
+      <rect width="150" height="56" rx="8" fill="#1c1219" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1" />
+      <rect width="3" height="56" rx="1.5" fill="#f43f5e" />
+      <text x="12" y="22" class="font-mono" font-size="9" font-weight="700" fill="#f43f5e">409 CONFLICT SHED</text>
+      <text x="12" y="38" class="font-mono" font-size="10" font-weight="500" fill="#fda4af">Contention Dropped</text>
+      <text x="12" y="50" class="font-mono" font-size="8.5" font-weight="500" fill="#f43f5e">Zero Oversold Items</text>
+    </g>
+    <line x1="310" y1="248" x2="385" y2="248" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="3,3" />
+
+    <!-- ===================================================================== -->
+    <!-- NODE 4: APACHE KAFKA BUS -->
+    <!-- ===================================================================== -->
+    <g transform="translate(45, 355)">
+      <rect width="290" height="95" rx="10" fill="url(#cardGradKafka)" stroke="#38bdf8" stroke-width="1.5" />
+      <rect width="4" height="95" rx="2" fill="#38bdf8" />
+      
+      <text x="16" y="24" class="font-mono" font-size="10" font-weight="700" fill="#38bdf8" letter-spacing="1">EVENT BUS · APACHE KAFKA</text>
+      <text x="16" y="45" class="font-sans" font-size="15" font-weight="700" fill="#ffffff">Asynchronous Event Stream</text>
+      
+      <!-- Topic Stream Tags -->
+      <g transform="translate(16, 56)">
+        <rect width="78" height="24" rx="4" fill="#0284c7" fill-opacity="0.18" stroke="#0284c7" stroke-width="1" />
+        <text x="8" y="16" class="font-mono" font-size="9" font-weight="600" fill="#7dd3fc">order-placed</text>
+
+        <rect x="85" width="86" height="24" rx="4" fill="#10b981" fill-opacity="0.18" stroke="#10b981" stroke-width="1" />
+        <text x="93" y="16" class="font-mono" font-size="9" font-weight="600" fill="#86efac">payment-done</text>
+
+        <rect x="178" width="78" height="24" rx="4" fill="#a855f7" fill-opacity="0.18" stroke="#a855f7" stroke-width="1" />
+        <text x="186" y="16" class="font-mono" font-size="9" font-weight="600" fill="#d8b4fe">shipped-ok</text>
+      </g>
+    </g>
+
+    <!-- ===================================================================== -->
+    <!-- NODE 5: ASYNC PROCESSING WORKERS -->
+    <!-- ===================================================================== -->
+    <g transform="translate(390, 355)">
+      <rect width="145" height="95" rx="10" fill="url(#cardGradWorker)" stroke="#10b981" stroke-width="1.3" />
+      <rect width="4" height="95" rx="2" fill="#10b981" />
+      
+      <text x="12" y="22" class="font-mono" font-size="9.5" font-weight="700" fill="#10b981">PROCESSING SVC</text>
+      <text x="12" y="42" class="font-sans" font-size="14" font-weight="700" fill="#f8fafc">Async Workers</text>
+      <text x="12" y="58" class="font-mono" font-size="9" font-weight="500" fill="#94a3b8">Payment Capture</text>
+      <text x="12" y="72" class="font-mono" font-size="9" font-weight="500" fill="#94a3b8">Carrier Dispatch</text>
+      <text x="12" y="87" class="font-mono" font-size="8.5" font-weight="700" fill="#f59e0b">↺ Auto Compensation</text>
+    </g>
+
+    <!-- Compensation Saga Curve Loopback -->
+    <path d="M 462 355 C 462 315, 490 295, 490 276" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3" />
+    <polygon points="487,280 490,272 493,280" fill="#f59e0b" />
+    <text x="470" y="318" class="font-mono" font-size="7.5" font-weight="700" fill="#f59e0b">SAGA</text>
+
+  </g>
+</svg>
