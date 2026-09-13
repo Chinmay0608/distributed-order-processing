@@ -228,7 +228,7 @@ cd order-service
    - **Single Order Placement:** Select catalog target, quantity, and specify or auto-generate UUID `Idempotency-Key`.
    - **High-Contention Simulator:**
      - Select a limited SKU (e.g. `Stock: 1`).
-     - Set concurrency count $N$ (clamped up to 50 for client socket safety) and trigger **"Blast N Concurrent Buyers"**.
+     - Set concurrency count $N$ (up to 1,000 concurrent requests) and trigger **"Blast N Concurrent Buyers"**.
      - Real-time scoreboard visualizes total requests fired, allocated orders (`201 Created`), and shed contention (`409 Conflict: OUT_OF_STOCK` or `LOCK_ACQUISITION_FAILED`).
      - Terminal execution trace stream shows sub-millisecond thread arrival, lock acquisition, and direct click-to-track order navigation.
 3. **Screen 3: Order Telemetry & Kafka Pipeline Stepper**

@@ -821,6 +821,7 @@ optgroup {
 .concurrency-presets {
   display: flex;
   gap: 0.35rem;
+  flex-wrap: wrap;
 }
 
 .btn-preset {
@@ -1147,7 +1148,7 @@ optgroup {
   min-width: max-content;
   box-sizing: border-box;
   animation: traceRowFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(var(--row-idx) * 45ms);
+  animation-delay: min(calc(var(--row-idx) * 8ms), 240ms);
 }
 
 .t-row-success {

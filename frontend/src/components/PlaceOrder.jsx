@@ -76,7 +76,7 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
 
   const handleSimulateConcurrency = async () => {
     if (!productId) return;
-    const safeCount = Math.min(Math.max(Number(concurrentCount) || 2, 2), 50);
+    const safeCount = Math.min(Math.max(Number(concurrentCount) || 2, 2), 1000);
     setConcurrentCount(safeCount);
     setSimulating(true);
     setSimulationResults(null);
@@ -277,14 +277,14 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
         <div className="form-group">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
             <label className="form-label-tech" style={{ margin: 0 }}>SIMULTANEOUS BUYERS CONCURRENCY ($N$)</label>
-            <span className="sys-badge sys-badge-sm sys-badge-secondary">CAP: 2 – 50 SAFE MAX</span>
+            <span className="sys-badge sys-badge-sm sys-badge-secondary">CAP: 2 – 1000 MAX</span>
           </div>
           <div className="concurrency-input-wrap">
             <input
               type="number"
               className="form-control mono-input"
               min="2"
-              max="50"
+              max="1000"
               value={concurrentCount}
               onChange={(e) => {
                 const val = e.target.value;
@@ -294,12 +294,12 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
                 }
                 const num = parseInt(val, 10);
                 if (!isNaN(num)) {
-                  setConcurrentCount(Math.min(Math.max(num, 1), 50));
+                  setConcurrentCount(Math.min(Math.max(num, 1), 1000));
                 }
               }}
             />
             <div className="concurrency-presets">
-              {[5, 10, 20, 50].map((preset) => (
+              {[10, 50, 100, 500, 1000].map((preset) => (
                 <button
                   key={preset}
                   type="button"
@@ -312,8 +312,8 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
             </div>
           </div>
           <div className="input-hint">
-            <span className="hint-tag" style={{ background: 'var(--cyan-bg)', color: 'var(--cyan-primary)', borderColor: 'var(--cyan-border)' }}>BROWSER SAFETY</span>
-            Guarded ceiling of 50 concurrent HTTP threads prevents local socket table exhaustion and V8 memory starvation.
+            <span className="hint-tag" style={{ background: 'var(--cyan-bg)', color: 'var(--cyan-primary)', borderColor: 'var(--cyan-border)' }}>BURST CONCURRENCY</span>
+            Guarded ceiling of 1,000 concurrent HTTP requests stress-tests Redis distributed locking and MongoDB atomic gates under burst contention.
           </div>
         </div>
 
@@ -392,10 +392,10 @@ export default function PlaceOrder({ products, selectedProduct, onSelectProduct,
                     <div
                       key={res.index}
                       className={`terminal-row ${isSuccess ? 't-row-success' : 't-row-fail'}`}
-                      style={{ '--row-idx': idx }}
+                      style={{ '--row-idx': Math.min(idx, 30) }}
                     >
                       <span className="t-time">+{String(idx * 15 + 12).padStart(3, '0')}ms</span>
-                      <span className="t-actor">BUYER_{String(res.index).padStart(2, '0')}</span>
+                      <span className="t-actor">BUYER_{String(res.index).padStart(Math.max(2, String(simulationResults.total).length), '0')}</span>
                       <span className={`t-code ${isSuccess ? 't-code-201' : isOutOfStock ? 't-code-409-stock' : 't-code-409-lock'}`}>
                         [{res.status} {isSuccess ? 'OK' : isOutOfStock ? 'OUT_OF_STOCK' : 'LOCK_TIMEOUT'}]
                       </span>

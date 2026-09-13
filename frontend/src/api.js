@@ -84,8 +84,8 @@ export async function getOrderStatus(orderId) {
  * Evaluates Redis distributed locking and race condition defense under concurrent load.
  */
 export async function simulateConcurrentBuyers(productId, count = 10) {
-  // Safety guardrail: clamp between 2 and 50 to prevent browser V8 OOM and OS TCP socket exhaustion
-  const safeCount = Math.min(Math.max(Number(count) || 2, 2), 50);
+  // Safety guardrail: clamp between 2 and 1000 to prevent browser V8 OOM and OS TCP socket exhaustion
+  const safeCount = Math.min(Math.max(Number(count) || 2, 2), 1000);
   const requests = Array.from({ length: safeCount }, (_, idx) => {
     const uniqueKey = `race-${Date.now()}-${idx}-${generateUUID().substring(0, 8)}`;
     return placeOrder(productId, 1, uniqueKey)
