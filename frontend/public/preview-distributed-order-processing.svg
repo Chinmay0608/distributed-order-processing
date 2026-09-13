@@ -6,192 +6,189 @@
       .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
       .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       
-      .card-shadow {
-        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.55)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+      .browser-shadow {
+        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.08));
       }
-      .cta-shadow {
-        filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.35));
+      .logo-glow {
+        filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.25));
       }
     </style>
 
-    <!-- Subtle ambient canvas gradients -->
-    <linearGradient id="bgCanvas" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="50%" stop-color="#090d16" />
+    <!-- Canvas Gradient -->
+    <linearGradient id="bgCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b101c" />
+      <stop offset="50%" stop-color="#080c16" />
+      <stop offset="100%" stop-color="#05080e" />
+    </linearGradient>
+
+    <!-- Browser Inner Gradient -->
+    <linearGradient id="browserBg" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0e1628" />
+      <stop offset="50%" stop-color="#090e1a" />
       <stop offset="100%" stop-color="#060911" />
     </linearGradient>
 
-    <!-- Card Background -->
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#111a2e" />
-      <stop offset="100%" stop-color="#0b111e" />
-    </linearGradient>
+    <!-- Subtle radial glow inside window -->
+    <radialGradient id="innerGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.18" />
+      <stop offset="70%" stop-color="#090e1a" stop-opacity="0" />
+    </radialGradient>
 
-    <!-- Subtle Dot Grid -->
-    <pattern id="dotGrid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#334155" fill-opacity="0.35" />
-    </pattern>
-
-    <!-- Button Gradient -->
-    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2563eb" />
-      <stop offset="100%" stop-color="#1d4ed8" />
+    <!-- Accent Gradient -->
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
     </linearGradient>
   </defs>
 
   <!-- 1. Canvas Background -->
   <rect width="1200" height="630" fill="url(#bgCanvas)" />
-  <rect width="1200" height="630" fill="url(#dotGrid)" />
-
-  <!-- Soft subtle radial light at top center -->
-  <radialGradient id="topGlow" cx="50%" cy="0%" r="50%">
-    <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.18" />
-    <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0" />
-  </radialGradient>
-  <rect width="1200" height="300" fill="url(#topGlow)" />
 
   <!-- ========================================================================= -->
-  <!-- HERO HEADER (Centered, Spacious, Punchy) -->
+  <!-- MAIN BROWSER WINDOW CONTAINER (Styled after portfolio card slot) -->
   <!-- ========================================================================= -->
+  <g transform="translate(75, 45)" class="browser-shadow">
+    <!-- Window Outer Chassis -->
+    <rect width="1050" height="540" rx="14" fill="url(#browserBg)" stroke="#1e293b" stroke-width="1.2" />
 
-  <!-- Pill Badge -->
-  <g transform="translate(485, 52)">
-    <rect width="230" height="26" rx="13" fill="#172238" stroke="#253554" stroke-width="1" />
-    <circle cx="14" cy="13" r="3.5" fill="#10b981" />
-    <text x="26" y="17" fill="#38bdf8" font-size="11" font-weight="600" class="mono" letter-spacing="0.8">DISTRIBUTED SYSTEMS ENGINE</text>
-  </g>
+    <!-- 1. Window Header Bar -->
+    <rect width="1050" height="42" rx="14" fill="#0b101d" />
+    <rect y="28" width="1050" height="14" fill="#0b101d" />
+    <line x1="0" y1="42" x2="1050" y2="42" stroke="#1a2333" stroke-width="1" />
 
-  <!-- Main Headline -->
-  <text x="600" y="122" text-anchor="middle" fill="#f8fafc" font-size="38" font-weight="800" class="sans" letter-spacing="-0.8">
-    Distributed Order Processing System
-  </text>
+    <!-- macOS Traffic Light Controls -->
+    <circle cx="24" cy="21" r="5" fill="#ef4444" fill-opacity="0.85" />
+    <circle cx="40" cy="21" r="5" fill="#f59e0b" fill-opacity="0.85" />
+    <circle cx="56" cy="21" r="5" fill="#10b981" fill-opacity="0.85" />
 
-  <!-- Subtitle -->
-  <text x="600" y="152" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="400" class="sans">
-    High-concurrency ordering platform with Redis distributed locking and zero-overselling guarantee.
-  </text>
-
-  <!-- ========================================================================= -->
-  <!-- FLOATING PREVIEW SHOWCASE CARD (High clarity, Normal UI, Zero clutter) -->
-  <!-- ========================================================================= -->
-  <g transform="translate(175, 185)" class="card-shadow">
-    <!-- Card Frame -->
-    <rect width="850" height="280" rx="12" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1" />
-
-    <!-- Card Title Bar -->
-    <rect width="850" height="38" rx="12" fill="#0b101c" />
-    <rect y="26" width="850" height="12" fill="#0b101c" />
-    <line x1="0" y1="38" x2="850" y2="38" stroke="#1e293b" stroke-width="1" />
-
-    <!-- Window Dots -->
-    <circle cx="22" cy="19" r="4.5" fill="#ef4444" fill-opacity="0.8" />
-    <circle cx="37" cy="19" r="4.5" fill="#f59e0b" fill-opacity="0.8" />
-    <circle cx="52" cy="19" r="4.5" fill="#10b981" fill-opacity="0.8" />
-
-    <!-- Tab / Breadcrumb -->
-    <text x="75" y="23" fill="#94a3b8" font-size="12" font-weight="500" class="mono">
-      telemetry-console &gt; simulation-bench &gt; 50-buyer-rush
-    </text>
-
-    <!-- Cluster Status Tag -->
-    <rect x="715" y="9" width="115" height="20" rx="4" fill="#0f291e" stroke="#10b981" stroke-width="0.8" stroke-opacity="0.4" />
-    <circle cx="727" cy="19" r="3" fill="#10b981" />
-    <text x="736" y="23" fill="#34d399" font-size="10" font-weight="600" class="mono">LIVE CLUSTER</text>
-
-    <!-- Card Interior Content -->
-    <!-- LEFT HALF: The Concurrency Rush Scenario -->
-    <g transform="translate(32, 60)">
-      <text x="0" y="0" fill="#64748b" font-size="11" font-weight="700" class="mono" letter-spacing="0.5">
-        CONCURRENT STRESS SIMULATION
+    <!-- Centered Browser URL Pill (Clean like mindvault.app) -->
+    <g transform="translate(385, 9)">
+      <rect width="280" height="24" rx="12" fill="#11192b" stroke="#1d2a44" stroke-width="0.8" />
+      <circle cx="14" cy="12" r="3" fill="#64748b" />
+      <text x="140" y="16" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="500" class="mono">
+        distributed-orders.app
       </text>
+    </g>
 
-      <!-- Rush Scenario Box -->
-      <g transform="translate(0, 14)">
-        <rect width="390" height="84" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
+    <!-- 2. Main Window Interior Canvas -->
+    <rect y="42" width="1050" height="438" fill="url(#innerGlow)" />
+
+    <!-- ======================================================================= -->
+    <!-- CENTERPIECE: MINIMAL, POWERFUL BRAND & VALUE PROPOSITION -->
+    <!-- ======================================================================= -->
+    <g transform="translate(525, 115)">
+      <!-- Center Brand Icon Badge -->
+      <g transform="translate(-36, 0)" class="logo-glow">
+        <rect width="72" height="72" rx="18" fill="#10192e" stroke="#2563eb" stroke-width="1.5" />
         
-        <!-- Icon & Tag -->
-        <text x="16" y="28" fill="#f1f5f9" font-size="15" font-weight="700" class="sans">
-          ⚡ 50 Concurrent Orders
-        </text>
-        <rect x="275" y="14" width="98" height="18" rx="3" fill="#1e293b" />
-        <text x="324" y="26" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600" class="mono">BURST TRAFFIC</text>
-
-        <!-- Product Details -->
-        <text x="16" y="52" fill="#94a3b8" font-size="12" class="mono">
-          Target: iPhone 15 Pro
-        </text>
-        <text x="210" y="52" fill="#e2e8f0" font-size="12" font-weight="600" class="mono">
-          Available Stock: 10
-        </text>
-
-        <text x="16" y="70" fill="#64748b" font-size="11" class="mono">
-          Concurrency Lock: Redis Redlock (TTL: 5s)
-        </text>
+        <!-- Padlock Shackle -->
+        <path d="M 26 34 L 26 24 C 26 18.5 30.5 14 36 14 C 41.5 14 46 18.5 46 24 L 46 34"
+              fill="none"
+              stroke="#38bdf8"
+              stroke-width="5"
+              stroke-linecap="round" />
+        
+        <!-- Padlock Body -->
+        <rect x="20" y="32" width="32" height="26" rx="5" fill="#0b1120" stroke="#38bdf8" stroke-width="2" />
+        
+        <!-- Central Lock / Distributed Node -->
+        <circle cx="36" cy="42" r="3.5" fill="#38bdf8" />
+        <line x1="36" y1="42" x2="28" y2="50" stroke="#38bdf8" stroke-width="1.5" />
+        <line x1="36" y1="42" x2="44" y2="50" stroke="#38bdf8" stroke-width="1.5" />
+        <circle cx="28" cy="50" r="2" fill="#10b981" />
+        <circle cx="44" cy="50" r="2" fill="#10b981" />
       </g>
 
-      <!-- Outcome Banner -->
-      <g transform="translate(0, 110)">
-        <rect width="390" height="42" rx="6" fill="#08281e" stroke="#10b981" stroke-width="1" stroke-opacity="0.5" />
-        <circle cx="20" cy="21" r="5" fill="#10b981" />
-        <text x="34" y="25" fill="#34d399" font-size="12" font-weight="700" class="mono">
-          10 Orders Placed  ·  40 Gracefully Rejected
-        </text>
-      </g>
-
-      <text x="0" y="174" fill="#64748b" font-size="11" class="mono">
-        Guaranteed: Remaining inventory = 0 (No overselling)
-      </text>
-    </g>
-
-    <!-- VERTICAL DIVIDER -->
-    <line x1="465" y1="56" x2="465" y2="256" stroke="#1e293b" stroke-width="1" stroke-dasharray="3,3" />
-
-    <!-- RIGHT HALF: Core System Guarantees & KPIs -->
-    <g transform="translate(500, 60)">
-      <text x="0" y="0" fill="#64748b" font-size="11" font-weight="700" class="mono" letter-spacing="0.5">
-        SYSTEM GUARANTEES &amp; TELEMETRY
+      <!-- Project Name (Bold, modern sans-serif like SkillBridge) -->
+      <text y="122" text-anchor="middle" fill="#f8fafc" font-size="38" font-weight="800" class="sans" letter-spacing="-0.8">
+        Distributed Order Processing
       </text>
 
-      <!-- Metric 1: Zero Overselling -->
-      <g transform="translate(0, 14)">
-        <rect width="318" height="54" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-        <text x="16" y="22" fill="#64748b" font-size="10" font-weight="600" class="mono">OVERSELLING RATE</text>
-        <text x="16" y="44" fill="#38bdf8" font-size="20" font-weight="800" class="mono">0 ITEMS</text>
-        <text x="135" y="42" fill="#94a3b8" font-size="11" class="sans">Strict single-winner lock</text>
+      <!-- Subtitle -->
+      <text y="154" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="400" class="sans">
+        High-concurrency ordering engine with zero-overselling guarantee
+      </text>
+
+      <!-- 3 Accent Status Dots (Directly inspired by SkillBridge in the portfolio!) -->
+      <g transform="translate(0, 185)">
+        <circle cx="-16" cy="0" r="4" fill="#38bdf8" />
+        <circle cx="0" cy="0" r="4" fill="#2563eb" />
+        <circle cx="16" cy="0" r="4" fill="#10b981" />
       </g>
 
-      <!-- Metric 2: Lock Latency -->
-      <g transform="translate(0, 78)">
-        <rect width="318" height="54" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-        <text x="16" y="22" fill="#64748b" font-size="10" font-weight="600" class="mono">AVG LOCK ACQUISITION</text>
-        <text x="16" y="44" fill="#10b981" font-size="20" font-weight="800" class="mono">1.8 ms</text>
-        <text x="135" y="42" fill="#94a3b8" font-size="11" class="sans">Sub-millisecond Redis I/O</text>
-      </g>
-
-      <!-- Metric 3: Kafka Streaming -->
-      <g transform="translate(0, 142)">
-        <rect width="318" height="42" rx="8" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
-        <text x="16" y="26" fill="#cbd5e1" font-size="11" font-weight="600" class="mono">
-          KAFKA PIPELINE: 3 PARTITIONS · 0 LAG
+      <!-- Core Value Metric Pill -->
+      <g transform="translate(-160, 215)">
+        <rect width="320" height="34" rx="17" fill="#0c1526" stroke="#1d2e4d" stroke-width="1" />
+        <circle cx="18" cy="17" r="3.5" fill="#10b981" />
+        <text x="168" y="21" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600" class="mono">
+          50 CONCURRENT BUYERS · 0 DEFECTS
         </text>
       </g>
     </g>
+
+    <!-- ======================================================================= -->
+    <!-- BOTTOM METADATA BAR (Directly inspired by MindVault in the portfolio!) -->
+    <!-- ======================================================================= -->
+    <g transform="translate(0, 480)">
+      <!-- Divider Line -->
+      <line x1="0" y1="0" x2="1050" y2="0" stroke="#161f30" stroke-width="1" />
+      <rect width="1050" height="60" rx="14" fill="#0b101c" />
+      <rect width="1050" height="20" fill="#0b101c" /> <!-- Clean top corners -->
+
+      <!-- Left: App Icon + Title + Descriptor -->
+      <g transform="translate(24, 14)">
+        <!-- Small App Icon -->
+        <rect width="32" height="32" rx="8" fill="#10192e" stroke="#2563eb" stroke-width="1" />
+        <circle cx="16" cy="16" r="5" fill="#38bdf8" />
+        <circle cx="16" cy="16" r="2" fill="#10b981" />
+
+        <!-- Title & Subtitle -->
+        <text x="44" y="14" fill="#f1f5f9" font-size="13" font-weight="700" class="sans">
+          Distributed Order System
+        </text>
+        <text x="44" y="28" fill="#64748b" font-size="10" font-weight="500" class="sans">
+          Distributed Redis Mutex &amp; Kafka Pipeline
+        </text>
+      </g>
+
+      <!-- Right: Tech Stack Badges (Matching MindVault's badge row) -->
+      <g transform="translate(540, 18)">
+        <!-- Java 17 -->
+        <g transform="translate(0, 0)">
+          <rect width="62" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
+          <text x="31" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Java 17</text>
+        </g>
+
+        <!-- Spring Boot 3 -->
+        <g transform="translate(68, 0)">
+          <rect width="98" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
+          <text x="49" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Spring Boot 3</text>
+        </g>
+
+        <!-- Redis -->
+        <g transform="translate(172, 0)">
+          <rect width="60" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
+          <text x="30" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Redis</text>
+        </g>
+
+        <!-- Kafka -->
+        <g transform="translate(238, 0)">
+          <rect width="60" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
+          <text x="30" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Kafka</text>
+        </g>
+
+        <!-- MongoDB -->
+        <g transform="translate(304, 0)">
+          <rect width="78" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
+          <text x="39" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">MongoDB</text>
+        </g>
+
+        <!-- React -->
+        <g transform="translate(388, 0)">
+          <rect width="64" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
+          <text x="32" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">React</text>
+        </g>
+      </g>
+    </g>
   </g>
-
-  <!-- ========================================================================= -->
-  <!-- CALL TO ACTION & STACK BADGES (Bottom Section, Invites Click) -->
-  <!-- ========================================================================= -->
-
-  <!-- Interactive CTA Button -->
-  <g transform="translate(485, 492)" class="cta-shadow">
-    <rect width="230" height="44" rx="22" fill="url(#btnGrad)" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.5" />
-    <text x="115" y="27" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" class="sans" letter-spacing="0.2">
-      Explore Live Console  →
-    </text>
-  </g>
-
-  <!-- Tech Stack Line -->
-  <text x="600" y="568" text-anchor="middle" fill="#64748b" font-size="12" font-weight="500" class="mono">
-    Spring Boot 3  ·  Redis Distributed Locking  ·  Apache Kafka  ·  MongoDB Saga  ·  React
-  </text>
 </svg>
