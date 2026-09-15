@@ -6692,7 +6692,7 @@
       "node_kind": "heading",
       "norm_label": "1. `order-service` tests (10 tests, 0 failures)",
       "source_file": "README.md",
-      "source_location": "L187"
+      "source_location": "L195"
     },
     {
       "id": "readme_1_start_infrastructure_mongodb_redis_kafka",
@@ -6704,7 +6704,7 @@
       "node_kind": "heading",
       "norm_label": "1. start infrastructure (mongodb, redis, kafka)",
       "source_file": "README.md",
-      "source_location": "L158"
+      "source_location": "L166"
     },
     {
       "id": "readme_1_why_redis_distributed_lock_over_database_pessimistic_locking_select_for_update",
@@ -6716,7 +6716,7 @@
       "node_kind": "heading",
       "norm_label": "1. why redis distributed lock over database pessimistic locking (`select ... for update`)",
       "source_file": "README.md",
-      "source_location": "L54"
+      "source_location": "L62"
     },
     {
       "id": "readme_2_processing_service_tests_5_tests_0_failures",
@@ -6728,7 +6728,7 @@
       "node_kind": "heading",
       "norm_label": "2. `processing-service` tests (5 tests, 0 failures)",
       "source_file": "README.md",
-      "source_location": "L200"
+      "source_location": "L208"
     },
     {
       "id": "readme_2_run_order_service",
@@ -6740,7 +6740,7 @@
       "node_kind": "heading",
       "norm_label": "2. run `order-service`",
       "source_file": "README.md",
-      "source_location": "L163"
+      "source_location": "L171"
     },
     {
       "id": "readme_2_why_apache_kafka_over_direct_synchronous_rest_calls",
@@ -6752,7 +6752,7 @@
       "node_kind": "heading",
       "norm_label": "2. why apache kafka over direct synchronous rest calls",
       "source_file": "README.md",
-      "source_location": "L61"
+      "source_location": "L69"
     },
     {
       "id": "readme_3_idempotency_replay_protection",
@@ -6764,7 +6764,7 @@
       "node_kind": "heading",
       "norm_label": "3. idempotency & replay protection",
       "source_file": "README.md",
-      "source_location": "L67"
+      "source_location": "L75"
     },
     {
       "id": "readme_3_run_processing_service",
@@ -6776,7 +6776,7 @@
       "node_kind": "heading",
       "norm_label": "3. run `processing-service`",
       "source_file": "README.md",
-      "source_location": "L169"
+      "source_location": "L177"
     },
     {
       "id": "readme_3_testcontainers_end_to_end_integration_test",
@@ -6788,7 +6788,7 @@
       "node_kind": "heading",
       "norm_label": "3. testcontainers end-to-end integration test",
       "source_file": "README.md",
-      "source_location": "L212"
+      "source_location": "L220"
     },
     {
       "id": "readme_4_run_frontend",
@@ -6800,7 +6800,7 @@
       "node_kind": "heading",
       "norm_label": "4. run `frontend`",
       "source_file": "README.md",
-      "source_location": "L175"
+      "source_location": "L183"
     },
     {
       "id": "readme_architectural_design_decision_rationale",
@@ -6812,7 +6812,7 @@
       "node_kind": "heading",
       "norm_label": "architectural & design decision rationale",
       "source_file": "README.md",
-      "source_location": "L52"
+      "source_location": "L60"
     },
     {
       "id": "readme_architecture_overview",
@@ -6836,7 +6836,7 @@
       "node_kind": "heading",
       "norm_label": "baseline product catalog & concurrency test fixtures",
       "source_file": "README.md",
-      "source_location": "L124"
+      "source_location": "L132"
     },
     {
       "id": "readme_distributed_order_processing_system",
@@ -6860,7 +6860,7 @@
       "node_kind": "heading",
       "norm_label": "frontend system telemetry console",
       "source_file": "README.md",
-      "source_location": "L221"
+      "source_location": "L229"
     },
     {
       "id": "readme_how_to_run_the_application",
@@ -6872,7 +6872,7 @@
       "node_kind": "heading",
       "norm_label": "how to run the application",
       "source_file": "README.md",
-      "source_location": "L144"
+      "source_location": "L152"
     },
     {
       "id": "readme_option_a_using_docker_compose_full_stack",
@@ -6884,7 +6884,7 @@
       "node_kind": "heading",
       "norm_label": "option a: using docker compose (full stack)",
       "source_file": "README.md",
-      "source_location": "L146"
+      "source_location": "L154"
     },
     {
       "id": "readme_option_b_running_locally_development_mode",
@@ -6896,7 +6896,7 @@
       "node_kind": "heading",
       "norm_label": "option b: running locally (development mode)",
       "source_file": "README.md",
-      "source_location": "L156"
+      "source_location": "L164"
     },
     {
       "id": "readme_project_structure",
@@ -6908,7 +6908,7 @@
       "node_kind": "heading",
       "norm_label": "project structure",
       "source_file": "README.md",
-      "source_location": "L75"
+      "source_location": "L83"
     },
     {
       "id": "readme_running_the_automated_test_suite",
@@ -6920,7 +6920,7 @@
       "node_kind": "heading",
       "norm_label": "running the automated test suite",
       "source_file": "README.md",
-      "source_location": "L185"
+      "source_location": "L193"
     },
     {
       "id": "order_service_mvnw",
@@ -18032,7 +18032,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L54",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -18043,7 +18043,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -18054,7 +18054,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L67",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -18065,7 +18065,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L124",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -18076,7 +18076,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L144",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -18087,7 +18087,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L185",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -18098,7 +18098,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L221",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -18109,7 +18109,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L52",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -18131,7 +18131,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L75",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -18142,7 +18142,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L146",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -18153,7 +18153,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L156",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -18164,7 +18164,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L158",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -18175,7 +18175,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L163",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -18186,7 +18186,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L169",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -18197,7 +18197,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L175",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -18208,7 +18208,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L187",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -18219,7 +18219,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L200",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -18230,7 +18230,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L212",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -23582,5 +23582,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ff43de4f8bcb10c60db0d94f767d53770edb3855"
+  "built_at_commit": "024f3ddf4628f547bdef19f62e48d6174924bb64"
 }

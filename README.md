@@ -6,6 +6,13 @@ A production-grade distributed order processing engine built to eliminate invent
 
 ## Architecture Overview
 
+<p align="center">
+  <img src="frontend/public/preview-distributed-order-processing.png" alt="Distributed Order Processing System Architecture & Workflow" width="100%" />
+</p>
+
+<details>
+<summary><b>View Text Blueprint (ASCII Diagram)</b></summary>
+
 ```
                             [ React Frontend (Vite) ]
                            (http://localhost:3000)
@@ -46,6 +53,7 @@ A production-grade distributed order processing engine built to eliminate invent
               • Restores stock in MongoDB: $inc: { stock: +qty }
               • Logs compensation in order statusHistory
 ```
+</details>
 
 ---
 
