@@ -6,189 +6,387 @@
       .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
       .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       
-      .browser-shadow {
-        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.08));
-      }
-      .logo-glow {
-        filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.25));
+      .box-shadow {
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
       }
     </style>
 
-    <!-- Canvas Gradient -->
-    <linearGradient id="bgCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b101c" />
-      <stop offset="50%" stop-color="#080c16" />
-      <stop offset="100%" stop-color="#05080e" />
-    </linearGradient>
+    <!-- Arrow Markers -->
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f43f5e" />
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a78bfa" />
+    </marker>
 
-    <!-- Browser Inner Gradient -->
-    <linearGradient id="browserBg" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#0e1628" />
-      <stop offset="50%" stop-color="#090e1a" />
-      <stop offset="100%" stop-color="#060911" />
-    </linearGradient>
-
-    <!-- Subtle radial glow inside window -->
-    <radialGradient id="innerGlow" cx="50%" cy="45%" r="55%">
-      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.18" />
-      <stop offset="70%" stop-color="#090e1a" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Accent Gradient -->
-    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#2563eb" />
-    </linearGradient>
+    <!-- Background Grid -->
+    <pattern id="archGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#162032" stroke-width="0.75" />
+    </pattern>
   </defs>
 
-  <!-- 1. Canvas Background -->
-  <rect width="1200" height="630" fill="url(#bgCanvas)" />
+  <!-- Canvas Background -->
+  <rect width="1200" height="630" fill="#080c14" />
+  <rect width="1200" height="630" fill="url(#archGrid)" />
 
   <!-- ========================================================================= -->
-  <!-- MAIN BROWSER WINDOW CONTAINER (Styled after portfolio card slot) -->
+  <!-- TOP HEADER (Y: 15 to 55) -->
   <!-- ========================================================================= -->
-  <g transform="translate(75, 45)" class="browser-shadow">
-    <!-- Window Outer Chassis -->
-    <rect width="1050" height="540" rx="14" fill="url(#browserBg)" stroke="#1e293b" stroke-width="1.2" />
+  <g transform="translate(45, 18)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#38bdf8" />
+    <text x="16" y="20" fill="#f8fafc" font-size="20" font-weight="800" class="sans" letter-spacing="-0.3">
+      Architecture Overview
+    </text>
+    <text x="245" y="19" fill="#64748b" font-size="12" font-weight="500" class="mono">
+      // High-Concurrency Redis Mutex · Kafka Event Pipeline · Distributed Sagas
+    </text>
 
-    <!-- 1. Window Header Bar -->
-    <rect width="1050" height="42" rx="14" fill="#0b101d" />
-    <rect y="28" width="1050" height="14" fill="#0b101d" />
-    <line x1="0" y1="42" x2="1050" y2="42" stroke="#1a2333" stroke-width="1" />
-
-    <!-- macOS Traffic Light Controls -->
-    <circle cx="24" cy="21" r="5" fill="#ef4444" fill-opacity="0.85" />
-    <circle cx="40" cy="21" r="5" fill="#f59e0b" fill-opacity="0.85" />
-    <circle cx="56" cy="21" r="5" fill="#10b981" fill-opacity="0.85" />
-
-    <!-- Centered Browser URL Pill (Clean like mindvault.app) -->
-    <g transform="translate(385, 9)">
-      <rect width="280" height="24" rx="12" fill="#11192b" stroke="#1d2a44" stroke-width="0.8" />
-      <circle cx="14" cy="12" r="3" fill="#64748b" />
-      <text x="140" y="16" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="500" class="mono">
-        distributed-orders.app
-      </text>
-    </g>
-
-    <!-- 2. Main Window Interior Canvas -->
-    <rect y="42" width="1050" height="438" fill="url(#innerGlow)" />
-
-    <!-- ======================================================================= -->
-    <!-- CENTERPIECE: MINIMAL, POWERFUL BRAND & VALUE PROPOSITION -->
-    <!-- ======================================================================= -->
-    <g transform="translate(525, 115)">
-      <!-- Center Brand Icon Badge -->
-      <g transform="translate(-36, 0)" class="logo-glow">
-        <rect width="72" height="72" rx="18" fill="#10192e" stroke="#2563eb" stroke-width="1.5" />
-        
-        <!-- Padlock Shackle -->
-        <path d="M 26 34 L 26 24 C 26 18.5 30.5 14 36 14 C 41.5 14 46 18.5 46 24 L 46 34"
-              fill="none"
-              stroke="#38bdf8"
-              stroke-width="5"
-              stroke-linecap="round" />
-        
-        <!-- Padlock Body -->
-        <rect x="20" y="32" width="32" height="26" rx="5" fill="#0b1120" stroke="#38bdf8" stroke-width="2" />
-        
-        <!-- Central Lock / Distributed Node -->
-        <circle cx="36" cy="42" r="3.5" fill="#38bdf8" />
-        <line x1="36" y1="42" x2="28" y2="50" stroke="#38bdf8" stroke-width="1.5" />
-        <line x1="36" y1="42" x2="44" y2="50" stroke="#38bdf8" stroke-width="1.5" />
-        <circle cx="28" cy="50" r="2" fill="#10b981" />
-        <circle cx="44" cy="50" r="2" fill="#10b981" />
-      </g>
-
-      <!-- Project Name (Bold, modern sans-serif like SkillBridge) -->
-      <text y="122" text-anchor="middle" fill="#f8fafc" font-size="38" font-weight="800" class="sans" letter-spacing="-0.8">
-        Distributed Order Processing
-      </text>
-
-      <!-- Subtitle -->
-      <text y="154" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="400" class="sans">
-        High-concurrency ordering engine with zero-overselling guarantee
-      </text>
-
-      <!-- 3 Accent Status Dots (Directly inspired by SkillBridge in the portfolio!) -->
-      <g transform="translate(0, 185)">
-        <circle cx="-16" cy="0" r="4" fill="#38bdf8" />
-        <circle cx="0" cy="0" r="4" fill="#2563eb" />
-        <circle cx="16" cy="0" r="4" fill="#10b981" />
-      </g>
-
-      <!-- Core Value Metric Pill -->
-      <g transform="translate(-160, 215)">
-        <rect width="320" height="34" rx="17" fill="#0c1526" stroke="#1d2e4d" stroke-width="1" />
-        <circle cx="18" cy="17" r="3.5" fill="#10b981" />
-        <text x="168" y="21" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600" class="mono">
-          50 CONCURRENT BUYERS · 0 DEFECTS
-        </text>
-      </g>
-    </g>
-
-    <!-- ======================================================================= -->
-    <!-- BOTTOM METADATA BAR (Directly inspired by MindVault in the portfolio!) -->
-    <!-- ======================================================================= -->
-    <g transform="translate(0, 480)">
-      <!-- Divider Line -->
-      <line x1="0" y1="0" x2="1050" y2="0" stroke="#161f30" stroke-width="1" />
-      <rect width="1050" height="60" rx="14" fill="#0b101c" />
-      <rect width="1050" height="20" fill="#0b101c" /> <!-- Clean top corners -->
-
-      <!-- Left: App Icon + Title + Descriptor -->
-      <g transform="translate(24, 14)">
-        <!-- Small App Icon -->
-        <rect width="32" height="32" rx="8" fill="#10192e" stroke="#2563eb" stroke-width="1" />
-        <circle cx="16" cy="16" r="5" fill="#38bdf8" />
-        <circle cx="16" cy="16" r="2" fill="#10b981" />
-
-        <!-- Title & Subtitle -->
-        <text x="44" y="14" fill="#f1f5f9" font-size="13" font-weight="700" class="sans">
-          Distributed Order System
-        </text>
-        <text x="44" y="28" fill="#64748b" font-size="10" font-weight="500" class="sans">
-          Distributed Redis Mutex &amp; Kafka Pipeline
-        </text>
-      </g>
-
-      <!-- Right: Tech Stack Badges (Matching MindVault's badge row) -->
-      <g transform="translate(540, 18)">
-        <!-- Java 17 -->
-        <g transform="translate(0, 0)">
-          <rect width="62" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
-          <text x="31" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Java 17</text>
-        </g>
-
-        <!-- Spring Boot 3 -->
-        <g transform="translate(68, 0)">
-          <rect width="98" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
-          <text x="49" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Spring Boot 3</text>
-        </g>
-
-        <!-- Redis -->
-        <g transform="translate(172, 0)">
-          <rect width="60" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
-          <text x="30" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Redis</text>
-        </g>
-
-        <!-- Kafka -->
-        <g transform="translate(238, 0)">
-          <rect width="60" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
-          <text x="30" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Kafka</text>
-        </g>
-
-        <!-- MongoDB -->
-        <g transform="translate(304, 0)">
-          <rect width="78" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
-          <text x="39" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">MongoDB</text>
-        </g>
-
-        <!-- React -->
-        <g transform="translate(388, 0)">
-          <rect width="64" height="24" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1" />
-          <text x="32" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">React</text>
-        </g>
-      </g>
+    <!-- Cluster Status Tag on Right -->
+    <g transform="translate(940, 2)">
+      <rect width="165" height="24" rx="12" fill="#0c1a2e" stroke="#1e3659" stroke-width="1" />
+      <circle cx="14" cy="12" r="3.5" fill="#10b981" />
+      <text x="26" y="16" fill="#38bdf8" font-size="10" font-weight="700" class="mono">ZERO OVERSELLING</text>
     </g>
   </g>
+
+  <!-- Main Divider -->
+  <line x1="45" y1="52" x2="1150" y2="52" stroke="#1e293b" stroke-width="1" />
+
+  <!-- ========================================================================= -->
+  <!-- TIER 1: FRONTEND CLIENT (X: 45 to 195) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(45, 75)" class="box-shadow">
+    <!-- Outer Group Frame -->
+    <rect width="155" height="425" rx="8" fill="#090f1d" stroke="#1e2c47" stroke-width="1" stroke-dasharray="4,4" />
+    <rect width="155" height="24" rx="8" fill="#0d172e" />
+    <rect y="16" width="155" height="8" fill="#0d172e" />
+    <text x="10" y="16" fill="#38bdf8" font-size="10" font-weight="700" class="mono">CLIENT TIER</text>
+
+    <!-- React Frontend Card -->
+    <g transform="translate(10, 36)">
+      <rect width="135" height="175" rx="6" fill="#0d182e" stroke="#0284c7" stroke-width="1.2" />
+      
+      <!-- Card Title Bar -->
+      <rect width="135" height="28" rx="6" fill="#0369a1" fill-opacity="0.25" />
+      <circle cx="14" cy="14" r="3" fill="#38bdf8" />
+      <text x="24" y="18" fill="#f0f9ff" font-size="11" font-weight="700" class="sans">React Frontend</text>
+
+      <!-- Port & Info -->
+      <text x="12" y="48" fill="#38bdf8" font-size="10" font-weight="600" class="mono">:3000 (Vite)</text>
+      <text x="12" y="66" fill="#94a3b8" font-size="10" class="sans">Order Telemetry &amp;</text>
+      <text x="12" y="80" fill="#94a3b8" font-size="10" class="sans">Concurrency Sim</text>
+
+      <!-- Sim Badge -->
+      <rect x="10" y="100" width="115" height="26" rx="4" fill="#091326" stroke="#1e3a68" stroke-width="0.8" />
+      <text x="16" y="117" fill="#f59e0b" font-size="10" font-weight="700" class="mono">⚡ 50 BUYERS RUSH</text>
+
+      <text x="12" y="146" fill="#64748b" font-size="9" class="mono">Stock: 10 units</text>
+      <text x="12" y="160" fill="#10b981" font-size="9" font-weight="600" class="mono">Simulates Contention</text>
+    </g>
+
+    <!-- Client Metric Summary Box -->
+    <g transform="translate(10, 230)">
+      <rect width="135" height="95" rx="6" fill="#0c1424" stroke="#1e2c47" stroke-width="1" />
+      <text x="10" y="20" fill="#64748b" font-size="9" font-weight="700" class="mono">INGRESS PROTOCOL</text>
+      <text x="10" y="40" fill="#cbd5e1" font-size="11" font-weight="600" class="sans">REST API</text>
+      <text x="10" y="56" fill="#94a3b8" font-size="10" class="mono">POST /api/orders</text>
+      <text x="10" y="74" fill="#64748b" font-size="9" class="mono">JSON Payload</text>
+      <text x="10" y="88" fill="#38bdf8" font-size="9" class="mono">Idempotency Key</text>
+    </g>
+  </g>
+
+  <!-- Connector: Frontend -> Module 1 -->
+  <g>
+    <line x1="200" y1="165" x2="242" y2="165" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr-blue)" />
+    <rect x="202" y="148" width="38" height="14" rx="2" fill="#080c14" />
+    <text x="221" y="159" text-anchor="middle" fill="#38bdf8" font-size="8" font-weight="700" class="mono">HTTP</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 2: MODULE 1 — ORDER SERVICE & DATA (X: 245 to 525) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(245, 75)" class="box-shadow">
+    <!-- Outer Group Frame -->
+    <rect width="280" height="425" rx="8" fill="#0a101d" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4,4" />
+    <rect width="280" height="24" rx="8" fill="#111d38" />
+    <rect y="16" width="280" height="8" fill="#111d38" />
+    <text x="12" y="16" fill="#60a5fa" font-size="10" font-weight="700" class="mono">MODULE 1: ORDER-SERVICE (:8080)</text>
+
+    <!-- Sub-box 2A: Order Controller -->
+    <g transform="translate(12, 34)">
+      <rect width="256" height="58" rx="6" fill="#121d36" stroke="#3b82f6" stroke-width="1.2" />
+      <circle cx="16" cy="18" r="4" fill="#3b82f6" />
+      <text x="26" y="21" fill="#f8fafc" font-size="12" font-weight="700" class="sans">Order Orchestrator</text>
+      <text x="26" y="38" fill="#94a3b8" font-size="10" class="mono">Spring Boot 3 · REST Ingress Handler</text>
+      <text x="26" y="50" fill="#38bdf8" font-size="9" class="mono">1. Acquire Lock ➔ 2. Check Stock ➔ 3. Emit</text>
+    </g>
+
+    <!-- Connectors down to Redis and MongoDB -->
+    <path d="M 75 92 L 75 110" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-amber)" />
+    <path d="M 205 92 L 205 110" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr-green)" />
+
+    <!-- Sub-box 2B: Redis Distributed Lock (Left Box) -->
+    <g transform="translate(12, 114)">
+      <rect width="124" height="128" rx="6" fill="#191114" stroke="#ef4444" stroke-width="1.2" />
+      <rect width="124" height="22" rx="6" fill="#ef4444" fill-opacity="0.2" />
+      <text x="8" y="15" fill="#fca5a5" font-size="10" font-weight="700" class="sans">Redis Lock</text>
+
+      <text x="8" y="34" fill="#ef4444" font-size="9" font-weight="700" class="mono">REDISSON MUTEX</text>
+      <text x="8" y="48" fill="#94a3b8" font-size="9" class="mono">lock:inventory:</text>
+      <text x="8" y="59" fill="#cbd5e1" font-size="9" class="mono">{productId}</text>
+      
+      <rect x="6" y="67" width="112" height="22" rx="3" fill="#2d1319" />
+      <text x="10" y="81" fill="#fca5a5" font-size="9" font-weight="600" class="mono">500ms lease wait</text>
+
+      <text x="8" y="104" fill="#64748b" font-size="8" class="mono">Atomic Lock/Unlock</text>
+      <text x="8" y="118" fill="#10b981" font-size="8" class="mono">Zero Race Conditions</text>
+    </g>
+
+    <!-- Sub-box 2C: MongoDB Database (Right Box) -->
+    <g transform="translate(144, 114)">
+      <rect width="124" height="128" rx="6" fill="#0d1b17" stroke="#10b981" stroke-width="1.2" />
+      <rect width="124" height="22" rx="6" fill="#10b981" fill-opacity="0.2" />
+      <text x="8" y="15" fill="#a7f3d0" font-size="10" font-weight="700" class="sans">MongoDB Store</text>
+
+      <text x="8" y="34" fill="#10b981" font-size="9" font-weight="700" class="mono">PORT: 27017</text>
+      <text x="8" y="48" fill="#94a3b8" font-size="9" class="mono">Collections:</text>
+      <text x="8" y="59" fill="#cbd5e1" font-size="9" class="mono">orders &amp; products</text>
+      
+      <rect x="6" y="67" width="112" height="22" rx="3" fill="#122a22" />
+      <text x="10" y="81" fill="#34d399" font-size="9" font-weight="600" class="mono">Atomic $gte &amp; $inc</text>
+
+      <text x="8" y="104" fill="#64748b" font-size="8" class="mono">Stock check &amp; deduct</text>
+      <text x="8" y="118" fill="#38bdf8" font-size="8" class="mono">Status: PENDING</text>
+    </g>
+
+    <!-- Connector down to Event Emitter -->
+    <path d="M 140 242 L 140 262" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-amber)" />
+
+    <!-- Sub-box 2D: Kafka Event Emitter Box -->
+    <g transform="translate(12, 266)">
+      <rect width="256" height="54" rx="6" fill="#1c170c" stroke="#f59e0b" stroke-width="1.2" />
+      <text x="10" y="18" fill="#fbbf24" font-size="10" font-weight="700" class="mono">EMIT EVENT: order-placed</text>
+      <text x="10" y="32" fill="#cbd5e1" font-size="10" class="sans">Payload: orderId, userId, amount, qty</text>
+      <text x="10" y="46" fill="#94a3b8" font-size="9" class="mono">Published with orderId partition key</text>
+    </g>
+
+    <!-- Module 1 Guarantee Badge -->
+    <g transform="translate(12, 332)">
+      <rect width="256" height="34" rx="4" fill="#0c1626" stroke="#1d2e4d" stroke-width="0.8" />
+      <circle cx="14" cy="17" r="3" fill="#10b981" />
+      <text x="24" y="21" fill="#cbd5e1" font-size="10" font-weight="600" class="sans">
+        Lock + DB check guarantees zero oversell
+      </text>
+    </g>
+  </g>
+
+  <!-- Connector: Module 1 -> Kafka -->
+  <g>
+    <line x1="525" y1="368" x2="558" y2="368" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-amber)" />
+    <rect x="526" y="352" width="30" height="13" rx="2" fill="#080c14" />
+    <text x="541" y="362" text-anchor="middle" fill="#f59e0b" font-size="7.5" font-weight="700" class="mono">EVENT</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 3: EVENT STREAMING BROKER (X: 562 to 732) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(562, 75)" class="box-shadow">
+    <!-- Kafka Cluster Box -->
+    <rect width="170" height="425" rx="8" fill="#12100a" stroke="#f59e0b" stroke-width="1.5" />
+    <rect width="170" height="24" rx="8" fill="#241906" />
+    <rect y="16" width="170" height="8" fill="#241906" />
+    <text x="10" y="16" fill="#fbbf24" font-size="10" font-weight="700" class="mono">APACHE KAFKA (:9092)</text>
+
+    <!-- Cluster Specs -->
+    <text x="10" y="42" fill="#94a3b8" font-size="9" class="mono">Cluster: 3 Partitions</text>
+    <text x="10" y="55" fill="#64748b" font-size="8.5" class="mono">Strict Key Ordering</text>
+
+    <!-- Topic Queue 1: order-placed -->
+    <g transform="translate(8, 68)">
+      <rect width="154" height="64" rx="5" fill="#1c150a" stroke="#f59e0b" stroke-width="1" />
+      <text x="8" y="14" fill="#fbbf24" font-size="9" font-weight="700" class="mono">topic: order-placed</text>
+      <!-- Partitions -->
+      <g transform="translate(8, 22)">
+        <rect width="42" height="18" rx="2" fill="#291e0a" stroke="#d97706" stroke-width="0.7" />
+        <text x="21" y="13" text-anchor="middle" fill="#fde68a" font-size="8" font-weight="600" class="mono">p0 [off]</text>
+      </g>
+      <g transform="translate(54, 22)">
+        <rect width="42" height="18" rx="2" fill="#291e0a" stroke="#d97706" stroke-width="0.7" />
+        <text x="21" y="13" text-anchor="middle" fill="#fde68a" font-size="8" font-weight="600" class="mono">p1 [off]</text>
+      </g>
+      <g transform="translate(100, 22)">
+        <rect width="44" height="18" rx="2" fill="#291e0a" stroke="#d97706" stroke-width="0.7" />
+        <text x="22" y="13" text-anchor="middle" fill="#fde68a" font-size="8" font-weight="600" class="mono">p2 [off]</text>
+      </g>
+      <text x="8" y="54" fill="#94a3b8" font-size="8" class="mono">Consumer group fan-out</text>
+    </g>
+
+    <!-- Topic Queue 2: order-payment-processed -->
+    <g transform="translate(8, 142)">
+      <rect width="154" height="46" rx="5" fill="#0d1b14" stroke="#10b981" stroke-width="0.8" />
+      <text x="8" y="14" fill="#34d399" font-size="8.5" font-weight="700" class="mono">order-payment-processed</text>
+      <text x="8" y="28" fill="#cbd5e1" font-size="8" class="sans">Status: CONFIRMED</text>
+      <text x="8" y="39" fill="#94a3b8" font-size="7.5" class="mono">Triggers shipping worker</text>
+    </g>
+
+    <!-- Topic Queue 3: order-payment-failed -->
+    <g transform="translate(8, 198)">
+      <rect width="154" height="46" rx="5" fill="#1c0f13" stroke="#f43f5e" stroke-width="0.8" />
+      <text x="8" y="14" fill="#fb7185" font-size="8.5" font-weight="700" class="mono">order-payment-failed</text>
+      <text x="8" y="28" fill="#fca5a5" font-size="8" class="sans">Status: PAYMENT_FAILED</text>
+      <text x="8" y="39" fill="#94a3b8" font-size="7.5" class="mono">Triggers compensation saga</text>
+    </g>
+
+    <!-- Topic Queue 4: order-shipped -->
+    <g transform="translate(8, 254)">
+      <rect width="154" height="44" rx="5" fill="#0c1722" stroke="#0284c7" stroke-width="0.8" />
+      <text x="8" y="14" fill="#38bdf8" font-size="8.5" font-weight="700" class="mono">order-shipped</text>
+      <text x="8" y="27" fill="#cbd5e1" font-size="8" class="sans">Status: SHIPPED</text>
+      <text x="8" y="38" fill="#94a3b8" font-size="7.5" class="mono">Tracking ID dispatched</text>
+    </g>
+
+    <!-- Zookeeper sync pill -->
+    <g transform="translate(8, 310)">
+      <rect width="154" height="28" rx="4" fill="#141c2c" stroke="#1f2d47" stroke-width="0.8" />
+      <text x="10" y="18" fill="#94a3b8" font-size="8.5" class="mono">ZooKeeper :2181 Sync</text>
+    </g>
+  </g>
+
+  <!-- Connectors: Kafka -> Module 2 -->
+  <g>
+    <!-- Line to Payment Worker -->
+    <path d="M 732 170 L 766 170" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr-purple)" />
+    <!-- Line to Shipping Worker -->
+    <path d="M 732 278 L 766 278" fill="none" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr-blue)" />
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 4: MODULE 2 — PROCESSING SERVICE & SAGAS (X: 770 to 1150) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(770, 75)" class="box-shadow">
+    <!-- Outer Group Frame -->
+    <rect width="380" height="425" rx="8" fill="#0c0e1e" stroke="#8b5cf6" stroke-width="1.2" stroke-dasharray="4,4" />
+    <rect width="380" height="24" rx="8" fill="#171433" />
+    <rect y="16" width="380" height="8" fill="#171433" />
+    <text x="12" y="16" fill="#c084fc" font-size="10" font-weight="700" class="mono">MODULE 2: PROCESSING-SERVICE (:8081)</text>
+
+    <!-- Sub-box 4A: Payment Worker -->
+    <g transform="translate(12, 34)">
+      <rect width="356" height="98" rx="6" fill="#13172e" stroke="#6366f1" stroke-width="1.2" />
+      <circle cx="16" cy="16" r="3.5" fill="#6366f1" />
+      <text x="26" y="19" fill="#e0e7ff" font-size="11" font-weight="700" class="sans">Payment Worker</text>
+      <text x="180" y="19" fill="#94a3b8" font-size="9" class="mono">(Group: payment-workers)</text>
+      
+      <!-- Branch 1: Happy -->
+      <g transform="translate(10, 30)">
+        <rect width="160" height="58" rx="4" fill="#0d241c" stroke="#10b981" stroke-width="0.8" />
+        <text x="8" y="15" fill="#34d399" font-size="9" font-weight="700" class="mono">✔ HAPPY PATH</text>
+        <text x="8" y="30" fill="#cbd5e1" font-size="8.5" class="sans">PAYMENT_PROCESSED</text>
+        <text x="8" y="44" fill="#94a3b8" font-size="8" class="mono">Emits: payment-processed</text>
+      </g>
+
+      <!-- Branch 2: Failure -->
+      <g transform="translate(180, 30)">
+        <rect width="166" height="58" rx="4" fill="#241016" stroke="#f43f5e" stroke-width="0.8" />
+        <text x="8" y="15" fill="#fb7185" font-size="9" font-weight="700" class="mono">✖ FAILURE PATH</text>
+        <text x="8" y="30" fill="#fca5a5" font-size="8.5" class="sans">Status: FAILED</text>
+        <text x="8" y="44" fill="#94a3b8" font-size="8" class="mono">Emits: payment-failed</text>
+      </g>
+    </g>
+
+    <!-- Sub-box 4B: Shipping Worker -->
+    <g transform="translate(12, 142)">
+      <rect width="356" height="68" rx="6" fill="#0d1c24" stroke="#06b6d4" stroke-width="1.2" />
+      <circle cx="16" cy="16" r="3.5" fill="#06b6d4" />
+      <text x="26" y="19" fill="#e0f2fe" font-size="11" font-weight="700" class="sans">Shipping Worker</text>
+      <text x="180" y="19" fill="#94a3b8" font-size="9" class="mono">(Group: shipping-workers)</text>
+
+      <text x="12" y="40" fill="#cbd5e1" font-size="9" class="sans">Generates Tracking ID: SHIP-XXXXX</text>
+      <text x="12" y="55" fill="#38bdf8" font-size="9" font-weight="600" class="mono">Updates status: SHIPPED ➔ Emits: order-shipped</text>
+    </g>
+
+    <!-- Sub-box 4C: Compensation Consumer (SAGA) -->
+    <g transform="translate(12, 220)">
+      <rect width="356" height="114" rx="6" fill="#1f1118" stroke="#f43f5e" stroke-width="1.3" />
+      <circle cx="16" cy="16" r="3.5" fill="#f43f5e" />
+      <text x="26" y="19" fill="#ffe4e6" font-size="11" font-weight="700" class="sans">Compensation Consumer (Saga Rollback)</text>
+      <text x="26" y="34" fill="#fda4af" font-size="9" class="mono">(Group: compensation-workers)</text>
+
+      <rect x="10" y="44" width="336" height="58" rx="4" fill="#2d131e" stroke="#9f1239" stroke-width="0.8" />
+      <text x="18" y="60" fill="#fca5a5" font-size="9" font-weight="600" class="mono">1. Acquires Redis lock: lock:inventory:{id}</text>
+      <text x="18" y="75" fill="#fca5a5" font-size="9" font-weight="600" class="mono">2. Restores stock in MongoDB: $inc { stock: +qty }</text>
+      <text x="18" y="90" fill="#34d399" font-size="9" font-weight="700" class="mono">3. Logs rollback in order statusHistory</text>
+    </g>
+
+    <!-- Saga Rollback Guarantee Badge -->
+    <g transform="translate(12, 344)">
+      <rect width="356" height="30" rx="4" fill="#161b2c" stroke="#2a3352" stroke-width="0.8" />
+      <text x="12" y="19" fill="#cbd5e1" font-size="9.5" font-weight="600" class="sans">
+        Distributed Saga Pattern ensures data consistency across failures
+      </text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- SAGA COMPENSATION FEEDBACK LOOP (Dashed Red Return Arrow) -->
+  <!-- ========================================================================= -->
+  <path d="M 770 380 L 480 380 L 480 250" fill="none" stroke="#f43f5e" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arr-red)" />
+  <g transform="translate(530, 390)">
+    <rect width="180" height="18" rx="3" fill="#240e15" stroke="#f43f5e" stroke-width="0.8" />
+    <text x="90" y="13" text-anchor="middle" fill="#fda4af" font-size="8.5" font-weight="700" class="mono">
+      ROLLBACK: $inc { stock: +qty }
+    </text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER STATUS STRIP (Y: 510 to 625) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(45, 515)">
+    <rect width="1105" height="42" rx="6" fill="#0b101c" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Left Project Tag -->
+    <g transform="translate(16, 12)">
+      <circle cx="8" cy="9" r="4" fill="#38bdf8" />
+      <text x="20" y="13" fill="#f8fafc" font-size="12" font-weight="700" class="sans">Distributed Order Processing System</text>
+      <text x="270" y="13" fill="#64748b" font-size="11" class="mono">· Production Architecture</text>
+    </g>
+
+    <!-- Right Tech Stack Badges -->
+    <g transform="translate(680, 9)">
+      <!-- Badge 1 -->
+      <rect x="0" width="58" height="24" rx="4" fill="#111827" stroke="#1f2937" />
+      <text x="29" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Java 17</text>
+
+      <!-- Badge 2 -->
+      <rect x="64" width="88" height="24" rx="4" fill="#111827" stroke="#1f2937" />
+      <text x="108" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Spring Boot 3</text>
+
+      <!-- Badge 3 -->
+      <rect x="158" width="56" height="24" rx="4" fill="#111827" stroke="#1f2937" />
+      <text x="186" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Redis</text>
+
+      <!-- Badge 4 -->
+      <rect x="220" width="94" height="24" rx="4" fill="#111827" stroke="#1f2937" />
+      <text x="267" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">Apache Kafka</text>
+
+      <!-- Badge 5 -->
+      <rect x="320" width="68" height="24" rx="4" fill="#111827" stroke="#1f2937" />
+      <text x="354" y="16" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" class="mono">MongoDB</text>
+    </g>
+  </g>
+
+  <!-- Bottom Brand Accent Line -->
+  <line x1="45" y1="620" x2="1150" y2="620" stroke="#1e293b" stroke-width="1" />
+  <line x1="45" y1="620" x2="250" y2="620" stroke="#38bdf8" stroke-width="2" />
+  <line x1="562" y1="620" x2="732" y2="620" stroke="#f59e0b" stroke-width="2" />
+  <line x1="770" y1="620" x2="980" y2="620" stroke="#8b5cf6" stroke-width="2" />
 </svg>
