@@ -1,7 +1,7 @@
-# Graph Report - Distributed order processing  (2026-10-24)
+# Graph Report - Distributed order processing  (2026-11-12)
 
 ## Corpus Check
-- 82 files · ~27,851 words
+- 82 files · ~27,856 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `98bf9bfd`
+- Built from commit: `fd296b81`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

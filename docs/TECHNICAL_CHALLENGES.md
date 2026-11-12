@@ -42,11 +42,11 @@ When clients experience network timeouts, client-side HTTP retry logic automatic
 
 ## 3. How We Narrowed It Down
 
-### Step 1: Deterministic Concurrency Harness
-We engineered a multi-threaded stress harness using Java's `ExecutorService` and `CountDownLatch` (`OrderServiceConcurrencyTest.java`):
-* 50 concurrent worker threads were prepped and released simultaneously against a single product initialized with `stock = 10`.
-* Monitored real-time Redis lock metrics and MongoDB document version logs.
-* **Finding:** Without strict distributed serialization and atomic database preconditions, thread interleaving resulted in 14 orders being accepted instead of 10, driving stock to `-4`.
+### Step 1: Multi-Threaded Concurrency Test
+We engineered a multi-threaded test harness using Java's `ExecutorService` and `CountDownLatch` (`OrderServiceConcurrencyTest.java`):
+* 50 concurrent worker threads were synchronized and released together against a single product initialized with `stock = 1`.
+* Monitored thread execution and database state.
+* **Finding:** Without strict distributed serialization and atomic database preconditions, thread interleaving caused multiple threads to evaluate `stock >= 1` simultaneously, driving stock negative and creating duplicate orders.
 
 ### Step 2: Fault Injection Across Distributed Boundaries
 We injected artificial network latency and runtime exceptions immediately after the MongoDB inventory update but *prior* to Kafka event emission:
@@ -176,12 +176,12 @@ public void compensateInventory(OrderPaymentFailedEvent event) {
 
 | Metric | Without Multi-Tier Defense | With Multi-Tier Defense-in-Depth |
 | :--- | :--- | :--- |
-| **50 Concurrent Threads (Stock: 10)** | 14 orders accepted (`stock = -4`) | **Exactly 10 orders accepted, 40 rejected** |
+| **50 Concurrent Threads (Stock: 1)** | Multiple orders accepted (negative stock) | **Exactly 1 order accepted, 49 rejected** |
 | **Final Stock Integrity** | Corrupted / Negative | **Exactly 0 (Zero overselling)** |
 | **Duplicate Request Replay** | Re-decremented inventory | **HTTP 200/201 Cached response returned** |
 | **Payload Tampering on Retry** | Corrupted order amounts | **HTTP 422 Unprocessable Entity rejected** |
 | **Payment Gateway Failure** | Stock lost permanently | **Automated Saga replenishment to stock** |
-| **Checkout Latency** | Synchronous cascade (3–5s) | **Asynchronous acknowledgment (< 25ms)** |
+| **Checkout Latency** | Blocked on payment/shipping APIs | **Immediate response upon Kafka event emission** |
 
 ---
 

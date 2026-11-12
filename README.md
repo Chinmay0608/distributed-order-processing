@@ -67,8 +67,8 @@ A production-grade distributed order processing engine built to eliminate invent
 - **Defense-in-Depth:** The Redis lock is backed by an atomic MongoDB decrement guard (`stock >= quantity`), guaranteeing zero overselling even if a lock were forcibly evicted.
 
 ### 2. Why Apache Kafka over Direct Synchronous REST Calls
-- **Temporal Decoupling & Availability:** Payment gateways and shipping courier APIs suffer latency spikes and intermittent outages. If `order-service` made synchronous HTTP calls to Payment and Shipping providers during order placement, checkout latency would be 3–5+ seconds, and any gateway downtime would immediately fail client orders.
-- **Immediate User Acknowledgment:** With Kafka, `order-service` reserves inventory, creates the order in initial state `PLACED`, and returns HTTP `201 Created` within ~20ms. Downstream processing occurs asynchronously in workers.
+- **Temporal Decoupling & Availability:** Payment gateways and shipping courier APIs suffer latency spikes and intermittent outages. Making synchronous HTTP calls to external payment and shipping providers during order intake would block the client thread and tightly couple intake availability to third-party uptime.
+- **Immediate User Acknowledgment:** With Kafka, `order-service` reserves inventory, creates the order in initial state `PLACED`, and immediately returns HTTP `201 Created` without waiting for downstream fulfillment. Payment processing and shipping dispatch occur asynchronously in workers.
 - **Independent Elastic Scaling:** `payment-workers` and `shipping-workers` run in isolated consumer groups. If shipping dispatch is slow, payment processing continues unimpeded, and workers can scale horizontally by adding Kafka consumer partitions.
 - **Built-in Replayability & Dead Lettering:** In the event of temporary downstream crashes, Kafka consumer offsets guarantee no lost events, allowing safe retry upon recovery.
 

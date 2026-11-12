@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1789476939.273069,
-    "seen": 1789476970.9796937,
-    "ast_hash": "d024d208e41a6c01ed649ea9abef540e",
+    "mtime": 1794473621.6645625,
+    "seen": 1794473644.8655832,
+    "ast_hash": "02809e6e1a54e29be2f60c6237f5f0d6",
     "semantic_hash": ""
   },
   "docker-compose.yml": {
@@ -564,9 +564,9 @@
     "semantic_hash": ""
   },
   "docs/TECHNICAL_CHALLENGES.md": {
-    "mtime": 1792850377.810732,
-    "seen": 1792850396.9902668,
-    "ast_hash": "848b4874b111adc782188e50bef195e2",
+    "mtime": 1794473613.953415,
+    "seen": 1794473644.8655891,
+    "ast_hash": "d75181f42bb076ab6276e6a10f120bfe",
     "semantic_hash": ""
   }
 }

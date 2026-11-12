@@ -6918,14 +6918,14 @@
       "source_location": "L1"
     },
     {
-      "id": "docs_technical_challenges_step_1_deterministic_concurrency_harness",
-      "label": "Step 1: Deterministic Concurrency Harness",
+      "id": "docs_technical_challenges_step_1_multi_threaded_concurrency_test",
+      "label": "Step 1: Multi-Threaded Concurrency Test",
       "_origin": "ast",
       "community": 14,
       "community_name": "Engineering Case Study: High-Concurrency Flash Sale Inventory Overselling & Saga Dual-Commit Resolution",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "step 1: deterministic concurrency harness",
+      "norm_label": "step 1: multi-threaded concurrency test",
       "source_file": "docs/TECHNICAL_CHALLENGES.md",
       "source_location": "L45"
     },
@@ -17308,7 +17308,7 @@
     },
     {
       "source": "docs_technical_challenges_3_how_we_narrowed_it_down",
-      "target": "docs_technical_challenges_step_1_deterministic_concurrency_harness",
+      "target": "docs_technical_challenges_step_1_multi_threaded_concurrency_test",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -24008,5 +24008,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "98bf9bfd303b7a1213312987038d38d78988a880"
+  "built_at_commit": "fd296b81dd267866a67b8f09bff964f5dc4cf182"
 }
